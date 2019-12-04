@@ -56,4 +56,4 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-gem 'sqlite3', '~> 1.4.1'
+# gem 'sqlite3', '~> 1.4.1'
