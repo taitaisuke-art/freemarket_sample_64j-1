@@ -16,7 +16,7 @@ groups
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null:false|
+|nickname|string| |
 |text|text|null:false|
 |email|string|null: false,unique:true|
 |first_name|string|null: false|
@@ -82,32 +82,13 @@ has_many:likes
 has_many:comments
 
 
-## categories_firstテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category_name|string|null:false|
 ### Association
 has_many:items
-has_many:categories_second
-
-
-## categories_secondテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_name|string|null:false|
-|categories_first_id|integer|null:false,foreign_key:true|
-### Association
-belongs_to:categories_first
-has_many:categories_third
-
-
-## categories_thirdテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_name|string|null:false|
-|categories_second_id|integer|null:false,foreign_key:true|
-### Association
-belongs_to:categories_second
+has_many:categories
 
 
 ## item_imagesテーブル
