@@ -179,7 +179,3 @@ has_many:brands_groups
 
 
 
-
-
-
-
