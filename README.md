@@ -3,9 +3,7 @@ users
 address
 likes
 items
-categories_first
-categories_second
-categories_third
+categories
 item_images
 comments
 messages
@@ -50,7 +48,6 @@ belongs_to:user
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|like|string||
 |item_id|integer|null:false,foreign_key:true|
 |user_id|integer|null:false,foreign_key:true|
 ### Association
@@ -63,7 +60,7 @@ belongs_to:user
 |------|----|-------|
 |name|string|null:false|
 |size|string||
-|conndition|string|null:false|
+|condition|string|null:false|
 |shipping_method|string|null:false|
 |shipping_days|string|null:false|
 |shipping_area|string|null:false|
@@ -88,7 +85,6 @@ has_many:comments
 |category_name|string|null:false|
 ### Association
 has_many:items
-has_many:categories
 
 
 ## item_imagesテーブル
@@ -136,8 +132,8 @@ has_many:brands_groups
 ## brands_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_id|integer|integer|null:false,foreign_key:true|
-|group_id|integer|integer|null:false,foreign_key:true|
+|brand_id|integer|null:false,foreign_key:true|
+|group_id|integer|null:false,foreign_key:true|
 ### Association
 belongs_to:brand
 belongs_to:group
