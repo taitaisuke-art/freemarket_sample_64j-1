@@ -57,3 +57,10 @@ group :production do
 end
 
 # gem 'sqlite3', '~> 1.4.1'
+gem 'haml-rails'
+
+gem 'font-awesome-sass'
+
+gem 'devise'
+
+gem 'ancestry'

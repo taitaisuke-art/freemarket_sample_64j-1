@@ -3,9 +3,7 @@ users
 address
 likes
 items
-categories_first
-categories_second
-categories_third
+categories
 item_images
 comments
 messages
@@ -16,7 +14,7 @@ groups
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null:false|
+|nickname|string| |
 |text|text|null:false|
 |email|string|null: false,unique:true|
 |first_name|string|null: false|
@@ -50,7 +48,6 @@ belongs_to:user
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|like|string||
 |item_id|integer|null:false,foreign_key:true|
 |user_id|integer|null:false,foreign_key:true|
 ### Association
@@ -63,7 +60,7 @@ belongs_to:user
 |------|----|-------|
 |name|string|null:false|
 |size|string||
-|conndition|string|null:false|
+|condition|string|null:false|
 |shipping_method|string|null:false|
 |shipping_days|string|null:false|
 |shipping_area|string|null:false|
@@ -82,32 +79,12 @@ has_many:likes
 has_many:comments
 
 
-## categories_firstテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category_name|string|null:false|
 ### Association
 has_many:items
-has_many:categories_second
-
-
-## categories_secondテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_name|string|null:false|
-|categories_first_id|integer|null:false,foreign_key:true|
-### Association
-belongs_to:categories_first
-has_many:categories_third
-
-
-## categories_thirdテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_name|string|null:false|
-|categories_second_id|integer|null:false,foreign_key:true|
-### Association
-belongs_to:categories_second
 
 
 ## item_imagesテーブル
@@ -155,8 +132,8 @@ has_many:brands_groups
 ## brands_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_id|integer|integer|null:false,foreign_key:true|
-|group_id|integer|integer|null:false,foreign_key:true|
+|brand_id|integer|null:false,foreign_key:true|
+|group_id|integer|null:false,foreign_key:true|
 ### Association
 belongs_to:brand
 belongs_to:group
@@ -169,6 +146,7 @@ belongs_to:group
 ### Association
 has_many:brands,through: :brands_groups
 has_many:brands_groups
+
 
 
 
