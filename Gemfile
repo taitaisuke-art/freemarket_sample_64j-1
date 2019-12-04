@@ -50,9 +50,7 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-<<<<<<< HEAD
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-=======
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
@@ -63,4 +61,4 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 gem 'ancestry'
->>>>>>> 78c4c05c9414f8f4004adf936ba82a6e0ce37f79
+
