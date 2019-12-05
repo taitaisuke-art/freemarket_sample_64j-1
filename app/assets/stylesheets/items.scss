@@ -1,0 +1,92 @@
+.header{
+  height: 110px;
+  width: 100%;
+  .header-inner{
+    width: 75%;
+    height:110px;
+    margin: auto;
+    }
+      .header-inner__upper{
+        height:55px;
+        display:flex;
+        width: 100%;
+      }
+        .header-inner__upper__site-logo{
+          margin-top: 10px;
+          margin-left: 20px;
+        }
+        .header-inner__upper__search-form{
+          margin-top: 10px;
+          padding-left: 30px;
+          width: 80%;
+        } 
+        .form{
+          .form_text{
+            background-color: whitesmoke;
+            height:40px;
+            width: 100%;
+            border-style: solid;
+            border-color: #cccccc; 
+            border-radius: 4px;
+            margin-left: 20px;
+            position:relative;
+        }
+            .fa{
+              position: absolute;
+              display: inline-block;
+              top: 23px;
+              right: 220px;
+            }}
+        
+        
+      .header-inner__lower{
+        width: 100%;
+        .header-inner__lower__left{
+        width: 0px;
+        display: flex;
+        position: relative;
+        }
+          .header-inner__lower__left i{
+            margin-top: 20px;
+            margin-left: 30px;
+          }
+          .header-inner__lower__left__search-list{
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 36px;
+            white-space: nowrap;
+            }
+            .header-inner__lower__right {
+              position: absolute;
+              top:60px;
+              }
+              .btn{
+                background-color: red;
+                color: white;
+                font-size: 14px;
+                border-radius: 4px;
+                border-color: red;
+                padding: 8px 10px;
+                margin-left: 850px;
+              }
+              .btns{
+                background-color: white;
+                color: rgb(0, 149, 238);
+                font-size: 14px;
+                border-color: rgb(0, 149, 238);
+                border-radius: 4px;
+                padding: 8px 10px;
+                margin-left: 500px;
+                position: absolute;
+                top: 61px;
+                right: 210px;
+
+              }
+      }
+    }
+
+
+
+
+      
+      
