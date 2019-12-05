@@ -6,4 +6,6 @@ has_many :messages, dependent: :destroy
 belongs_to :bland
 has_many :likes, dependent: :destroy
 has_many :comments, dependent: :destroy
+
+mount_uploader :image, ImageUploader
 end
