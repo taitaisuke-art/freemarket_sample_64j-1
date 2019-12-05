@@ -8,8 +8,8 @@ item_images
 comments
 messages
 brands
-brands_groups
-groups
+brands_genres
+genres
 
 ## usersテーブル
 |Column|Type|Options|
@@ -25,11 +25,11 @@ groups
 |telephone|integer|null:false|
 |icon|text||
 ### Association
-has_one:address
-has_many:messages
-has_many:items
-has_many:comments
-has_many:likes
+has_one:address, dependent: :destroy
+has_many:messages, dependent: :destroy
+has_many:items, dependent: :destroy
+has_many:comments, dependent: :destroy
+has_many:likes, dependent: :destroy
 
 
 ## addressテーブル
@@ -72,12 +72,12 @@ belongs_to:user
 |category_id|integer|null:false,foreign_key:true|
 ### Association
 belongs_to:user
-belongs_to:category
-has_many:item_images
-has_many:messages
-belongs_to:bland
-has_many:likes
-has_many:comments
+belongs_to:category, dependent: :destroy
+has_many:item_images, dependent: :destroy
+has_many:messages, dependent: :destroy
+belongs_to:bland, dependent: :destroy
+has_many:likes, dependent: :destroy
+has_many:comments, dependent: :destroy
 
 
 ## categoriesテーブル
@@ -147,32 +147,6 @@ belongs_to:genre
 ### Association
 has_many:brands,through: :brands_genres
 has_many:brands_genres
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
