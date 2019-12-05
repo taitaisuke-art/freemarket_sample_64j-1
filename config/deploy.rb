@@ -51,3 +51,6 @@ namespace :deploy do
   before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
 end
+
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
