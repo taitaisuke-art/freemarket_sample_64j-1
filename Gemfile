@@ -61,7 +61,6 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-# gem 'sqlite3', '~> 1.4.1'
 gem 'haml-rails'
 
 gem 'font-awesome-sass'
@@ -69,3 +68,9 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 gem 'ancestry'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem 'fog-aws'
