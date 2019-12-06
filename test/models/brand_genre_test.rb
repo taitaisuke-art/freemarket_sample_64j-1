@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BrandsGroupTest < ActiveSupport::TestCase
+class BrandGenreTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
