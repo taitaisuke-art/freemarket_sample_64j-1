@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20191206094953) do
     t.string "brand_name", null: false
   end
 
+  create_table "brands_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "brand_id", null: false
+    t.integer "group_id", null: false
+  end
+
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "category_name", null: false
   end
@@ -43,6 +48,10 @@ ActiveRecord::Schema.define(version: 20191206094953) do
   end
 
   create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "brand_type", null: false
+  end
+
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "brand_type", null: false
   end
 
