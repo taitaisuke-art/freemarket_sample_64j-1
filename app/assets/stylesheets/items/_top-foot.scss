@@ -44,7 +44,7 @@
   .footer-text {
     display: flex;
     background-color: rgb(34, 34, 34);
-    padding-left: 280px;
+    padding: 0 200px;
     color: whitesmoke;
     font-size: 12px;
     .text1-list {
@@ -52,17 +52,47 @@
       text-align: left;
     }
     .text1-title {
-      font-size: 16px;
+      font-size: 18px;
       font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     }
     .footer-text1__icon {
       display: flex;
       font-size: 30px;
       &__1 {
-        margin: 5px 10px;
+        margin: 5px 0;
       }
       &__2 {
-        margin: 5px 10px;
+        margin: 5px 20px;
+      }
+    }
+    .footer-text1 {
+      padding: 10px 20px;
+      li {
+        padding-top: 10px;
+      }
+    }
+    .footer-text2 {
+      padding: 10px 20px;
+      li {
+        padding-top: 10px;
+      }
+    }
+    .footer-text3 {
+      padding: 10px 20px;
+      li {
+        padding-top: 10px;
+      }
+    }
+    .footer-text4 {
+      padding: 45px 20px;
+      li {
+        padding-top: 10px;
+      }
+    }
+    .footer-text5 {
+      padding: 10px 20px;
+      li {
+        padding-top: 10px;
       }
     }
   }
@@ -73,7 +103,7 @@
   height: 80px;
   &__icon {
     color: white;
-    padding-left: 290px;
+    padding-left: 220px;
     padding-top: 10px;
   }
   &__text {
