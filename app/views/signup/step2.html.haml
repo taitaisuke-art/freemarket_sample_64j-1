@@ -1,0 +1,7 @@
+= form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'second-wrapper__box'} do |f|
+  .field
+    = f.label :telephone
+    %br/
+    = f.text_field :telephone
+
+  = f.submit "次へ進む", class: 'btn'
