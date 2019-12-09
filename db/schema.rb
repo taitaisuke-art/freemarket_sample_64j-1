@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191206094953) do
+ActiveRecord::Schema.define(version: 20191209020247) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "post_cord",                 null: false
@@ -32,11 +32,6 @@ ActiveRecord::Schema.define(version: 20191206094953) do
     t.string "brand_name", null: false
   end
 
-  create_table "brands_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "brand_id", null: false
-    t.integer "group_id", null: false
-  end
-
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "category_name", null: false
   end
@@ -48,10 +43,6 @@ ActiveRecord::Schema.define(version: 20191206094953) do
   end
 
   create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "brand_type", null: false
-  end
-
-  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "brand_type", null: false
   end
 
@@ -88,6 +79,13 @@ ActiveRecord::Schema.define(version: 20191206094953) do
     t.integer "item_id",                 null: false
     t.integer "buyer_id",                null: false
     t.integer "seller_id",               null: false
+  end
+
+  create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "icon",       limit: 65535
+    t.text     "text",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
