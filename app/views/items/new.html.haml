@@ -6,10 +6,11 @@
   = f.text_field :name, class: "item-name"
 
   = f.label :name, "商品の説明", class: "item-label"
-  = f.text_area :item_text, class: "item-text"
+  = f.text_area :text, class: "item-text"
 
   = f.label :name, "カテゴリー", class: "item-label"
-  = f.text_area :item_text, class: "item-text"
+  = f.select :category_id, class: "item-category"
+
+
 
   = f.submit "出品"
-
