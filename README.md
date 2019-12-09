@@ -76,7 +76,7 @@ belongs_to:user
 |price|integer|null:false|
 |text｜text｜null:false｜
 |user_id|integer|null:false,foreign_key:true|
-|brand_id|integer|null:false,foreign_key:true|
+|brand_id|integer|foreign_key:true|
 |category_id|integer|null:false,foreign_key:true|
 ### Association
 belongs_to:user
