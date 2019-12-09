@@ -1,4 +1,35 @@
-.wrapper
-  = render "top-head"
+= render "top-head"
+
+.header
+  .header-inner
+    .header-inner__upper
+      .header-inner__upper__site-logo
+        %img{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", :width => "140px"}/
+      .header-inner__upper__search-form
+        %form.form{:action => ""}
+          %input.form_text{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+          %i.fa.fa-search-minus
+    .header-inner__lower
+      .header-inner__lower__left
+        %i.fa.fa-search-minus
+        .header-inner__lower__left__search-list
+          %h1 カテゴリーから探す
+        %i.fa.fa-search-minus
+        .header-inner__lower__left__search-list
+          %h1 ブランドから探す
+      .header-inner__lower__right
+        %button.btn{:autofocus => "true", :type => "buttun"} 新規会員登録
+      %button.btns{:autofocus => "true", :type => "buttun"} ログイン
+.single
+  .top_image
+    = image_tag 'top_page/top1.jpg', alt: ""
+  .top_image
+    = image_tag 'top_page/top2.jpg', alt: ""
+  .top_image
+    = image_tag 'top_page/top3.png', alt: ""
+    
+
+
   = render "top-main"
   = render "top-foot"
+
