@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191204042158) do
+ActiveRecord::Schema.define(version: 20191206094953) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "post_cord",                 null: false
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20191204042158) do
     t.integer  "user_id",                   null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "brand_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "brand_id", null: false
+    t.integer "group_id", null: false
   end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -40,6 +45,10 @@ ActiveRecord::Schema.define(version: 20191204042158) do
     t.text    "comment", limit: 65535, null: false
     t.integer "item_id",               null: false
     t.integer "user_id",               null: false
+  end
+
+  create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "brand_type", null: false
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
