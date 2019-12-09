@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
-  $('.slick').slick({
+  $('.single').not('.slick-initialized').slick({
     autoplay:true,
     dots:true,
-    autoplaySpeed:6000,
+    autoplaySpeed:5000,
   });
 });
