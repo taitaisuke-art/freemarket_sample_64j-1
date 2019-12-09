@@ -1,0 +1,184 @@
+.step-1
+
+  .step-1_header
+    .step-1_header__icon
+      = link_to root_path do
+        = image_tag "fmarket_logo_red.svg", class: "header_logo"
+
+    %nav
+      %ul
+        %li-1
+          会員登録
+          .nav-dot-1
+          .nav-line-1
+        %li
+          電話番号認証
+          .nav-dot
+          .nav-line
+        %li
+          お届け先住所入力
+          .nav-dot
+          .nav-line
+        %li
+          支払い方法
+          .nav-dot
+          .nav-line
+        %li
+          完了
+          .nav-dot
+          .nav-line
+  
+  .form-1
+    %h1
+      会員情報入力
+    .form-user
+
+
+      .form-user__nickname
+        %label
+          ニックネーム
+        %span.form-require
+          必須
+        %input{type: "text", name: "nickname", placeholder: "例）メルカリ太郎", class: "input-default"}
+          -# aria-invalid: true;  ※入力された値は検証に失敗した？
+          -# aria-describedby: "nickname-error"; エラーだったら表示？
+
+        -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+        -#   %li#nickname-error.has-error
+        -#     ニックネームを入力してください
+        -#   %li#nickname-error.has-error
+        -#     20文字以下で入力してください
+
+
+      .form-user__email
+        %label
+          メールアドレス
+        %span.form-require
+          必須
+        %input{type: "email", name: "email", placeholder: "PC・携帯どちらでも可", class: "input-default"}
+          -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+            -#   %li#email-error.has-error
+            -#     メールアドレスを入力してください
+            -#   %li#email-error.has-error
+            -#     フォーマットが不適切です
+
+
+      .form-user__password
+        %label
+          パスワード
+        %span.form-require
+          必須
+        %input{type: "password", name: "password", placeholder: "7文字以上の半角英数字", class: "input-default"}
+          -# ※フォームが選択されたときに条件分岐でアラート？する
+          %ul
+            %li#email-error.has-error
+              パスワードを入力してください
+            -#   %li#email-error.has-error
+            -#     7文字以上128文字以下で入力してください
+        %p
+          ※ 英字と数字の両方を含めて設定してください
+        
+        %label
+          確認用パスワード
+        %input{type: "password", name: "password", placeholder: "7文字以上の半角英数字", class: "input-default"}
+          -# ※フォームが選択されたときに条件分岐でアラート？する
+          %ul
+            %li#email-error.has-error
+              パスワードを入力してください
+            -#   %li#email-error.has-error
+            -#     7文字以上128文字以下で入力してください
+        %p
+          ※ 英字と数字の両方を含めて設定してください
+
+        -# .check_box 
+        -#   %input{type: "checkbox", class: "checkbox-input"}
+        -#     %i.icon_check
+        -#     %label
+        -#       パスワードを表示する
+        -# .password_revealed
+        -#   %span
+            -# 打ち込んだパスワードが随時表示される
+
+
+      .form-user__identification
+        本人確認
+        %p
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+
+      .form-user__name
+        %label
+          お名前(全角)
+        %span.form-require
+          必須
+        .input-name
+          %input{type: "text", name: "first_name", placeholder: "例)山田", class: "input-default"}
+            -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+              -#   %li#first_name-error.has-error
+              -#     姓 を入力してくださいを入力してください
+          %input{type: "text", name: "last_name", placeholder: "例)彩", class: "input-default__lastname"}
+            -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+              -#   %li#last_name-error.has-error
+              -#     名 を入力してくださいを入力してください
+
+
+
+      .form-user__name-kana
+        %label
+          お名前カナ(全角)
+        %span.form-require
+          必須
+        .input-name
+          %input{type: "text", name: "first_name_kana", placeholder: "例)ヤマダ", class: "input-default"}
+            -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+              -#   %li#first_name-error.has-error
+              -#     姓 を入力してくださいを入力してください
+          %input{type: "text", name: "last_name_kana", placeholder: "例)アヤ", class: "input-default__lastname"}
+            -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+              -#   %li#last_name-error.has-error
+              -#     名 を入力してくださいを入力してください
+
+
+      .form-user__birthday
+        %label
+          生年月日
+        %span.form-require
+          必須
+        %input{type: "text", name: "birthday", placeholder: "19890218", class: "input-default"}
+          -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+            -#   %li#birthday-error.has-error
+            -#      生年月日を入力してください
+
+        -# != sprintf(.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        %p
+          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+      .form-user__text
+        「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+
+      %button{type: "submit", class: "submit"}
+        次へ進む
+
+      .form-user__text2
+        %p
+          本人情報の登録について
+        = icon "fas fa-angle-right", class: "fas fa-angle-right"
+
+
+  .step-1_fooder
+    %nav
+      %ul
+        %li
+          = link_to "プライバシーポリシー", root_path
+        %li
+          = link_to "フリーマケット利用規約", root_path
+        %li
+          = link_to "特定商取引に関する表記", root_path
+            
+
+    .fooder-image
+      = link_to root_path do
+        = image_tag "logo_white.svg", class: "fooder_logo"
+
+    %p
+      &copy; Fmarket 64 teamJ
