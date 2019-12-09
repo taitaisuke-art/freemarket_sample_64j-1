@@ -31,7 +31,7 @@ has_many:comments, dependent: :destroy
 has_many:likes, dependent: :destroy
 
 
-## profileテーブル
+## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |icon|text||
