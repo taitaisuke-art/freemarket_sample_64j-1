@@ -5,6 +5,21 @@
     %title FreemarketSample64j
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{:href => "slick-theme.scss", :rel => "stylesheet", :type => "text/scss"}/
+    %link{:href => "slick.scss", :rel => "stylesheet", :type => "text/scss"}/
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %script{:src => "./js/jquery-1.12.4.min.js", :type => "text/javascripts"}
+    %script{:src => "./js/jquery-migrate-1.4.1.min.js", :type => "text/javascripts"}
+    %script{:src => "slick.min.js", :type => "text/javascripts"}
+
   %body
+    
+    :javascript
+      $(document).ready(function(){
+        $('.single').slick({
+          autoplay: true,
+        });
+      });
+
     = yield
