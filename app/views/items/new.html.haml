@@ -1,0 +1,16 @@
+商品出品ページ
+
+= form_for @item do |f|
+
+  = f.label :name, "商品名", class: "item-label"
+  = f.text_field :name, class: "item-name"
+
+  = f.label :name, "商品の説明", class: "item-label"
+  = f.text_area :text, class: "item-text"
+
+  = f.label :name, "カテゴリー", class: "item-label"
+  = f.select :category_id, class: "item-category"
+
+
+
+  = f.submit "出品"

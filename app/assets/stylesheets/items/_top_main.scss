@@ -36,8 +36,8 @@
       display: flex;
     }
       .item-exhibit__image__title h1{
-        font-weight: bold;
-      }
+        font-weight: bold；
+    }
       .item-exhibit__image__title button{
         background-color: red;
         color: white;
@@ -76,3 +76,66 @@
     }
 
   }
+.top-main{
+  background-color: #f5f5f5;
+  color: rgb(51, 51, 51);
+  .categoreis-box {
+    .popularity-categoreis {
+      &__head {
+        padding-top: 56px ;
+        background-color: white;
+        height: 120px;
+        h1 {
+          font-size: 28px;
+          font-weight: 600;
+          margin-bottom: 16px;
+          text-align: center;
+        }
+        .popularity-categoreis__list {
+          position: relative;
+          ul {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            .category-link {
+              font-size: 14px;
+              background-color: #F5F5F5;
+              cursor: pointer;
+              text-decoration: none;
+              font-weight: 600;
+              border-radius: 15px;
+              padding: 8px 16px;
+              margin: 10px 0px 0px 10px;
+            }
+            .category-link:visited {
+              color: rgb(51, 51, 51);
+            }
+          }
+        }
+        
+        // 出品ボタン
+        .circle{
+          height: 155px;
+          width: 155px;
+          background-color: rgb(234,53,45,);
+          border-radius: 50%;
+          position: fixed;
+          bottom: 50px;
+          right: 50px;
+          display: inline-block;
+          z-index: 100;
+        }
+        .circle span{
+          color: white;
+          position: absolute;
+          margin-top: 25px;
+          margin-left: 55px;
+          font-size: 20px;
+        }
+        .circle i{
+          color:white;
+          position: absolute;
+          margin-top: 55px;
+          margin-left: 48px;
+          font-size: 55px;
+        }
