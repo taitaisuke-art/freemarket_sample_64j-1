@@ -4,8 +4,9 @@
   .categoreis-box {
     .popularity-categoreis {
       &__head {
-        padding: 56px 0px 30px;
+        padding-top: 56px ;
         background-color: white;
+        height: 120px;
         h1 {
           font-size: 28px;
           font-weight: 600;
@@ -13,6 +14,7 @@
           text-align: center;
         }
         .popularity-categoreis__list {
+          position: relative;
           ul {
             display: flex;
             text-align: center;
@@ -32,6 +34,32 @@
             }
           }
         }
+        .circle{
+          height: 155px;
+          width: 155px;
+          background-color: rgb(234,53,45,);
+          border-radius: 50%;
+          position: relative;
+          left: 1250px;
+          display: inline-block;
+        }
+        
+        .circle span{
+          color: white;
+          position: absolute;
+          margin-top: 25px;
+          margin-left: 55px;
+          font-size: 20px;
+        }
+        
+        .circle i{
+          color:white;
+          position: absolute;
+          margin-top: 55px;
+          margin-left: 48px;
+          font-size: 55px;
+        }
+        
       }
       .items-images {
         width: 1020px;
