@@ -5,20 +5,20 @@
         = image_tag "fmarket_logo_white.svg", size: "120x40", alt: "test"
       .header-inner__upper__search-form
         %form.form{:action => ""}
-          %input.form_text{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+          %input.form_text{name: "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
           %i.fa.fa-search
     .header-inner__lower
       .header-inner__lower__left
         .header-inner__lower__left__search-list
           %ul.gnav
             %li
-              %a{:href => ""}
+              %a{href: ""}
               %span
               %i.fas.fa-bars
               カテゴリーから探す     
               %ul
                 %li
-                  %a{:href => ""} レディース
+                  =link_to "レディース"
                   %ul
                     %li
                       %a{:href => ""} トップス
