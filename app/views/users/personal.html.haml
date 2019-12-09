@@ -6,8 +6,7 @@
       お客さまの本人情報をご登録ください。<br>
       登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
     %p.text_right
-      %a{href: "/"}
-        本人確認書類のアップロードについて>
+      = link_to "本人確認書類のアップロードについて>", root_path
     .personal
       %label
         お名前
@@ -30,33 +29,32 @@
         郵便番号
       %span
         任意
-      %input.text_box{:placeholder => "例）1234567", :type => "text"}
+      %input.text_box{placeholder: "例）1234567", type: "text"}
     .Street_address
       %label
         都道府県
       %span
         任意
-      %input.text_box{:placeholder => "--", :type => "text"}
+      %input.text_box{placeholder: "--", type: "text"}
     .Street_address
       %label
         市区町村
       %span
         任意
-      %input.text_box{:placeholder => "例）横浜市緑区", :type => "text"}
+      %input.text_box{placeholder: "例）横浜市緑区", type: "text"}
     .Street_address
       %label
         番地
       %span
         任意
-      %input.text_box{:placeholder => "例）青山1-1-1", :type => "text"}
+      %input.text_box{placeholder: "例）青山1-1-1", type: "text"}
     .Street_address
       %label
         建物名
       %span
         任意
-      %input.text_box{:placeholder => "例）柳ビル103", :type => "text"}
+      %input.text_box{placeholder: "例）柳ビル103", type: "text"}
     %button.btn_red{type: "submit"}
       登録する
     %p.Registration
-      %a{href: "/"}
-        本人情報の本人情報の登録について>
+      = link_to "本人情報の登録について>", root_path
