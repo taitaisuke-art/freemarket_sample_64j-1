@@ -15,21 +15,29 @@ genres
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string| |
-|text|text|null:false|
 |email|string|null: false,unique:true|
 |first_name|string|null: false|
 |last_name|string|null:false|
 |first_name_kana|string|null:false|
 |last_name_kana|string|null:false|
 |birthday|string|null:false|
-|telephone|integer|null:false|
-|icon|text||
+|telephone|string|null:false|
 ### Association
 has_one:address, dependent: :destroy
+has_one:profile, dependent: :destroy
 has_many:messages, dependent: :destroy
 has_many:items, dependent: :destroy
 has_many:comments, dependent: :destroy
 has_many:likes, dependent: :destroy
+
+
+## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|icon|text||
+|text|text|null:false|
+### Association
+belongs_to:user
 
 
 ## addressテーブル
