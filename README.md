@@ -161,4 +161,11 @@ belongs_to:genre
 has_many:brands,through: :brands_genres
 has_many:brands_genres
 
+list-style: none;
+    text-align: right;
+    color: #43a4de;
+    position: relative;
 
+position: absolute;
+    left: 57%;
+    top: 3px;
