@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
 
   def create
     Profire.create(create_params)
-    redirect_to :back
+    redirect_to action: 'new'
   end
 
 
