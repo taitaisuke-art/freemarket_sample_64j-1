@@ -1,10 +1,37 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.single-header
+  .single-header__title
+    =link_to "/", class: "title__btn" do
+      = image_tag "fmarket_logo_red.svg", size: "200x100", alt: "test"
+
+.forget-main
+  .forget-content
+    .forget-content__title
+      パスワードをお忘れの方
+    .forget-content__email
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .forget-content__email__form
+          = f.label :メールアドレス, class: "label-forget"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "ご登録されたメールアドレス", class: "input-forget"
+        .forget-content__email__text
+          ご登録されたメールアドレスにパスワード再設定のご案内
+          %br
+          が送信されます
+        .forget-content__email__actions
+          = f.submit "送信する",class: "btn-forget"
+      //= render "devise/shared/links"
+
+.single-footer
+  .single-footer__content
+    .single-footer__content__1
+      プライバシーポリシー
+    .single-footer__content__2
+      メルカリ利用規約
+    .single-footer__content__3
+      特定商取引に関する表記
+  .single-footer__image
+    =link_to "/", class: "title__btn" do
+      = image_tag "logo_gray.svg", size: "80x80", alt: "test"
+  .single-footer__text
+    © 2019 Mercari
