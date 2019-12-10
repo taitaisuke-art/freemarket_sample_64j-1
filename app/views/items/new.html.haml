@@ -1,0 +1,38 @@
+.item
+  .item-header
+    %img{:src => "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", :width => "185px"}>
+  .item-exhibit
+    .item-exhibit__content
+      %h1 &#x5546;&#x54C1;&#x306E;&#x60C5;&#x5831;&#x3092;&#x5165;&#x529B;
+    .item-exhibit__image
+      .item-exhibit__image__title
+        %h1 &#x51FA;&#x54C1;&#x753B;&#x50CF;
+        %button{:name => "name", :type => "button", :value => "value"} &#x5FC5;&#x9808;
+      .item-exhibit__image__text
+        %p &#x6700;&#x5927;10&#x679A;&#x307E;&#x3067;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x3067;&#x304D;&#x307E;&#x3059;
+      .item-exhibit__image__photo
+        %h1 &#x30C9;&#x30E9;&#x30C3;&#x30B0;&#x30A2;&#x30F3;&#x30C9;&#x30C9;&#x30ED;&#x30C3;&#x30D7;
+        %p &#x307E;&#x305F;&#x306F;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;
+      .item-exhibit__image__border
+      .item-exhibit__name
+      .item-exhibit__details
+      .item-exhibit__delivery
+      .item-exhibit__price
+    .item-footer
+
+商品出品ページ
+
+= form_for @item do |f|
+
+  = f.label :name, "商品名", class: "item-label"
+  = f.text_field :name, class: "item-name"
+
+  = f.label :name, "商品の説明", class: "item-label"
+  = f.text_area :text, class: "item-text"
+
+  = f.label :name, "カテゴリー", class: "item-label"
+  = f.select :category_id, class: "item-category"
+
+
+
+  = f.submit "出品"
