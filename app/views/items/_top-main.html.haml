@@ -14,9 +14,11 @@
               = link_to "家電・スマホ・カメラ", root_path, class: "category-link"
             %li
               = link_to "おもちゃ・ホビー・グッズ", root_path, class: "category-link"
+
           .circle
-            %span 出品
-            %i.fas.fa-camera
+            = link_to new_item_path, class: "category-link" do
+              %span 出品
+              %i.fas.fa-camera
               
 
       .items-images

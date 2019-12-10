@@ -78,10 +78,10 @@ belongs_to:user
 |shipping_days|string|null:false|
 |shipping_area|string|null:false|
 |shipping_price|integer|null:false|
-|item_price|integer|null:false|
-|item_text｜text｜null:false｜
+|price|integer|null:false|
+|text｜text｜null:false｜
 |user_id|integer|null:false,foreign_key:true|
-|brand_id|integer|null:false,foreign_key:true|
+|brand_id|integer|foreign_key:true|
 |category_id|integer|null:false,foreign_key:true|
 ### Association
 belongs_to:user
@@ -113,7 +113,7 @@ belongs_to:item
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|commnet|text|null:false|
+|text|text|null:false|
 |item_id|integer|null:false,foreign_key:true|
 |user_id|integer|null:false,foreign_key:true|
 ### Association
@@ -124,7 +124,7 @@ belongs_to:user
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null:false|
+|text|text|null:false|
 |item_id|integer|null:false,foreign_key:true|
 |buyer_id|integer|null:false,foreign_key:true|
 |seller_id|integer|null:false,foreign_key:true|
@@ -156,7 +156,7 @@ belongs_to:genre
 ## genresテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_type|string|null:false|
+|name|string|null:false|
 ### Association
 has_many:brands,through: :brands_genres
 has_many:brands_genres
