@@ -39,10 +39,9 @@
           お名前
         %span.form-require
           必須
-      .aaaa
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.text_field :first_name, placeholder: "例）山田", class:"input-default"
-      .dddd
         = form_for @address, url: new_address_path do |f|
           = f.text_field :last_name, placeholder: "例）彩", class:"input-default"
           -# aria-invalid: true;  ※入力された値は検証に失敗した？
@@ -60,7 +59,7 @@
           お名前カナ
         %span.form-require
           必須
-      .iiii
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.text_field :first_name_kana, placeholder: "例）ヤマダ", class: "input-default"
           = f.text_field :last_name_kana, placeholder: "例）アヤ",class: "input-default"
@@ -69,7 +68,7 @@
           郵便番号
         %span.form-require
           必須
-      .qqqq
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.text_field :post_cord, placeholder: "例）123-4567", class:"input-default"
           -# ※フォームが選択されたときに条件分岐でアラート？する
@@ -83,7 +82,7 @@
           都道府県
         %span.form-require
           必須
-      .eeee
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.select :prefectures,  ['sample1', 'sample2', 'sample3'], {include_blank: '北海道'}, class:"input-default"
           
@@ -104,7 +103,7 @@
           市区町村
         %span.form-require
           必須
-        .input-name
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.text_field :city, placeholder: "例）横浜市緑区", class:"input-default"
 
@@ -113,7 +112,7 @@
           番地
         %span.form-require
           必須
-        .input-name
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.text_field :address, placeholder: "例）青山1-1-1", class:"input-default"
             
@@ -123,7 +122,7 @@
           建物名
         %span.form-require__gray
           任意
-      .fff
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.text_field :building, placeholder: "例）柳ビル103", class:"input-default"
       
@@ -132,7 +131,7 @@
           電話
         %span.form-require__gray
           任意
-      .ddd
+      .form-user__nickname
         = form_for @address, url: new_address_path do |f|
           = f.text_field :telephone, placeholder: "例）09096459666", class:"input-default"
 

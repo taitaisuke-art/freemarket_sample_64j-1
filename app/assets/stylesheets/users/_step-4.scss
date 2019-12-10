@@ -148,7 +148,7 @@ $blue: #86D6FC;
       }
 
       &__email{
-        margin-top:5px;
+        margin-top:50px;
         label{
           font-weight: 600;
         }
@@ -181,6 +181,13 @@ $blue: #86D6FC;
           color: #888;
           margin: 8px 0 8px 0;
           height: 10px;
+        }
+        &__conment{
+          position: absolute;
+          left: 54%;
+          &__cald{
+            
+          }
         }
         .check_box{
           margin: 16px 0 0;
