@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
   resources :users, only: [:index, :edit, :update]
-  resources :items
-
+  resources :items, only: [:index,:new, :create] 
+  resources :address, only: [:index,:new, :create] 
   resources :signup do
     collection do
       get 'step0'
