@@ -1,4 +1,5 @@
-# merukari DB設計
+# merukari DB 設計
+
 users
 address
 likes
@@ -11,18 +12,21 @@ brands
 brands_genres
 genres
 
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|nickname|string| |
-|email|string|null: false,unique:true|
-|first_name|string|null: false|
-|last_name|string|null:false|
-|first_name_kana|string|null:false|
-|last_name_kana|string|null:false|
-|birthday|string|null:false|
-|telephone|string|null:false|
+## users テーブル
+
+| Column          | Type   | Options                 |
+| --------------- | ------ | ----------------------- |
+| nickname        | string |                         |
+| email           | string | null: false,unique:true |
+| first_name      | string | null: false             |
+| last_name       | string | null:false              |
+| first_name_kana | string | null:false              |
+| last_name_kana  | string | null:false              |
+| birthday        | string | null:false              |
+| telephone       | string | null:false              |
+
 ### Association
+
 has_one:address, dependent: :destroy
 has_one:profile, dependent: :destroy
 has_many:messages, dependent: :destroy
@@ -30,61 +34,70 @@ has_many:items, dependent: :destroy
 has_many:comments, dependent: :destroy
 has_many:likes, dependent: :destroy
 
+## profiles テーブル
 
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|icon|text||
-|text|text|null:false|
+| Column | Type | Options    |
+| ------ | ---- | ---------- |
+| icon   | text |            |
+| text   | text | null:false |
+
 ### Association
+
 belongs_to:user
 
+## address テーブル
 
-## addressテーブル
-|Column|Type|Options|
-|------|----|-------|
-|first_name|string|null: false|
-|last_name|string|null:false|
-|first_name_kana|string|null:false|
-|last_name_kana|string|null:false|
-|post_cord|integer|null:false|
-|prefectures|string|null:false|
-|city|string|null:false|
-|address|string|null:false|
-|building|text||
-|telephone|string||
-|user_id|integer|null:false,foreign_key:true|
+| Column          | Type    | Options                     |
+| --------------- | ------- | --------------------------- |
+| first_name      | string  | null: false                 |
+| last_name       | string  | null:false                  |
+| first_name_kana | string  | null:false                  |
+| last_name_kana  | string  | null:false                  |
+| post_cord       | integer | null:false                  |
+| prefectures     | string  | null:false                  |
+| city            | string  | null:false                  |
+| address         | string  | null:false                  |
+| building        | text    |                             |
+| telephone       | string  |                             |
+| user_id         | integer | null:false,foreign_key:true |
+
 ### Association
+
 belongs_to:user
 
+## likes テーブル
 
-## likesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|integer|null:false,foreign_key:true|
-|user_id|integer|null:false,foreign_key:true|
+| Column  | Type    | Options                     |
+| ------- | ------- | --------------------------- |
+| item_id | integer | null:false,foreign_key:true |
+| user_id | integer | null:false,foreign_key:true |
+
 ### Association
+
 belongs_to:item
 belongs_to:user
 
+## items テーブル
 
-## itemsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false|
-|size|string||
-|condition|string|null:false|
-|shipping_method|string|null:false|
-|shipping_days|string|null:false|
-|shipping_area|string|null:false|
-|shipping_price|integer|null:false|
-|price|integer|null:false|
-|text｜text｜null:false｜
+| Column          | Type    | Options    |
+| --------------- | ------- | ---------- |
+| name            | string  | null:false |
+| size            | string  |            |
+| condition       | string  | null:false |
+| shipping_method | string  | null:false |
+| shipping_days   | string  | null:false |
+| shipping_area   | string  | null:false |
+| shipping_price  | integer | null:false |
+| price           | integer | null:false |
+
+|text ｜ text ｜ null:false ｜
 |seller_id|integer|null:false,foreign_key:true|
 |buyer_id|integer|foreign_key:true|
 |brand_id|integer|foreign_key:true|
 |category_id|integer|null:false,foreign_key:true|
+
 ### Association
+
 belongs_to:user
 belongs_to:category, dependent: :destroy
 has_many:item_images, dependent: :destroy
@@ -93,71 +106,85 @@ belongs_to:bland, dependent: :destroy
 has_many:likes, dependent: :destroy
 has_many:comments, dependent: :destroy
 
+## categories テーブル
 
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false|
+| Column | Type   | Options    |
+| ------ | ------ | ---------- |
+| name   | string | null:false |
+
 ### Association
+
 has_many:items
 
+## item_images テーブル
 
-## item_imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|text||
-|item_id|integer|null:false,foreign_key:true|
+| Column  | Type    | Options                     |
+| ------- | ------- | --------------------------- |
+| image   | text    |                             |
+| item_id | integer | null:false,foreign_key:true |
+
 ### Association
+
 belongs_to:item
 
+## comments テーブル
 
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null:false|
-|item_id|integer|null:false,foreign_key:true|
-|user_id|integer|null:false,foreign_key:true|
+| Column  | Type    | Options                     |
+| ------- | ------- | --------------------------- |
+| text    | text    | null:false                  |
+| item_id | integer | null:false,foreign_key:true |
+| user_id | integer | null:false,foreign_key:true |
+
 ### Association
-belongs_to:item
-belongs_to:user
 
-
-## messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null:false|
-|item_id|integer|null:false,foreign_key:true|
-|buyer_id|integer|null:false,foreign_key:true|
-|seller_id|integer|null:false,foreign_key:true|
-### Association
 belongs_to:item
 belongs_to:user
 
+## messages テーブル
 
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false|
+| Column    | Type    | Options                     |
+| --------- | ------- | --------------------------- |
+| text      | text    | null:false                  |
+| item_id   | integer | null:false,foreign_key:true |
+| buyer_id  | integer | null:false,foreign_key:true |
+| seller_id | integer | null:false,foreign_key:true |
+
 ### Association
+
+belongs_to:item
+belongs_to:user
+
+## brands テーブル
+
+| Column | Type   | Options    |
+| ------ | ------ | ---------- |
+| name   | string | null:false |
+
+### Association
+
 has_many:items
 has_many:genres,through: :brands_genres
 has_many:brands_genres
 
+## brands_genres テーブル
 
-## brands_genresテーブル
-|Column|Type|Options|
-|------|----|-------|
-|brand_id|integer|null:false,foreign_key:true|
-|genre_id|integer|null:false,foreign_key:true|
+| Column   | Type    | Options                     |
+| -------- | ------- | --------------------------- |
+| brand_id | integer | null:false,foreign_key:true |
+| genre_id | integer | null:false,foreign_key:true |
+
 ### Association
+
 belongs_to:brand
 belongs_to:genre
 
+## genres テーブル
 
-## genresテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false|
+| Column | Type   | Options    |
+| ------ | ------ | ---------- |
+| name   | string | null:false |
+
 ### Association
+
 has_many:brands,through: :brands_genres
 has_many:brands_genres
