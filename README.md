@@ -43,11 +43,16 @@ belongs_to:user
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|first_name|string|null: false|
+|last_name|string|null:false|
+|first_name_kana|string|null:false|
+|last_name_kana|string|null:false|
 |post_cord|integer|null:false|
 |prefectures|string|null:false|
 |city|string|null:false|
 |address|string|null:false|
 |building|text||
+|telephone|string||
 |user_id|integer|null:false,foreign_key:true|
 ### Association
 belongs_to:user
@@ -75,7 +80,8 @@ belongs_to:user
 |shipping_price|integer|null:false|
 |price|integer|null:false|
 |text｜text｜null:false｜
-|user_id|integer|null:false,foreign_key:true|
+|seller_id|integer|null:false,foreign_key:true|
+|buyer_id|integer|foreign_key:true|
 |brand_id|integer|foreign_key:true|
 |category_id|integer|null:false,foreign_key:true|
 ### Association
@@ -155,5 +161,3 @@ belongs_to:genre
 ### Association
 has_many:brands,through: :brands_genres
 has_many:brands_genres
-
-

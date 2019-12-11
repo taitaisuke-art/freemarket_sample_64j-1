@@ -23,6 +23,8 @@ class SignupController < ApplicationController
     @user = User.new # 新規インスタンス作成
   end
 
- 
+  def done
+    
+  end
 
 end
