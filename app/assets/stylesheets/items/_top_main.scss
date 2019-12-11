@@ -34,19 +34,21 @@
             }
           }
         }
-        
-        // 出品ボタン
         .circle{
           height: 155px;
           width: 155px;
           background-color: rgb(234,53,45,);
           border-radius: 50%;
+          position: relative;
+          left: 1250px;
+          display: inline-block;
           position: fixed;
           bottom: 50px;
           right: 50px;
           display: inline-block;
           z-index: 100;
         }
+        
         .circle span{
           color: white;
           position: absolute;
@@ -54,6 +56,7 @@
           margin-left: 55px;
           font-size: 20px;
         }
+        
         .circle i{
           color:white;
           position: absolute;

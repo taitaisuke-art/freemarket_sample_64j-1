@@ -43,11 +43,16 @@ belongs_to:user
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|first_name|string|null: false|
+|last_name|string|null:false|
+|first_name_kana|string|null:false|
+|last_name_kana|string|null:false|
 |post_cord|integer|null:false|
 |prefectures|string|null:false|
 |city|string|null:false|
 |address|string|null:false|
 |building|text||
+|telephone|string||
 |user_id|integer|null:false,foreign_key:true|
 ### Association
 belongs_to:user
@@ -157,4 +162,11 @@ belongs_to:genre
 has_many:brands,through: :brands_genres
 has_many:brands_genres
 
+list-style: none;
+    text-align: right;
+    color: #43a4de;
+    position: relative;
 
+position: absolute;
+    left: 57%;
+    top: 3px;

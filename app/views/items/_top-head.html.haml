@@ -2627,4 +2627,7 @@
                 マイページ
         - else
           = link_to "新規会員登録", step0_signup_index_path, class: 'btn'
-          %button.btns{:autofocus => "true", :type => "buttun"} ログイン
+          = link_to user_session_path do
+            %button.btns{:autofocus => "true", :type => "buttun"}
+              ログイン  
+          
