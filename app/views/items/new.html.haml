@@ -7,7 +7,8 @@
     .item-exhibit__image
       .item-exhibit__image__title
         %h1 出品画像
-        %button{:name => "name", :type => "button", :value => "value"} 必須
+        %span.form-require
+          必須
       .item-exhibit__image__text
         %p 最大10枚までアップロードできます
       .item-exhibit__image__photo
@@ -39,7 +40,7 @@
           %span.form-require
             必須
           .item-exhibit__details__category__input
-            = f.select :category_id, [["レディース,メンズ",0],["ベビー・キッズ",1],["インテリア・住まい・小物",2],["本・音楽・ゲーム",3],["おもちゃ・ボビー・グッズ",4],["コスメ・香水・美容",5],["家電・スマホ・カメラ",6],["スポーツ・レジャー",7],["ハンドメイド",8],["チケット",9],["自動車・オートバイ",10],["その他",11]],prompt: "---",class: "select"
+            = f.select :category_id, [["レディース",0],["メンズ",1],["ベビー・キッズ",2],["インテリア・住まい・小物",3],["本・音楽・ゲーム",4],["おもちゃ・ボビー・グッズ",5],["コスメ・香水・美容",6],["家電・スマホ・カメラ",7],["スポーツ・レジャー",8],["ハンドメイド",9],["チケット",10],["自動車・オートバイ",11],["その他",12]],prompt: "---",class: "select"
       .item-exhibit__details__status
         = form_for @item do |f|
           = f.label :category_id, "商品の状態", class: "item-label"
@@ -53,25 +54,26 @@
         %h3 配送について
       .item-exhibit__delivery__price
         = form_for @item do |f|
-          = f.label :category_id, "配送量の負担", class: "item-label"
+          = f.label :shipping_price, "配送量の負担", class: "item-label"
           %span.form-require
             必須
           .item-exhibit__delivery__price__input
-            = f.select :category_id, [["送料込み(出品者負担)",0],["着払い(購入者負担)",1]],prompt: "---",class: "select"
+            = f.select :shipping_area, [["送料込み(出品者負担)",0],["着払い(購入者負担)",1]],prompt: "---",class: "select"
       .item-exhibit__delivery__area
         = form_for @item do |f|
-          = f.label :category_id, "発送元の地域", class: "item-labels"
+          = f.label :shipping_area, "発送元の地域", class: "item-labels"
+          = f.collection_select :shipping_area, Prefecture.all, :id, :name
           %span.form-require
             必須
           .item-exhibit__delivery__area__input
             = f.select :category_id, [["北海道",0],["青森県",1],["岩手県",2],["宮城県",3],["秋田県",4],["山形県",5],["福島県",6],["茨城県",7],["栃木県",8],["群馬県",9],["埼玉県",10],["千葉県",11],["東京都",12],["神奈川県",13],["新潟県",14],["富山県",15],["石川県",16],["福井県",17],["山梨県",18],["長野県",19],["岐阜県",20],["静岡県",21],["愛知県",22],["三重県",23],["滋賀県",24],["京都府",25],["大阪府",26],["兵庫県",27],["奈良県",29],["和歌山県",30],["鳥取県",31],["島根県",32],["岡山県",33],["広島県",34],["山口県",35],["徳島県",36],["香川県",37],["愛媛県",38],["高知県",39],["福岡県",40],["佐賀県",41],["長崎県",42],["熊本県",43],["大分県",44],["宮崎県",45],["鹿児島県",46],["沖縄県",47],["未定",48]],prompt: "---",class: "select"
       .item-exhibit__delivery__day
         = form_for @item do |f|
-          = f.label :category_id, "発送までの日数", class: "item-labels"
+          = f.label :shipping_days, "発送までの日数", class: "item-labels"
           %span.form-require
             必須
           .item-exhibit__delivery__day__input
-            = f.select :category_id, [["1~2日で発送",0],["2~3日で発送",1],["4~7日で発送",2]],prompt: "---",class: "select"
+            = f.select :shipping_days, [["1~2日で発送",0],["2~3日で発送",1],["4~7日で発送",2]],prompt: "---",class: "select"
           .item-exhibit__delivery__day__border
     .item-exhibit__price
       .item-exhibit__price__title
@@ -116,61 +118,3 @@
         = image_tag "logo_gray.svg", size: "80x80", alt: "test"
     .single-footer__text
       © 2019 Mercari
-
-
-
-
-
-
-          
-
-
-  = f.label :name, "商品名", class: "item-label"
-  = f.text_field :name, class: "item-name"
-  %br
-
-  = f.label :text, "商品の説明", class: "item-label"
-  = f.text_area :text, class: "item-text"
-  %br
-
-  = f.label :category_id, "カテゴリー", class: "item-label"
-  = f.select :category_id, {レディース: 1, メンズ: 2, ベビー・キッズ: 3}, class: "select-category"
-  %br
-
-  = f.label :size, "サイズ", class: "item-label"
-  = f.select :size, ["XXS以下", "XS(SS)", "S", "M", "L", "XL(LL)", "2XL(3L)", "3LX(4L)", "4XL(5L)以上", "FREE SIZE"], include_blank: ' --- ', class: "select-size"
-  %br
-
-  = f.label :brand_id, "ブランド", class: "item-label"
-  = f.text_field :brand_id, class: "item-bland"
-  %br
-
-  = f.label :condition, "商品の状態", class: "item-label"
-  = f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], class: "item-condition"
-  %br
-
-  = f.label :shipping_price, "配送料の負担", class: "item-label"
-  = f.select :shipping_price, ["送料込み(出品者負担)", "着払い(購入者負担)"], include_blank: ' --- ', class: "shipping_price"
-  %br
-
-  = f.label :shipping_method, "配送の方法", class: "item-label"
-  = f.select :shipping_method, ["未定", "らくらくメルカリ便", "ゆうメール", "レターパック", "普通郵便(定形、定形外)", "クロネコヤマト", "ゆうパック", "クリックポスト", "ゆうパケット"], include_blank: ' --- ', class: "shipping_method"
-  %br
-
-  = f.label :shipping_area, "発送元の地域", class: "item-label"
-  = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-  %br
-
-  = f.label :shipping_days, "発送までの日数", class: "item-label"
-  = f.select :shipping_days, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], include_blank: ' --- ', class: "shipping_day"
-  %br
-
-  = f.label :price, "価格", class: "item-label"
-  = f.text_field :price, class: "item-price"
-  %br
-
-
-  = f.submit "出品"
-
-  -# = f.select :shipping_area, ["送料込み(出品者負担)", "着払い(購入者負担)"], include_blank: ' --- ', class: "shipping_area"
-

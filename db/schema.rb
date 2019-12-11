@@ -13,19 +13,14 @@
 ActiveRecord::Schema.define(version: 20191210114850) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name",                    null: false
-    t.string   "last_name",                     null: false
-    t.string   "first_name_kana",               null: false
-    t.string   "last_name_kana",                null: false
-    t.integer  "post_cord",                     null: false
-    t.string   "prefectures",                   null: false
-    t.string   "city",                          null: false
-    t.string   "address",                       null: false
-    t.text     "building",        limit: 65535
-    t.string   "telephone"
-    t.integer  "user_id",                       null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.integer  "post_cord",                 null: false
+    t.string   "prefectures",               null: false
+    t.string   "city",                      null: false
+    t.string   "address",                   null: false
+    t.text     "building",    limit: 65535
+    t.integer  "user_id",                   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "brand_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -59,15 +54,14 @@ ActiveRecord::Schema.define(version: 20191210114850) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
     t.string   "size"
-    t.string   "condition",                     null: false
+    t.string   "conndition",                    null: false
     t.string   "shipping_method",               null: false
     t.string   "shipping_days",                 null: false
     t.string   "shipping_area",                 null: false
     t.integer  "shipping_price",                null: false
     t.integer  "price",                         null: false
     t.text     "text",            limit: 65535, null: false
-    t.integer  "seller_id",                     null: false
-    t.integer  "buyer_id"
+    t.integer  "user_id",                       null: false
     t.integer  "category_id",                   null: false
     t.integer  "brand_id"
     t.datetime "created_at",                    null: false
