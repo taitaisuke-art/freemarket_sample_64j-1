@@ -75,7 +75,8 @@ belongs_to:user
 |shipping_price|integer|null:false|
 |price|integer|null:false|
 |text｜text｜null:false｜
-|user_id|integer|null:false,foreign_key:true|
+|seller_id|integer|null:false,foreign_key:true|
+|buyer_id|integer|foreign_key:true|
 |brand_id|integer|foreign_key:true|
 |category_id|integer|null:false,foreign_key:true|
 ### Association

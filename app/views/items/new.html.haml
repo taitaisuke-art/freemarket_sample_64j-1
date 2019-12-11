@@ -4,13 +4,49 @@
 
   = f.label :name, "商品名", class: "item-label"
   = f.text_field :name, class: "item-name"
+  %br
 
-  = f.label :name, "商品の説明", class: "item-label"
+  = f.label :text, "商品の説明", class: "item-label"
   = f.text_area :text, class: "item-text"
+  %br
 
-  = f.label :name, "カテゴリー", class: "item-label"
-  = f.select :category_id, class: "item-category"
+  = f.label :category_id, "カテゴリー", class: "item-label"
+  = f.select :category_id, {レディース: 1, メンズ: 2, ベビー・キッズ: 3}, class: "select-category"
+  %br
 
+  = f.label :size, "サイズ", class: "item-label"
+  = f.select :size, ["XXS以下", "XS(SS)", "S", "M", "L", "XL(LL)", "2XL(3L)", "3LX(4L)", "4XL(5L)以上", "FREE SIZE"], include_blank: ' --- ', class: "select-size"
+  %br
+
+  = f.label :brand_id, "ブランド", class: "item-label"
+  = f.text_field :brand_id, class: "item-bland"
+  %br
+
+  = f.label :condition, "商品の状態", class: "item-label"
+  = f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], class: "item-condition"
+  %br
+
+  = f.label :shipping_price, "配送料の負担", class: "item-label"
+  = f.select :shipping_price, ["送料込み(出品者負担)", "着払い(購入者負担)"], include_blank: ' --- ', class: "shipping_price"
+  %br
+
+  = f.label :shipping_method, "配送の方法", class: "item-label"
+  = f.select :shipping_method, ["未定", "らくらくメルカリ便", "ゆうメール", "レターパック", "普通郵便(定形、定形外)", "クロネコヤマト", "ゆうパック", "クリックポスト", "ゆうパケット"], include_blank: ' --- ', class: "shipping_method"
+  %br
+
+  = f.label :shipping_area, "発送元の地域", class: "item-label"
+  = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+  %br
+
+  = f.label :shipping_days, "発送までの日数", class: "item-label"
+  = f.select :shipping_days, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], include_blank: ' --- ', class: "shipping_day"
+  %br
+
+  = f.label :price, "価格", class: "item-label"
+  = f.text_field :price, class: "item-price"
+  %br
 
 
   = f.submit "出品"
+
+  -# = f.select :shipping_area, ["送料込み(出品者負担)", "着払い(購入者負担)"], include_blank: ' --- ', class: "shipping_area"
