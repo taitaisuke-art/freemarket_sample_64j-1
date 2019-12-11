@@ -28,34 +28,27 @@ ActiveRecord::Schema.define(version: 20191210114850) do
     t.datetime "updated_at",                    null: false
   end
 
-  create_table "aesidences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "prefecture_id"
-    t.string   "city"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "brand_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "brand_id", null: false
     t.integer "group_id", null: false
   end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
+    t.string "brand_name", null: false
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
+    t.string "category_name", null: false
   end
 
   create_table "commnets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text    "text",    limit: 65535, null: false
+    t.text    "comment", limit: 65535, null: false
     t.integer "item_id",               null: false
     t.integer "user_id",               null: false
   end
 
   create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
+    t.string "brand_type", null: false
   end
 
   create_table "item_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -66,17 +59,15 @@ ActiveRecord::Schema.define(version: 20191210114850) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
     t.string   "size"
-    t.string   "condition",                     null: false
+    t.string   "conndition",                    null: false
     t.string   "shipping_method",               null: false
     t.string   "shipping_days",                 null: false
     t.string   "shipping_area",                 null: false
     t.integer  "shipping_price",                null: false
-    t.integer  "price",                         null: false
-    t.text     "text",            limit: 65535, null: false
-    t.integer  "seller_id",                     null: false
-    t.integer  "buyer_id"
-    t.integer  "category_id",                   null: false
-    t.integer  "brand_id"
+    t.integer  "item_price",                    null: false
+    t.text     "item_text",       limit: 65535, null: false
+    t.integer  "user_id",                       null: false
+    t.integer  "brand_id",                      null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
@@ -89,7 +80,7 @@ ActiveRecord::Schema.define(version: 20191210114850) do
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text    "text",      limit: 65535, null: false
+    t.text    "message",   limit: 65535, null: false
     t.integer "item_id",                 null: false
     t.integer "buyer_id",                null: false
     t.integer "seller_id",               null: false
