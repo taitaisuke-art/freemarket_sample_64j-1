@@ -78,9 +78,9 @@
           都道府県
         %span.form-require
           必須
-      .form-user__nickname
+      .form-user__
         = form_for @address, url: new_address_path do |f|
-          = f.select :prefectures,  ['sample1', 'sample2', 'sample3'], {include_blank: '北海道'}, class:"input-default"
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "aaaa"
           
           %ul
             %li#email-error.has-error
