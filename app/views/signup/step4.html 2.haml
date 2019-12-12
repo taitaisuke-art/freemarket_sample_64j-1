@@ -1,0 +1,109 @@
+.step-1
+
+  .step-1_header
+    .step-1_header__icon
+      = link_to root_path do
+        = image_tag "fmarket_logo_red.svg", class: "header_logo"
+
+    %nav
+      %ul
+        %li
+          会員登録
+          .nav-dot
+          
+        %li
+          電話番号認証
+          .nav-dot
+          
+        %li
+          お届け先住所入力
+          .nav-dot
+          
+        
+        %li-ok
+          支払い方法
+          .nav-dot-ok
+          .nav-line-ok
+        %li
+          完了
+          .nav-dot
+          
+  
+  .form-1
+    %h1
+      支払い方法
+    .form-user
+
+      .form-user__image
+        = image_tag "creget card.jpg", class: "header_tab"
+      .form-user__nickname
+        %label
+          カード番号
+        %span.form-require
+          必須
+        %input{type: "text", name: "last name", placeholder: "半角数字のみ", class: "input-default"}
+          -# aria-invalid: true;  ※入力された値は検証に失敗した？
+          -# aria-describedby: "nickname-error"; エラーだったら表示？
+
+        -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+        -#   %li#nickname-error.has-error
+        -#     ニックネームを入力してください
+        -#   %li#nickname-error.has-error
+        -#     20文字以下で入力してください
+
+
+      .form-user__email
+        %label
+          有効期限
+        %span.form-require
+          必須
+        .form-user__period
+          
+          -# %ul  ※フォームが選択されたときに条件分岐でアラート？する
+            -#   %li#email-error.has-error
+            -#     メールアドレスを入力してください
+            -#   %li#email-error.has-error
+            -#     フォーマットが不適切です
+
+
+      .form-user__password
+        %label
+          セキュリティコード
+        %span.form-require
+          必須
+        %input{type: "text", name: "postal code", placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default"}
+          -# ※フォームが選択されたときに条件分岐でアラート？する
+          %li
+            カード裏面の番号とは?
+            = icon "fas fa-angle-right", class: "password-conment"
+
+      .form-user__text
+
+      %button{type: "submit", class: "submit"}
+        次へ進む
+
+      .form-user__text2
+        %p
+        //= icon "fas fa-angle-right", class: "fas fa-angle-right"
+
+
+  .step-1_fooder
+    %nav
+      %ul
+        %li
+          = link_to "プライバシーポリシー", root_path
+        %li
+          = link_to "フリーマケット利用規約", root_path
+        %li
+          = link_to "特定商取引に関する表記", root_path
+            
+
+    .fooder-image
+      = link_to root_path do
+        = image_tag "logo_white.svg", class: "fooder_logo"
+
+    %p
+      &copy; Fmarket 64 teamJ
+// = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'third-main__box'} do |f|
+
+// = f.submit "次へ進む", class: 'btn'

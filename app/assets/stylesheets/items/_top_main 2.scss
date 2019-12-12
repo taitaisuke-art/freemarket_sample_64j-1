@@ -1,0 +1,326 @@
+.top-main{
+  background-color: #f5f5f5;
+  color: rgb(51, 51, 51);
+  .categoreis-box {
+    .popularity-categoreis {
+      &__head {
+        padding-top: 56px ;
+        background-color: white;
+        height: 120px;
+        h1 {
+          font-size: 28px;
+          font-weight: 600;
+          margin-bottom: 16px;
+          text-align: center;
+        }
+        .popularity-categoreis__list {
+          position: relative;
+          ul {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            .category-link {
+              font-size: 14px;
+              background-color: #F5F5F5;
+              cursor: pointer;
+              text-decoration: none;
+              font-weight: 600;
+              border-radius: 15px;
+              padding: 8px 16px;
+              margin: 10px 0px 0px 10px;
+            }
+            .category-link:visited {
+              color: rgb(51, 51, 51);
+            }
+          }
+        }
+        .circle{
+          height: 155px;
+          width: 155px;
+          background-color: rgb(234,53,45,);
+          border-radius: 50%;
+          position: relative;
+          left: 1250px;
+          display: inline-block;
+          position: fixed;
+          bottom: 50px;
+          right: 50px;
+          display: inline-block;
+          z-index: 100;
+        }
+        
+        .circle span{
+          color: white;
+          position: absolute;
+          margin-top: 25px;
+          margin-left: 55px;
+          font-size: 20px;
+        }
+        
+        .circle i{
+          color:white;
+          position: absolute;
+          margin-top: 55px;
+          margin-left: 48px;
+          font-size: 55px;
+        }
+        
+      }
+      .items-images {
+        width: 1020px;
+        margin: 0 auto;
+        padding: 42px 0px 100px;
+        .women {
+          .women-new {
+            display: flex;
+            justify-content: space-between;
+            .women-new-item{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            }
+            .women-new-more{
+              color: rgb(0, 149, 238);
+              text-align: right;
+              font-weight: 600;
+              text-decoration: none;
+              height: 25px;
+              font-size: 14px;
+              padding-top: 25px;
+            }
+            .fas{
+              margin: 3px;
+            }
+          }
+          ul {
+            display: flex;
+            li {
+              background-color: white;
+              width: 188px;
+              box-shadow: 2px 2px 4px lightgrey;
+              padding-bottom: 10px;
+              margin: 10px;
+              cursor: pointer;
+              .woman-1 {
+                width: 188px;
+                height: 188px;
+                object-fit: cover;
+              }
+              .item-price {
+                height: 25px;
+                background-color: rgba(0,0,0,.4);
+                border-radius: 0 14px 14px 0;
+                padding:0 12px;
+                width: fit-content;
+                position: relative;
+                bottom: 40px;
+                margin-bottom: -31px;
+                color: white;
+                font-size: 16px;
+                text-align: center;
+                z-index: 2;
+              }
+              .item-name {
+                overflow: hidden;
+                position: relative;
+                padding: 0 12px;
+                margin-top: 9px;
+                height: 3.6em;
+                line-height: 1.8;
+                p {
+                  font-size: 14px;
+                }
+                p::after {
+                  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+                  bottom: 0;
+                  content: "";
+                  height: 50%;
+                  position: absolute;
+                  right: 0;
+                  width: 50%;
+                }
+              }
+            }
+            li:hover {
+              outline: 1px solid cornflowerblue;
+              }
+          }
+        }
+        .mens-items{
+          .mens-new{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            margin-top: 60px;
+          }
+          ul {
+            display: flex;
+            li {
+              background-color: white;
+              width: 188px;
+              box-shadow: 2px 2px 4px lightgrey;
+              padding-bottom: 10px;
+              margin: 10px;
+              cursor: pointer;
+              .woman-1 {
+                width: 188px;
+                height: 188px;
+                object-fit: cover;
+              }
+              .item-price {
+                height: 25px;
+                background-color: rgba(0,0,0,.4);
+                border-radius: 0 14px 14px 0;
+                padding:0 12px;
+                width: fit-content;
+                position: relative;
+                bottom: 40px;
+                margin-bottom: -31px;
+                color: white;
+                font-size: 16px;
+                text-align: center;
+                z-index: 2;
+              }
+              .item-name {
+                overflow: hidden;
+                position: relative;
+                padding: 0 12px;
+                margin-top: 9px;
+                height: 3.6em;
+                line-height: 1.8;
+                p {
+                  font-size: 14px;
+                }
+                p::after {
+                  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+                  bottom: 0;
+                  content: "";
+                  height: 50%;
+                  position: absolute;
+                  right: 0;
+                  width: 50%;
+                }
+              }
+            }
+          }
+        }
+        .mens-items{
+          .mens-new{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            margin-top: 60px;
+          }
+          ul {
+            display: flex;
+            li {
+              background-color: white;
+              width: 188px;
+              box-shadow: 2px 2px 4px lightgrey;
+              padding-bottom: 10px;
+              margin: 10px;
+              cursor: pointer;
+              .woman-1 {
+                width: 188px;
+                height: 188px;
+                object-fit: cover;
+              }
+              .item-price {
+                height: 25px;
+                background-color: rgba(0,0,0,.4);
+                border-radius: 0 14px 14px 0;
+                padding:0 12px;
+                width: fit-content;
+                position: relative;
+                bottom: 40px;
+                margin-bottom: -31px;
+                color: white;
+                font-size: 16px;
+                text-align: center;
+                z-index: 2;
+              }
+              .item-name {
+                overflow: hidden;
+                position: relative;
+                padding: 0 12px;
+                margin-top: 9px;
+                height: 3.6em;
+                line-height: 1.8;
+                p {
+                  font-size: 14px;
+                }
+                p::after {
+                  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+                  bottom: 0;
+                  content: "";
+                  height: 50%;
+                  position: absolute;
+                  right: 0;
+                  width: 50%;
+                }
+              }
+            }
+          }
+        }
+        .mens-items{
+          .mens-new{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            margin-top: 60px;
+          }
+          ul {
+            display: flex;
+            li {
+              background-color: white;
+              width: 188px;
+              box-shadow: 2px 2px 4px lightgrey;
+              padding-bottom: 10px;
+              margin: 10px;
+              cursor: pointer;
+              .woman-1 {
+                width: 188px;
+                height: 188px;
+                object-fit: cover;
+              }
+              .item-price {
+                height: 25px;
+                background-color: rgba(0,0,0,.4);
+                border-radius: 0 14px 14px 0;
+                padding:0 12px;
+                width: fit-content;
+                position: relative;
+                bottom: 40px;
+                margin-bottom: -31px;
+                color: white;
+                font-size: 16px;
+                text-align: center;
+                z-index: 2;
+              }
+              .item-name {
+                overflow: hidden;
+                position: relative;
+                padding: 0 12px;
+                margin-top: 9px;
+                height: 3.6em;
+                line-height: 1.8;
+                p {
+                  font-size: 14px;
+                }
+                p::after {
+                  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+                  bottom: 0;
+                  content: "";
+                  height: 50%;
+                  position: absolute;
+                  right: 0;
+                  width: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
