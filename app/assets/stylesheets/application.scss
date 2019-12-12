@@ -10,12 +10,14 @@
 @import 'items/top-foot';
 @import "users/step-2";
 @import "personal";
+@import "profile";
 @import "users/step-3";
 @import "items/new";
 @import "users/step-4";
 @import "users/login";
 @import "users/forget";
 @import "users/complete";
+@import "users/sidehead";
 
 
 body{
@@ -23,3 +25,6 @@ body{
   font-size: 14px;
   color: #333;
   }
+
+
+

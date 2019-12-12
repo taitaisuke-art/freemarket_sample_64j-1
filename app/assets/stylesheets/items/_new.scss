@@ -1,17 +1,18 @@
 .item{
   width: 100%;
   background-color: #f8f8f8;
-  height: 2500px;
+  height: 2210px;
+  
   
 
   .item-header{
   width: 100%;
   text-align: center;
-  margin-top:35px;
+  padding-top: 35px;
   }
 
 .item-exhibit{
-  height: 1500px;
+  height: 2075px;
   background-color: white;
   width: 700px;
   margin: auto;
@@ -36,9 +37,10 @@
       display: flex;
     }
       .item-exhibit__image__title h1{
-        font-weight: bold；
+        font-weight: 600;
+        font-size: 14px;
     }
-      .item-exhibit__image__title button{
+      .form-require{
         background-color: red;
         color: white;
         margin-left: 8px;
@@ -72,10 +74,332 @@
       width: 700px;
       border-bottom: 3px solid #f8f8f8;
       padding-top: 45px;
-      margin: auto;
+      margin-left: -40px;
+    }
+  }
+  .item-exhibit__name{
+    height:355px;
+    margin-top: 25px;
+    margin-left: 40px;
+      .item-label{
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .form-require{
+        background-color: red;
+        color: white;
+        margin-left: 8px;
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 4px;
+        font-weight: bold;
+      }
+      .item-name{
+        margin-top: 5px;
+        width: 620px;
+        height: 45px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        padding-left: 15px;
+      }
+      .item-exhibit__name__description{
+        margin-top: 35px;
+      .item-labels{
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .form-requires{
+        background-color: red;
+        color: white;
+        margin-left: 8px;
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 4px;
+        font-weight: bold;
+      }
+      .item-text{
+        margin-top: 5px;
+        width: 620px;
+        height: 140px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        padding-top:10px;
+        padding-left: 10px;
+      }
+      .item-exhibit__name__description__border{
+      width: 800px;
+      border-bottom: 2px solid #f8f8f8;
+      padding-top: 40px;
+      margin-left: -45px;
+      }
+    }
+  }
+  .item-exhibit__details{
+    height: 260px;
+    .item-exhibit__details__title{
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
+      margin-left: 40px;
+      float:left;
+    }
+    .item-exhibit__details__category{
+      float:left;
+      padding-top: 37px;
+      margin-left: 150px;
+    }
+      .item-label{
+      font-weight: 600;
+      font-size: 14px;
+      }
+      .form-require{
+        background-color: red;
+        color: white;
+        margin-left: 8px;
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 4px;
+        font-weight: bold;
+      }
+      .item-exhibit__details__category__input{
+        margin-top:5px;
+        #item_category_id{
+          height: 48px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          width: 400px;
+          background: white;
+        }
+      }
+    .item-exhibit__details__status{
+      float:left;
+      padding-top: 37px;
+      margin-left: 259px;
+    }
+    .item-exhibit__details__category__border{
+      width: 800px;
+      border-bottom: 2px solid #f8f8f8;
+      padding-top: 40px;
+      margin-left: -260px;
+    }
+  }
+  .item-exhibit__delivery{
+    height: 370px;
+    .item-exhibit__delivery__title{
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
+      margin-left: 40px;
+      float:left;
+    }
+    .item-exhibit__delivery__price{
+      float:left;
+      padding-top: 35px;
+      margin-left: 133px;
+    }
+    .item-label{
+      font-weight: 600;
+      font-size: 14px;
+      }
+      .form-require{
+        background-color: red;
+        color: white;
+        margin-left: 8px;
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 4px;
+        font-weight: bold;
+      }
+      .item-exhibit__delivery__price__input{
+        margin-top:5px;
+        #item_category_id{
+          height: 48px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          width: 400px;
+          background: white;
+        }
+      }
+      .item-exhibit__delivery__area{
+        float:left;
+        padding-top: 35px;
+        margin-left: 253px;
+      
+      .item-labels{
+        font-weight: 600;
+        font-size: 14px;
+        }
+        .form-require{
+          background-color: red;
+        color: white;
+        margin-left: 8px;
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 4px;
+        font-weight: bold;
+        }
+        .item-exhibit__delivery__area__input{
+          margin-top:5px;
+          #item_category_id{
+            height: 48px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            width: 400px;
+            background: white;
+          }
+        }
+      }
+      .item-exhibit__delivery__day{
+        float:left;
+        padding-top: 35px;
+        margin-left: 253px;
+      
+      .item-labels{
+        font-weight: 600;
+        font-size: 14px;
+        }
+        .form-require{
+        background-color: red;
+        color: white;
+        margin-left: 8px;
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 4px;
+        font-weight: bold;
+        }
+        .item-exhibit__delivery__day__input{
+          margin-top:5px;
+          #item_category_id{
+            height: 48px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            width: 400px;
+            background: white;
+          }
+        }
+        .item-exhibit__delivery__day__border{
+          width: 800px;
+          border-bottom: 2px solid #f8f8f8;
+          padding-top: 40px;
+          margin-left: -260px;
+        }
+      }
+    }
+  .item-exhibit__price{
+    height: 300px;
+    .item-exhibit__price__title{
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
+      margin-left: 40px;
+      float:left;
+    }
+    .item-exhibit__price__cost{
+      padding-top: 65px;
+      margin-left: 255px;
+      .item-label{
+        font-weight: 600;
+        font-size: 14px;
+        }
+        .form-require{
+          background-color: red;
+        color: white;
+        margin-left: 8px;
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 4px;
+        font-weight: bold;
+        }
+        .item-name{
+        margin-left: 145px;
+        }
+      }
+    .item-exhibit__price__border{
+      width: 445px;
+      border-bottom: 1px solid #ccc;
+      padding-top: 40px;
+      margin-left: 255px;
+    }
+    .item-exhibit__price__fee{
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 30px;
+      margin-left: 255px;
+    }
+    .item-exhibit__price__border2{
+      width: 445px;
+      border-bottom: 1px solid #ccc;
+      padding-top: 20px;
+      margin-left: 255px;
+    }
+    .item-exhibit__price__profit{
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 30px;
+      margin-left: 255px;
+    }
+    .item-exhibit__price__border3{
+      width: 800px;
+      border-bottom: 2px solid #f8f8f8;
+      padding-top: 75px;
+      margin-left: -45px;
+    }
+  }
+  .item-exhibit__notes{
+    height: 330px;
+    .item-exhibit__notes__content{
+      margin-top: 75px;
+      margin-left: 40px;
+      font-size: 14px;
+      height: 125px;
+    }
+    .item-exhibit__notes__buttun{
+  
+      .item-exhibit__notes__buttun__exhibit{
+        background: red;
+        border: 1px solid red;
+        margin: auto;
+        width:620px;
+        .btn-default{
+          display: block;
+          width: 100%;
+          font-size: 14px;
+          line-height: 48px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+    .item-exhibit__notes__buttun2{
+      margin-top:25px;
+      .item-exhibit__notes__buttun2__back{
+        background: #aaa;
+        border: 1px solid #aaa;
+        margin: auto;
+        color: #fff;
+        width: 300px;
+        height: 50px;
+        .btn-default2{
+          display: block;
+          width: 100%;
+          font-size: 14px;
+          line-height: 48px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+   }
+   .single-footer{
+     background: #f8f8f8;
+     .single-footer__content{
+       padding-top: 40px;
     }
   }
 }
-
-
-            
