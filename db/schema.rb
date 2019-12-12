@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20191211111559) do
     t.string   "condition",                                 null: false
     t.string   "shipping_method",                           null: false
     t.string   "shipping_days",                             null: false
-    t.string   "prefeture_id",                              null: false
+    t.string   "prefecture_id",                             null: false
     t.integer  "shipping_price",                            null: false
     t.integer  "price",                                     null: false
     t.text     "text",            limit: 65535,             null: false
