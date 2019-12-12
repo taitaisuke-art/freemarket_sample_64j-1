@@ -36,9 +36,9 @@
         %span.form-require
           必須
       .form-user__nickname
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :first_name, placeholder: "例）山田", class:"input-default"
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :last_name, placeholder: "例）彩", class:"input-default"
           -# aria-invalid: true;  ※入力された値は検証に失敗した？
           -# aria-describedby: "nickname-error"; エラーだったら表示？
@@ -56,7 +56,7 @@
         %span.form-require
           必須
       .form-user__nickname
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :first_name_kana, placeholder: "例）ヤマダ", class: "input-default"
           = f.text_field :last_name_kana, placeholder: "例）アヤ",class: "input-default"
       .form-user__password
@@ -65,7 +65,7 @@
         %span.form-require
           必須
       .form-user__nickname
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :post_cord, placeholder: "例）123-4567", class:"input-default"
           -# ※フォームが選択されたときに条件分岐でアラート？する
           %ul
@@ -79,7 +79,7 @@
         %span.form-require
           必須
       .form-user__
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "aaaa"
           
           %ul
@@ -100,7 +100,7 @@
         %span.form-require
           必須
       .form-user__nickname
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :city, placeholder: "例）横浜市緑区", class:"input-default"
 
       .form-user__name-kana
@@ -109,7 +109,7 @@
         %span.form-require
           必須
       .form-user__nickname
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :address, placeholder: "例）青山1-1-1", class:"input-default"
             
 
@@ -119,7 +119,7 @@
         %span.form-require__gray
           任意
       .form-user__nickname
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :building, placeholder: "例）柳ビル103", class:"input-default"
       
       .form-user__birthday
@@ -128,7 +128,7 @@
         %span.form-require__gray
           任意
       .form-user__nickname
-        = form_for @address, url: new_address_path do |f|
+        = form_for @address, url: new_user_address_path do |f|
           = f.text_field :telephone, placeholder: "例）09096459666", class:"input-default"
 
       .form-user__text
