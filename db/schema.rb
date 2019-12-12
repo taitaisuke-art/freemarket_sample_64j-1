@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20191211102545) do
     t.text     "building",        limit: 65535
     t.string   "telephone"
     t.integer  "user_id",                       null: false
+    t.string   "prefecture_id",                 null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
@@ -42,6 +43,14 @@ ActiveRecord::Schema.define(version: 20191211102545) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -80,7 +89,7 @@ ActiveRecord::Schema.define(version: 20191211102545) do
     t.string   "condition",                                 null: false
     t.string   "shipping_method",                           null: false
     t.string   "shipping_days",                             null: false
-    t.string   "shipping_area",                             null: false
+    t.string   "prefecture_id",                             null: false
     t.integer  "shipping_price",                            null: false
     t.integer  "price",                                     null: false
     t.text     "text",            limit: 65535,             null: false
