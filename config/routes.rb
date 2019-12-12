@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :profiles, only: [:new, :create]
   resources :items, only: [:index,:new, :create]
   resources :address, only: [:index,:new, :create] 
-
+  resources :categories, only: [:index] 
+  
   resources :signup do
     collection do
       get 'step0'
