@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20191211102545) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "item_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -113,13 +112,6 @@ ActiveRecord::Schema.define(version: 20191211102545) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["item_id"], name: "index_messages_on_item_id", using: :btree
-  end
-
-  create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "prefecture_id"
-    t.string   "city"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
