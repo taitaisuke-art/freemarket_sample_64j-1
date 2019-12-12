@@ -10,6 +10,7 @@
 @import 'items/top-foot';
 @import "users/step-2";
 @import "personal";
+@import "profile";
 @import "users/step-3";
 @import "items/new";
 @import "users/step-4";
@@ -17,3 +18,14 @@
 @import "users/forget";
 @import "users/complete";
 @import "card";
+@import "users/sidehead";
+
+
+body{
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  }
+
+
+
