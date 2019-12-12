@@ -161,16 +161,3 @@ belongs_to:genre
 ### Association
 has_many:brands,through: :brands_genres
 has_many:brands_genres
-
-%input{type: "text", name: "last name-kana", placeholder: "例）ヤマダ", class: "input-default"}
-          %input{type: "text", name: "first name-kana", placeholder: "例）アヤ", class: "input-default"}
-
-          width: 110%;
-  background-color: white;
-  margin: 8px 0 0;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  line-height: 1.5;
-  font-size: 16px;
-  height: 50px;
