@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string        :condition,        null:false
       t.string        :shipping_method,  null:false
       t.string        :shipping_days,    null:false
-      t.string        :shipping_area,    null:false
+      t.string        :prefeture_id,    null:false
       t.integer       :shipping_price,   null:false
       t.integer       :price,            null:false
       t.text          :text,             null:false
