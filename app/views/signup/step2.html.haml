@@ -40,7 +40,7 @@
           = f.text_field :telephone, placeholder: "携帯電話の番号を入力", class: "input-default"
           %p
             本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-          = link_to root_path do
+          = link_to new_user_address_path(current_user.id) do
             = f.submit "SMSを送信する", class: 'sms-btn'
         %p
           ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
