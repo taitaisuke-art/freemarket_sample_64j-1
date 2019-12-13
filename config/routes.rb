@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   end
   resources :items, only: [:index,:new, :create] 
   resources :card, only: [:new, :show] 
-  resources :profiles, only: [:new, :create]
   resources :categories, only: [:index] 
  
   resources :signup do
