@@ -4,13 +4,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user)
   end
 
   def update
     user = User.find(current_user)
     user.update(user_params)
-    # redirect_to root_path
+    if user.save
+      redirect_to users_path
+    else
+      render :edit
+    end
   end
 
   private

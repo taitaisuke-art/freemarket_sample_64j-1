@@ -6,7 +6,7 @@
       .profile_header
         プロフィール
       .contents
-        = form_for @user do |f|
+        = form_for current_user do |f|
           .username_setting
             .namegroup
               =image_tag "user_image", class: "user_icon"
