@@ -24,7 +24,7 @@
   %h2.setting
     設定
   %ul.side-head1
-    %li= link_to "プロフィール", users_path, class: "mymenu"
+    %li= link_to "プロフィール", edit_user_path(:id), class: "mymenu"
     %li= link_to "発送元・お届け先住所変更", users_path, class: "mymenu"
     %li= link_to "支払い方法", users_path, class: "mymenu"
     %li= link_to "メール/パスワード", users_path, class: "mymenu"
