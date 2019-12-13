@@ -1,0 +1,29 @@
+.wrapper
+  = render "items/top-head"
+
+
+.catepories-type
+  .catepories-type__title
+    カテゴリー一覧
+  .catepories-type__content
+  - @parents.each do |parent|
+    =parent.name
+
+.catepories-all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper
+  = render "items/top-foot"
