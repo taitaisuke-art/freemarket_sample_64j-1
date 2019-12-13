@@ -1,7 +1,17 @@
-%section.profile
-  %h1  プロフィール
-  = form_for [@users], class: "profile-head" do |f|
-    = f.text_field :nickname
-    = f.text_area :text , class: "profile-text",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" 
-    = f.submit "変更する", class: "profile-btn"
-    
+.wrapper
+  = render "items/top-head"
+  .mypage_main
+    = render "sidehead"
+    .profile
+      .profile_header
+        プロフィール
+      .contents
+        = form_for current_user do |f|
+          .username_setting
+            .namegroup
+              =image_tag "user_image", class: "user_icon"
+            = f.text_field :nickname,placeholder: "例)AYA☆セール中",class:"nickname"
+          .content_setting
+            = f.text_area :text,class:"content",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+            = f.submit "変更する" ,class:"btn_red"
+  = render "items/top-foot"

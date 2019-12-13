@@ -1,3 +1,4 @@
+
 # README
 
 ## users テーブル
@@ -12,26 +13,16 @@
 | last_name_kana  | string | null:false              |
 | birthday        | string | null:false              |
 | telephone       | string | null:false              |
+| icon            | text   |                         |
+| text            | text   | null:false              |
 
 ### Association
 
 has_one:address, dependent: :destroy
-has_one:profile, dependent: :destroy
 has_many:messages, dependent: :destroy
 has_many:items, dependent: :destroy
 has_many:comments, dependent: :destroy
 has_many:likes, dependent: :destroy
-
-## profiles テーブル
-
-| Column | Type | Options    |
-| ------ | ---- | ---------- |
-| icon   | text |            |
-| text   | text | null:false |
-
-### Association
-
-belongs_to:user
 
 ## address テーブル
 

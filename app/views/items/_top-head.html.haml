@@ -15,7 +15,7 @@
               %a{href: ""}
               %span
               %i.fas.fa-bars
-              カテゴリーから探す     
+              カテゴリーから探す
               %ul
                 %li
                   =link_to "レディース"
@@ -1189,15 +1189,19 @@
                       %a{:href => ""} DVD／ブルーレイ
                       %ul
                         %li
-                          %a{:href => ""} 邦楽
+                          %a{:href => ""} 外国映画
                         %li
-                          %a{:href => ""} 洋楽
+                          %a{:href => ""} 日本映画
                         %li
                           %a{:href => ""} アニメ
                         %li
-                          %a{:href => ""} クラシック
+                          %a{:href => ""} TVドラマ
                         %li
-                          %a{:href => ""} K-POP/アジア 
+                          %a{:href => ""} ミュージック 
+                        %li
+                          %a{:href => ""} お笑い/バラエティ
+                        %li
+                          %a{:href => ""} スポーツ/フィットネス
                         %li
                           %a{:href => ""} キッズ/ファミリー
                         %li
@@ -1312,7 +1316,7 @@
                         %li
                           %a{:href => ""} ドラゴンボール
                         %li
-                          %a{:href => ""} スリープ
+                          %a{:href => ""} スリーブ
                         %li
                           %a{:href => ""} その他
                     %li
@@ -2278,7 +2282,7 @@
                         %li
                           %a{:href => ""} その他
                     %li
-                      %a{:href => ""} 私設利用者
+                      %a{:href => ""} 施設利用券
                       %ul
                         %li
                           %a{:href => ""} 遊園地/テーマパーク
@@ -2583,7 +2587,7 @@
                     %li
                       %a{:href => ""} その他
                 %li
-                  %a{:href => ""} カテゴリー一覧
+                  = link_to "カテゴリー一覧", categories_path, class: 'categoryall'
                
         .header-inner__lower__left__search-list
           %ul.gnav
