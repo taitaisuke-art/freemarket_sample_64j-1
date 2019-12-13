@@ -7,9 +7,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(current_user)
-    user.update(user_params)
-    if user.save
+    if current_user.update(user_params)
       redirect_to users_path
     else
       render :edit
