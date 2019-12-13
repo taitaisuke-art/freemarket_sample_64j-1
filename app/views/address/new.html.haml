@@ -1,0 +1,106 @@
+= form_for @address, url: user_address_index_path do |f|  
+  .step-4
+
+    .step-4_header
+      .step-4_header__icon
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", class: "header_logo"
+
+      %nav
+        %ul
+          %li
+            会員登録
+            .nav-dot
+          %li
+            電話番号認証
+            .nav-dot
+          %li-ok
+            お届け先住所入力
+            .nav-dot-ok
+            .nav-line-ok
+          %li
+            支払い方法
+            .nav-dot
+          %li
+            完了
+            .nav-dot
+    
+    .form-4
+      %h1
+        住所入力
+      .form-user
+        .form-user__nickname
+          %label
+            お名前
+          %span.form-require
+            必須
+        .form-user__nickname
+          = f.text_field :first_name, placeholder: "例）山田", class:"input-default"
+          = f.text_field :last_name, placeholder: "例）彩", class:"input-default"
+        .form-user__email
+          %label
+            お名前カナ
+          %span.form-require
+            必須
+        .form-user__nickname
+          = f.text_field :first_name_kana, placeholder: "例）ヤマダ", class:"input-default"
+          = f.text_field :last_name_kana, placeholder: "例）アヤ",class:"input-default"
+        .form-user__password
+          %label
+            郵便番号
+          %span.form-require
+            必須
+        .form-user__nickname
+          = f.text_field :post_cord, placeholder: "例）123-4567", class:"input-default"
+        .form-user__password
+          %label
+            都道府県
+          %span.form-require
+            必須
+        .form-user__
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "aaaa"
+        .form-user__name
+          %label
+            市区町村
+          %span.form-require
+            必須
+        .form-user__nickname
+          = f.text_field :city, placeholder: "例）横浜市緑区", class:"input-default"
+        .form-user__name-kana
+          %label
+            番地
+          %span.form-require
+            必須
+        .form-user__nickname
+          = f.text_field :address, placeholder: "例）青山1-1-1", class:"input-default"
+        .form-user__birthday
+          %label
+            建物名
+          %span.form-require__gray
+            任意
+        .form-user__nickname
+          = f.text_field :building, placeholder: "例）柳ビル103", class:"input-default"
+        .form-user__birthday
+          %label
+            電話
+          %span.form-require__gray
+            任意
+        .form-user__nickname
+          = f.text_field :telephone, placeholder: "例）09096459666", class:"input-default"
+        .form-user__text
+          = f.submit "次へ進む", class: "submit"
+        .form-user__text2
+    .step-1_fooder
+      %nav
+        %ul
+          %li
+            = link_to "プライバシーポリシー", root_path
+          %li
+            = link_to "フリーマケット利用規約", root_path
+          %li
+            = link_to "特定商取引に関する表記", root_path
+      .fooder-image
+        = link_to root_path do
+          = image_tag "logo_white.svg", class: "fooder_logo"
+      %p
+        &copy; Fmarket 64 teamJ
