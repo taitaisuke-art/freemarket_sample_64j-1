@@ -1,16 +1,5 @@
-# mercari DB 設計
 
-users
-address
-likes
-items
-categories
-item_images
-comments
-messages
-brands
-brands_genres
-genres
+# README
 
 ## users テーブル
 
@@ -69,22 +58,21 @@ belongs_to:user
 
 ## items テーブル
 
-| Column          | Type    | Options    |
 | --------------- | ------- | ---------- |
-| name            | string  | null:false |
-| size            | string  |            |
-| condition       | string  | null:false |
-| shipping_method | string  | null:false |
-| shipping_days   | string  | null:false |
-| shipping_area   | string  | null:false |
-| shipping_price  | integer | null:false |
-| price           | integer | null:false |
-
-|text ｜ text ｜ null:false ｜
-|seller_id|integer|null:false,foreign_key:true|
-|buyer_id|integer|foreign_key:true|
-|brand_id|integer|foreign_key:true|
-|category_id|integer|null:false,foreign_key:true|
+| Column | Type | Options |
+| name | string | null:false |
+| size | string | |
+| condition | string | null:false |
+| shipping_method | string | null:false |
+| shipping_days | string | null:false |
+| shipping_area | string | null:false |
+| shipping_price | integer | null:false |
+| price | integer | null:false |
+| text | text | null:false |
+| seller_id | integer | null:false |
+| buyer_id | integer | |
+| brand_id | integer | |
+| category_id | references | null:false,foreign_key:true|
 
 ### Association
 
