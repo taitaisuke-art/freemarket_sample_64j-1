@@ -97,9 +97,11 @@ $blue: #86d6fc;
             width: 100%;
             .dropzone-text{
               pre{
-                font-size: 14px;
+                font-size: 16px;
                 text-align: center;
                 height: 100%;
+                padding: 50px;
+                line-height: 1.5;
               }
             }
             #upload-image{
@@ -109,12 +111,9 @@ $blue: #86d6fc;
         }
       }
     }
-    hr{
-      border-top-style: solid;
-      border-top-color: #efefef;
-    }
 
     .item-form-1 {
+      border-top: 1px solid #eee;
       padding: 40px;
       .item-name {
         .item-label {
@@ -140,176 +139,224 @@ $blue: #86d6fc;
         .item-input {
           &__form{
             @include input;
+            resize: none;
+            height: 150px;
+            line-height: 1.5;
           }
         }
       }
     }
-    hr{
-      border-top-color: #efefef;
-    }
-    
+
     .item-form-2 {
+      border-top: 1px solid #eee;
       padding: 40px;
-      .item-category {
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
+      display: inline-flex;
+      width: 720px;
+      h2{
+        color: #888;
+        font-weight: 600;
+        width: 35%;
+      }
+      .registration{
+        width: 65%;
+        .item-category {
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_category_id {
+              @include select;
+            }
+          }
         }
-        .form-require {
-          @include require;
+        .item-size {
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+            background: #BFBFBF;
+          }
+          .item-input {
+            #item_size {
+              @include select;
+            }
+          }
         }
-        .item-input {
-          #item_category_id {
-            @include select;
+        .item-burad{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+            background: #BFBFBF;
+          }
+          .item-input {
+            &__form {
+              @include input;
+            }
+          }
+        }
+        .item-condition{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_condition {
+              @include select;
+            }
           }
         }
       }
-      .item-size {
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
-        }
-        .form-require {
-          @include require;
-          background: #BFBFBF;
-        }
-        .item-input {
-          #item_size {
-            @include select;
-          }
-        }
-      }
-      .item-burad{
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
-        }
-        .form-require {
-          @include require;
-          background: #BFBFBF;
-        }
-        .item-input {
-          &__form {
-            @include input;
-          }
-        }
-      }
-      .item-condition{
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
-        }
-        .form-require {
-          @include require;
-        }
-        .item-input {
-          #item_condition {
-            @include select;
-          }
-        }
-      }
-    }
-    hr{
-      border-top-color: #efefef;
-      border-top-style: solid;
     }
 
     .item-form-3 {
       padding: 40px;
-      .item-shipping_price{
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
+      border-top: 1px solid #eee;
+      display: inline-flex;
+      width: 720px;
+      h3{
+        color: #888;
+        font-weight: 600;
+        width: 35%;
+      }
+      .registration{
+        width: 65%;
+        .item-shipping_price{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_shipping_price {
+              @include select;
+            }
+          }
         }
-        .form-require {
-          @include require;
+        .item-shipping_method{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_shipping_method {
+              @include select;
+            }
+          }
         }
-        .item-input {
-          #item_shipping_price {
-            @include select;
+        .item-prefecture_id{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_prefecture_id {
+              @include select;
+            }
+          }
+        }
+        .item-shipping_days{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_shipping_days{
+              @include select;
+            }
           }
         }
       }
-      .item-shipping_method{
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
-        }
-        .form-require {
-          @include require;
-        }
-        .item-input {
-          #item_shipping_method {
-            @include select;
-          }
-        }
-      }
-      .item-prefecture_id{
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
-        }
-        .form-require {
-          @include require;
-        }
-        .item-input {
-          #item_prefecture_id {
-            @include select;
-          }
-        }
-      }
-      .item-shipping_days{
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
-        }
-        .form-require {
-          @include require;
-        }
-        .item-input {
-          #item_shipping_days{
-            @include select;
-          }
-        }
-      }
-    }
-    hr{
-      border-top-color: #efefef;
     }
 
     .item-form-4 {
       padding: 40px;
-      .item-price{
-        margin-top: 32px;
-        .item-label {
-          font-weight: 600;
-        }
-        .form-require {
-          @include require;
-        }
-        .item-input {
-          &__form {
-            @include input;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      display: inline-flex;
+      width: 720px;
+      h4{
+        color: #888;
+        font-weight: 600;
+        width: 35%;
+      }
+      .registration{
+        width: 65%;
+        .item-price{
+          display: flex;
+          margin-top: 32px;
+          padding: 0 0 24px;
+          border-bottom: 1px solid #ccc;
+          .item-price-left{
+            line-height: 65px;
+            .item-label {
+              font-weight: 600;
+            }
+            .form-require {
+              @include require;
+            }
           }
+          .item-input {
+            display: flex;
+            text-align: right;
+            p{
+              line-height: 75px;
+              vertical-align: middle;
+              padding-right: 10px;
+            }
+            &__form {
+              @include input;
+              text-align: right;
+            }
+          }
+        }
+        .sales-fee{
+          padding: 24px 0;
+          border-bottom: 1px solid #ccc;
+        }
+        .sales-profit{
+          padding: 24px 0;
         }
       }
     }
-    hr{
-      border-top-color: #efefef;
-    }
+
+
 
     .item-form-btn{
       padding: 40px;
       margin: 0 auto;
       margin-top: 32px;
-      width: 360px;
       font-size: 18px;
-      font-weight: 600;
+      .consent{
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
       .submit {
         margin: 24px 0 0;
         background: $red;
         border: 1px solid $red;
-        border-radius: 4px;
         color: #fff;
         width: 100%;
         line-height: 55px;
@@ -318,11 +365,12 @@ $blue: #86d6fc;
       }
       .root-btn{
         line-height: 55px;
-        border-radius: 4px;
         background-color: #bfbfbf;
         cursor: pointer;
+        margin: 0 auto;
         margin-bottom: 24px;
         text-align: center;
+        width: 45%;
         a{
           text-decoration: none;
         }
