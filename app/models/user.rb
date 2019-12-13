@@ -14,11 +14,12 @@ class User < ApplicationRecord
   has_many :seller_messages, class_name: 'Message', foreign_key: 'seller_id', dependent: :destroy
 
   has_one :address, dependent: :destroy
-  has_one :profile, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
   validates :nickname, :first_name, :last_name, :first_name_kana, :last_name_kana, :birthyear, :birthmonth, :birthday, :telephone, presence: true
+
+  mount_uploader :icon, ImageUploader
 end
 
 
