@@ -1,11 +1,12 @@
 .wrapper
   = render "items/top-head"
+  = render "pan"
   .mypage_main
     = render "sidehead"
     .profile
       .profile_header
         プロフィール
-      .contents
+      .profile_contents
         = form_for current_user do |f|
           .username_setting
             .namegroup
