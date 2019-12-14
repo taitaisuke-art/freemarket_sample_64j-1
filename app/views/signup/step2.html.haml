@@ -34,7 +34,7 @@
       電話番号の確認
     .form-user
       .form-user__phonenumber
-        = form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'second-wrapper__box'} do |f|
+        = form_for @user, url: step2_signup_index_path, method: :get, html: {class: 'second-wrapper__box'} do |f|
           = f.label :携帯電話の番号
           %br/
           = f.text_field :telephone, placeholder: "携帯電話の番号を入力", class: "input-default"
