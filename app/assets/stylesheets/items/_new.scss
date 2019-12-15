@@ -228,10 +228,22 @@ $blue: #86d6fc;
       h3{
         color: #888;
         font-weight: 600;
-        width: 35%;
+      }
+      .price-info{
+        background-color: #0099e8;
+        border-radius: 50%;
+        text-decoration: none;
+        height: 14px;
+        width: 14px;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 5px;
       }
       .registration{
         width: 65%;
+        margin-left: auto;
         .item-shipping_price{
           margin-top: 32px;
           .item-label {
@@ -300,10 +312,22 @@ $blue: #86d6fc;
       h4{
         color: #888;
         font-weight: 600;
-        width: 35%;
+      }
+      .price-info{
+        background-color: #0099e8;
+        border-radius: 50%;
+        text-decoration: none;
+        height: 14px;
+        width: 14px;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 5px;
       }
       .registration{
         width: 65%;
+        margin-left: auto;
         .item-price{
           display: flex;
           margin-top: 32px;
@@ -320,7 +344,7 @@ $blue: #86d6fc;
           }
           .item-input {
             display: flex;
-            text-align: right;
+            margin-left: auto;
             p{
               line-height: 75px;
               vertical-align: middle;
@@ -335,9 +359,19 @@ $blue: #86d6fc;
         .sales-fee{
           padding: 24px 0;
           border-bottom: 1px solid #ccc;
+          display: flex;
+          .sales-fee-price{
+            margin-left: auto;
+          }
         }
         .sales-profit{
           padding: 24px 0;
+          display: flex;
+          font-weight: 600;
+          font-size: 16px;
+          .sales-profit-price{
+            margin-left: auto;
+          }
         }
       }
     }
