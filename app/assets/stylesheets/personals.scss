@@ -1,6 +1,11 @@
-.Personal_information{
+.mypage_main{
+  margin:40px 210px 0;
+  padding-bottom:40px;
+  display:flex;
+  .Personal_information{
   width:700px;
   height:1208px;
+  float: right;
   .head_top{
   font-size:24px;
   padding:8px 24px;
@@ -8,7 +13,7 @@
   font-weight: bold;
   border-bottom: solid 2px #f5f5f5;
   }
-  .contents{
+  .profile_contents{
     padding:64px;
     height: 1158px;
       .text_left{
@@ -76,4 +81,8 @@
       text-decoration:none;
       }
   }
+}
+}
+select{
+  background-color:#fff;
 }
