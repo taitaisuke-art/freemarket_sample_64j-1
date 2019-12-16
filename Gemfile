@@ -63,6 +63,8 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
+gem 'jquery_mobile_rails'
+
 gem 'haml-rails'
 
 gem 'font-awesome-sass'
