@@ -6,7 +6,6 @@
           = image_tag "fmarket_logo_red.svg", class: "header-logo__icon"
 
 
-
     .item-form
 
       .item-form-image
@@ -76,6 +75,7 @@
 
       .item-form-3
         %h3 配送について
+        .price-info ?
         .registration
           .item-shipping_price
             = f.label :shipping_price, "配送料の負担", class: "item-label"
@@ -109,6 +109,7 @@
 
       .item-form-4
         %h4 販売価格(300〜9,999,999)
+        .price-info ?
         .registration
           .item-price
             .item-price-left
@@ -120,11 +121,10 @@
               = f.text_field :price, class: "item-input__form", placeholder: "例）300"
           .sales-fee
             %p 販売手数料 (10%)
+            .sales-fee-price -
           .sales-profit
             %p 販売利益
-
-
-
+            .sales-profit-price -
 
 
       .item-form-btn
@@ -137,7 +137,6 @@
           = f.submit "出品する", class: "submit"
         .root-btn
           = link_to "もどる", root_path
-
 
 
     .item-fooder
@@ -154,7 +153,3 @@
           = image_tag "logo_white.svg", class: "fooder_logo"
       %p
         &copy; Fmarket 64 teamJ
-
-
-
-
