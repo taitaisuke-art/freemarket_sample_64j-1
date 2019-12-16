@@ -1,0 +1,78 @@
+- unless @path.is('products#index')
+  .breadcrumbs
+    %ul
+      %li
+        = link_to "メルカリ", root_path, class: "panpan"
+        - if @path.is('categories#index')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last カテゴリー一覧
+        - if @path.is('categories#show') && @category.indirect_ids.present?
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "カテゴリー一覧", categories_path, data: {"turbolinks": false}, class: "panpan"
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last #{@category.name}
+        - if @path.is('categories#show') && @category.indirect_ids.empty? && @category.children.present?
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "カテゴリー一覧", categories_path
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "#{@category.parent.name}", category_path(@category.parent)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last #{@category.name}
+        - if @path.is('categories#show') && @category.children.empty?
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "カテゴリー一覧", categories_path
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "#{@category.parent.parent.name}", category_path(@category.parent.parent)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "#{@category.parent.name}", category_path(@category.parent)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last #{@category.name}
+        - if @path.is('users#index')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last マイページ
+        - if @path.is('users#edit')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "マイページ", users_path(@user)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last プロフィール
+        - if @path.is('users#logout')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "マイページ", users_path(@user)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last ログアウト
+        - if @path.is('searches#index')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last
+              = "#{@keyword}"    
