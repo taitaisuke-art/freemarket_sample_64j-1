@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update] do
     resources :address, only: [:index,:new, :create]
   end
-  resources :items, only: [:index,:new, :create] 
+  resources :items, only: [:index,:new, :create]
   resources :card, only: [:new, :show] 
-  resources :profiles, only: [:new, :create]
   resources :categories, only: [:index] 
- 
+  resources :personals, only: [:edit] 
+  
   resources :signup do
     collection do
       get 'step0'
