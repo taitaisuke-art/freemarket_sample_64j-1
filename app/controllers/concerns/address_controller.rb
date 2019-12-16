@@ -10,7 +10,6 @@ class AddressController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
-      # redirect_to "new_card_path"
       redirect_to new_card_path
     else
       redirect_to new_user_address_path
