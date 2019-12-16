@@ -37,7 +37,7 @@
             %li.women-item-image
               = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
                 .item-text
-                = link_to "/items/#{item.id}", method: :get do
+                = link_to item_path(item.id), method: :get do
                   .item-price  
                     = item.price
                   .item-name
