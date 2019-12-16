@@ -1,0 +1,119 @@
+.wrapper
+  = render "top-head"
+
+
+.mainbody
+  .mainbody__item
+    .mainbody__item__title
+      = @item.name
+    .mainbody__item__description
+      『
+      = @item.name
+      』は、**回の取引実績を持つ"出品者"さんから出品されました。
+      = @item.category.name
+      の商品で、”県名”から
+      = @item.shipping_days
+      されます。
+    .mainbody__item__content
+      .mainbody__item__content__image
+        .thumbnail
+          %div
+            = image_tag 'show_page/m1.jpg', alt: "", class: "showimage"
+          %div
+            = image_tag 'show_page/m2.jpg', alt: "", class: "showimage"
+          %div
+            = image_tag 'show_page/m3.jpg', alt: "", class: "showimage"
+          %div
+            = image_tag 'show_page/m4.jpg', alt: "", class: "showimage"
+        .thumbnail-thumb
+          %div
+            = image_tag 'show_page/m1.jpg', alt: "", class: "showimage1"
+          %div
+            = image_tag 'show_page/m2.jpg', alt: "", class: "showimage1"
+          %div
+            = image_tag 'show_page/m3.jpg', alt: "", class: "showimage1"
+          %div
+            = image_tag 'show_page/m4.jpg', alt: "", class: "showimage1"
+
+      .mainbody__item__content__post
+        %table
+          %tr
+            %td.td1 出品者名
+            %td.td2 "出品者名" "評価"
+          %tr
+            %td.td1 カテゴリー
+            %td.td2= @item.category.name
+          %tr
+            %td.td1 ブランド
+            %td.td2 "ブランド名"
+          %tr
+            %td.td1 商品の状態
+            %td= @item.condition
+          %tr
+            %td.td1 配送料の負担
+            %td= @item.shipping_price
+          %tr
+            %td.td1 配送の方法
+            %td= @item.shipping_method
+          %tr
+            %td.td1 発送元地域
+            %td.td2 "県名"
+          %tr
+            %td.td1 発送日の目安
+            %td= @item.shipping_days
+            
+    .mainbody__item__pricebox
+      .mainbody__item__pricebox__price
+        ¥  
+        = @item.price
+      .mainbody__item__pricebox__zei
+        (税込)
+      .mainbody__item__pricebox__soryo
+        = @item.shipping_price
+    .mainbody__item__buybox
+      購入画面に進む
+    .mainbody__item__textbox
+      = @item.text
+    .mainbody__item__btnbox
+      .mainbody__item__btnbox__iine
+        <i class="far fa-heart"></i>
+        いいね！
+      .mainbody__item__btnbox__report
+        <i class="far fa-flag"></i>
+        不適切な商品の報告
+      .mainbody__item__btnbox__anzen
+        <i class="fas fa-lock"></i>
+        あんしん・あんぜんへの取り組み
+
+  .item-select
+    .item-select__left
+      ＜商品1
+    .item-select__right
+      商品2＞
+
+  .iconbox
+    .iconbox2
+      .iconbox2__face
+        = link_to "https://www.facebook.com/", class: "women-new-more" do
+          %i.fab.fa-facebook-square
+      .iconbox2__twitter
+        = link_to "https://twitter.com/", class: "women-new-more" do
+          %i.fab.fa-twitter-square
+      .iconbox2__pinte
+        = link_to "https://www.instagram.com/", class: "women-new-more" do
+          %i.fab.fa-pinterest-square
+      
+  .usersitem
+    .usersitem__title
+      **さんのその他の出品
+        
+        
+  .categoryitem
+    .categoryitem__select
+      = @item.category.name
+      その他の出品  
+
+.wrapper
+  = render "pans/pan"
+  = render "top-foot"
+
