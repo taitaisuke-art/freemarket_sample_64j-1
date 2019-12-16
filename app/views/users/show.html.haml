@@ -1,12 +1,16 @@
 .wrapper
   = render "items/top-head"
-  = render "pans/pan"
+  = render "pan"
 .mypage
   .mypage_main
     = render "sidehead"
+    .logout-box
+      .logout-btn
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
     .circle
       %span 出品
       %i.fas.fa-camera
      
       
 = render "items/top-foot"
+
