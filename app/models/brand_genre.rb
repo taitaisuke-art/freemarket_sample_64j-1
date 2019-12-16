@@ -1,4 +1,4 @@
 class BrandGenre < ApplicationRecord
-  belongs_to :brand
-  belongs_to :genre
+  belongs_to :brand, optional: true
+  belongs_to :genre, optional: true
 end

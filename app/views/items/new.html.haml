@@ -1,126 +1,155 @@
-.item
-  .item-header
-    %img{:src => "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", :width => "185px"}>
-  .item-exhibit
-    .item-exhibit__content
-      %h1 商品の情報を入力
-    .item-exhibit__image
-      .item-exhibit__image__title
-        %h1 出品画像
-        %span.form-require
-          必須
-      .item-exhibit__image__text
-        %p 最大10枚までアップロードできます
-      .item-exhibit__image__photo
-        %h1 ドラックアンドドロップ
-        %p またはクリックしてファイルをダウンロード
-      .item-exhibit__image__border
+= form_for @item do |f|
+  .item
+    .item-header
+      .header-logo
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", class: "header-logo__icon"
 
 
-    .item-exhibit__name
-      .item-exhibit__name__text
-        = form_for @item do |f|
+    .item-form
+
+      .item-form-image
+        .item-image
+          #preview
+            %h1 出品画像
+            %span.form-require
+              必須
+          %p 最大10枚までアップロードできます
+          .dropzone
+            %label.item-label
+              .dropzone-text
+                %pre
+                  ドラック&ドロップ 
+                  またはクリックしてファイルをアップロード
+              = f.fields_for :item_images do |image|
+                = image.file_field :image, multiple: true, id: "upload-image", class: "upload-image"
+
+
+      .item-form-1
+        .item-name
           = f.label :name, "商品名", class: "item-label"
           %span.form-require
             必須
-          .item-exhibit__name__text__input
-            = f.text_field :name, class: "item-name",placeholder: "商品名(必須 40文字まで)"
-      .item-exhibit__name__description
-        = form_for @item do |f|
-          = f.label :name, "商品の説明", class: "item-labels"
-          %span.form-requires
-            必須
-          .item-exhibit__name__description__input
-            = f.text_area :text, class: "item-text",placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、低下、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
-          .item-exhibit__name__description__border
-    .item-exhibit__details
-      .item-exhibit__details__title
-        %h3 商品の詳細
-      .item-exhibit__details__category
-        = form_for @item do |f|
-          = f.label :category_id, "カテゴリー", class: "item-label"
+          .item-input
+            = f.text_field :name, class: "item-input__form", placeholder: "商品名(必須40文字まで)"
+
+        .item-text
+          = f.label :text, "商品の説明", class: "item-label"
           %span.form-require
             必須
-          .item-exhibit__details__category__input
-            = f.select :category_id, [["レディース",0],["メンズ",1],["ベビー・キッズ",2],["インテリア・住まい・小物",3],["本・音楽・ゲーム",4],["おもちゃ・ボビー・グッズ",5],["コスメ・香水・美容",6],["家電・スマホ・カメラ",7],["スポーツ・レジャー",8],["ハンドメイド",9],["チケット",10],["自動車・オートバイ",11],["その他",12]],prompt: "---",class: "select"
-      .item-exhibit__details__status
-        = form_for @item do |f|
-          = f.label :category_id, "商品の状態", class: "item-label"
-          %span.form-require
-            必須
-          .item-exhibit__details__category__input
-            = f.select :category_id, [["新品、未使用",0],["未使用に近い",1],["目立った傷や汚れなし",2],["やや傷や汚れあり",3],["傷や汚れあり",4],["全体的に状態が悪い",5]],prompt: "---",class: "select"
-          .item-exhibit__details__category__border
-    .item-exhibit__delivery
-      .item-exhibit__delivery__title
+          .item-input
+            = f.text_area :text, size: "20x10", class: "item-input__form", placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、低下、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+
+
+      .item-form-2
+        %h2 商品の詳細
+        .registration
+          .item-category
+            = f.label :category_id, "カテゴリー", class: "item-label"
+            %span.form-require
+              必須
+            .item-input
+              = f.collection_select :category_id, Category.all, :id, :name, class: "item-input__select", prompt: "選択してください"
+
+          .item-size
+            = f.label :size, "サイズ", class: "item-label"
+            %span.form-require
+              任意
+            .item-input
+              = f.select :size, ["XXS以下", "XS(SS)", "S", "M", "L", "XL(LL)", "2XL(3L)", "3LX(4L)", "4XL(5L)以上", "FREE SIZE"], include_blank: ' --- ', class: "item-input__select" 
+
+          .item-burad
+            = f.label :brand_id, "ブランド", class: "item-label"
+            %span.form-require
+              任意
+            .item-input
+              = f.text_field :brand_id, class: "item-input__form"
+
+          .item-condition
+            = f.label :condition, "商品の状態", class: "item-label"
+            %span.form-require
+              必須
+            .item-input
+              = f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], class: "item-input__form"
+
+
+      .item-form-3
         %h3 配送について
-      .item-exhibit__delivery__price
-        = form_for @item do |f|
-          = f.label :shipping_price, "配送量の負担", class: "item-label"
-          %span.form-require
-            必須
-          .item-exhibit__delivery__price__input
-            = f.select :shipping_price, [["送料込み(出品者負担)",0],["着払い(購入者負担)",1]],prompt: "---",class: "select"
-      .item-exhibit__delivery__area
-        = form_for @item do |f|
-          = f.label :prefecture_id, "発送元の地域", class: "item-labels"
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "select"
-          %span.form-require
-            必須
-          .item-exhibit__delivery__area__input
-            -# = f.select :category_id, [["北海道",0],["青森県",1],["岩手県",2],["宮城県",3],["秋田県",4],["山形県",5],["福島県",6],["茨城県",7],["栃木県",8],["群馬県",9],["埼玉県",10],["千葉県",11],["東京都",12],["神奈川県",13],["新潟県",14],["富山県",15],["石川県",16],["福井県",17],["山梨県",18],["長野県",19],["岐阜県",20],["静岡県",21],["愛知県",22],["三重県",23],["滋賀県",24],["京都府",25],["大阪府",26],["兵庫県",27],["奈良県",29],["和歌山県",30],["鳥取県",31],["島根県",32],["岡山県",33],["広島県",34],["山口県",35],["徳島県",36],["香川県",37],["愛媛県",38],["高知県",39],["福岡県",40],["佐賀県",41],["長崎県",42],["熊本県",43],["大分県",44],["宮崎県",45],["鹿児島県",46],["沖縄県",47],["未定",48]],prompt: "---",class: "select"
-      
-      .item-exhibit__delivery__day
-        = form_for @item do |f|
-          = f.label :shipping_days, "発送までの日数", class: "item-labels"
-          %span.form-require
-            必須
-          .item-exhibit__delivery__day__input
-            = f.select :shipping_days, [["1~2日で発送",0],["2~3日で発送",1],["4~7日で発送",2]],prompt: "---",class: "select"
-          .item-exhibit__delivery__day__border
-    .item-exhibit__price
-      .item-exhibit__price__title
-        %h3 販売価格(300~9,999,999)
-      .item-exhibit__price__cost
-        = form_for @item do |f|
-          = f.label :name, "価格", class: "item-label"
-          %span.form-require
-            必須
-          = f.text_field :name, class: "item-name",placeholder: "例)300"
-      .item-exhibit__price__border
-      .item-exhibit__price__fee
-        %h3 販売手数料(10%)
-      .item-exhibit__price__border2
-      .item-exhibit__price__profit
-        %h3 販売利益
-      .item-exhibit__price__border3
-    .item-exhibit__notes
-      .item-exhibit__notes__content
-        %p 禁止されている出品、行為を必ずご確認ください。
-        %p  またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であ
-        %p  り処罰される可能性があります
-        %p  また、出品をもちまして加盟店規約に同意したことになります。
-      .item-exhibit__notes__buttun
-        .item-exhibit__notes__buttun__exhibit
-          = link_to root_path, class: "btn-default" do
-            %span 出品する
-      .item-exhibit__notes__buttun2
-        .item-exhibit__notes__buttun2__back
-          = link_to root_path, class: "btn-default2" do
-            %span もどる
-  .single-footer
-    .single-footer__content
-      .single-footer__content__1
-        プライバシーポリシー
-      .single-footer__content__2
-        メルカリ利用規約
-      .single-footer__content__3
-        特定商取引に関する表記
-    .single-footer__image
-      =link_to "/", class: "title__btn" do
-        = image_tag "logo_gray.svg", size: "80x80", alt: "test"
-    .single-footer__text
-      © 2019 Mercari
+        .price-info ?
+        .registration
+          .item-shipping_price
+            = f.label :shipping_price, "配送料の負担", class: "item-label"
+            %span.form-require
+              必須
+            .item-input
+              = f.select :shipping_price, ["送料込み(出品者負担)", "着払い(購入者負担)"], include_blank: '選択してください', class: "item-input__select"
+
+          .item-shipping_method
+            = f.label :shipping_method, "配送の方法", class: "item-label"
+            %span.form-require
+              必須
+            .item-input
+              = f.select :shipping_method, ["未定", "らくらくメルカリ便", "ゆうメール", "レターパック", "普通郵便(定形、定形外)", "クロネコヤマト", "ゆうパック", "クリックポスト", "ゆうパケット"], include_blank: '選択してください', class: "item-input__select"
 
 
+          .item-prefecture_id
+            = f.label :prefecture_id, "発送元の地域", class: "item-label"
+            %span.form-require
+              必須
+            .item-input
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください", class: "item-input__select"
 
+          .item-shipping_days
+            = f.label :shipping_days, "発送までの日数", class: "item-label"
+            %span.form-require
+              必須
+            .item-input
+              = f.select :shipping_days, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], include_blank: '選択してください', class: "item-input__select"
+
+
+      .item-form-4
+        %h4 販売価格(300〜9,999,999)
+        .price-info ?
+        .registration
+          .item-price
+            .item-price-left
+              = f.label :price, "価格", class: "item-label"
+              %span.form-require
+                必須
+            .item-input
+              %p ¥
+              = f.text_field :price, class: "item-input__form", placeholder: "例）300"
+          .sales-fee
+            %p 販売手数料 (10%)
+            .sales-fee-price -
+          .sales-profit
+            %p 販売利益
+            .sales-profit-price -
+
+
+      .item-form-btn
+        .consent
+          %p 禁止されている出品、行為を必ずご確認ください。
+          %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+          %p また、出品をもちまして加盟店規約に同意したことになります。
+
+        .item-btn
+          = f.submit "出品する", class: "submit"
+        .root-btn
+          = link_to "もどる", root_path
+
+
+    .item-fooder
+      %nav
+        %ul
+          %li
+            = link_to "プライバシーポリシー", root_path
+          %li
+            = link_to "フリーマケット利用規約", root_path
+          %li
+            = link_to "特定商取引に関する表記", root_path
+      .fooder-image
+        = link_to root_path do
+          = image_tag "logo_white.svg", class: "fooder_logo"
+      %p
+        &copy; Fmarket 64 teamJ
