@@ -1,167 +1,421 @@
-.buy{
-  margin-top: -30px;
+$red: #ea352d;
+$blue: #86d6fc;
 
-.buy-confirm{
-  height: 1200px;
-  background-color: #f5f5f5;
-  .buy-confirm__header{
-  height: 120px;
-  .buy-confirm__header__logo{
-    width: 185px;
-    height: 50px;
-    margin: auto;
-    margin-top: 30px;
-    .header-logo__icon{
-      margin-top: 30px;
-    }}
+@mixin input {
+  width: 95%;
+  margin: 15px 0 0;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 16px;
+  height: 30px;
+  &:focus {
+    border: 1px solid $blue;
+    outline: 0;
   }
-  .buy-confirm__box{
-    height: 770PX;
-    width: 700px;
-    background-color: white;
-    margin: auto;
-    .buy-confirm__box__header{
-      height: 100px;
-      h1{
-        font-size: 22px;
-        font-weight: bold;
-        text-align: center;
-        padding-top: 30px;
-      }}
-      .buy-confirm__box__border{
-        border: 1px solid #f5f5f5;
-      }
-      .buy-confirm__box__item{
-        height: 150px;
-        width: 100%;
-        display: flex;
-        .buy-confirm__box__item__image{
-          width:38%;
-          .woman-1{
-            height: 80px;
-            width: 80px;
-            margin-top: 35px;
-            margin-left: 180px;
-          }
-        }
-        .buy-confirm__box__item__text{
-          width: 62%;
-          margin-top: 35px;
-          margin-left: 5px;
-        }
-        .buy-confirm__box__item__text p{
-          margin-top: 10px;
-          margin-left: 5px;
-          font-weight: bold;
-      }}
+}
+@mixin select{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #222;
+  font-size: 16px;
+  height: 48px;
+  line-height: 1;
+  outline: none;
+  padding: 13px 16px;
+  margin: 15px 0 0;
+  width: 100%;
+}
+@mixin require {
+  background: $red;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  vertical-align: top;
+}
+@mixin optional{
+  background: #BFBFBF;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
 
-      .buy-confirm__box__border2{
-        border: 1px solid #f5f5f5;
+
+.item {
+  background-color: #F5F5F5;
+  font-size: 16px;
+  .item-header {
+    height: 130px;
+    line-height: 130px;
+    .header-logo {
+      width: 185px;
+      margin: 0 auto;
+      &__icon {
+        padding: 30px 0 30px 0;
       }
-      .buy-confirm__box__price{
-        height: 95px;
-        margin: auto;
-        .buy-confirm__box__price__top{
-          height: 50px;
+    }
+  }
+
+  .item-form {
+    width: 800px;
+    margin: 0 auto;
+    background: #fff;
+
+    .item-form-image{
+      padding: 40px;
+      .item-image{
+        height: 200px;
+        #preview{
+          margin-bottom: 16px;
           display: flex;
-          margin-top: 40px;
-          margin-left: 180px;
-          .buy-confirm__box__price__top__left{
-            width: 50%;
-            height: 30px;
-            h1{
-            font-size: 18px;
-            font-weight: bold;
-            }}
-          .buy-confirm__box__price__top__right{
-           width: 50%;
-           height: 30px;
-           h2{
-            font-size: 25px;
-            font-weight: bold;
-           }
-      }
-    }
-    .buy-confirm__box__price__bottom{
-      height: 60px;
-      .buy-confirm__box__price__bottom__box{
-        display: flex;
-        margin-left: 180px;
-      i{
-        color: #ccc;
-        background: #ccc;
-        height: 20px;
-        width: 20px;
-        border-radius: 4px;
-      }
-      h1{
-        margin-left: 10px;
-        color: #ccc;
-      }}}}
-      .buy-confirm__box__border3{
-        border: 1px solid #f5f5f5;
-        width: 48%;
-        margin: auto;
-      }
-      .buy-confirm__box__price-method{
-        height: 80px;
-        margin-top: 30px;
-        margin-left: 179px;
-        h1{
-          font-weight: bold;
+          h1{
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+            height: 20px;
+          }
         }
-        .buy-confirm__box__price-method__bottom{
-        color: #0099e8;
-        margin-top: 5px;
-        a{
-          text-decoration: none;
-          color: #0099e8;
-        }}
-      }
-      .buy-confirm__box__border4{
-        border: 1px solid #f5f5f5;
-        width: 48%;
-        margin: auto;
-      }
-      .buy-confirm__box__address{
-        height: 110px;
-        margin-top: 30px;
-        margin-left: 180px;
-        display: flex;
-        h1{
-          font-weight: bold;
-        }
-        a{
-          text-decoration: none;
-          color: #0099e8;
-          margin-left: 125px;
-        }
-      }
-      .buy-confirm__box__border5{
-        border: 1px solid #f5f5f5;
-        width: 48%;
-        margin: auto;
-      }
-      .buy-confirm__box__btn{
-
-        .buy-btn{
-          height: 50px;
-          width: 340px;
-          background: grey;
-          margin: auto;
-          margin-top: 30px;
-          .submit{
-          color:white;
-          text-decoration: none;
-          text-align: center;
-          line-height: 50px;
-          padding-left: 130px;
+        .dropzone{
+          display: flex;
+          align-items: center;
+          background-color: rgb(245, 245, 245);
+          border-width: 1px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          .item-label {
+            margin: 0 auto;
+            height: 150px;
+            width: 100%;
+            .dropzone-text{
+              pre{
+                font-size: 16px;
+                text-align: center;
+                height: 100%;
+                padding: 50px;
+                line-height: 1.5;
+              }
+            }
+            #upload-image{
+              display: none;
+            }
           }
         }
       }
     }
+
+    .item-form-1 {
+      border-top: 1px solid #eee;
+      padding: 40px;
+      .item-name {
+        .item-label {
+          font-weight: 600;
+        }
+        .form-require {
+          @include require;
+        }
+        .item-input {
+          &__form {
+            @include input;
+          }
+        }
+      }
+      .item-text {
+        margin-top: 32px;
+        .item-label {
+          font-weight: 600;
+        }
+        .form-require {
+          @include require;
+        }
+        .item-input {
+          &__form{
+            @include input;
+            resize: none;
+            height: 150px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    .item-form-2 {
+      border-top: 1px solid #eee;
+      padding: 40px;
+      display: inline-flex;
+      width: 720px;
+      h2{
+        color: #888;
+        font-weight: 600;
+        width: 35%;
+      }
+      .registration{
+        width: 65%;
+        .item-category {
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_category_id {
+              @include select;
+            }
+          }
+        }
+        .item-size {
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+            background: #BFBFBF;
+          }
+          .item-input {
+            #item_size {
+              @include select;
+            }
+          }
+        }
+        .item-burad{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+            background: #BFBFBF;
+          }
+          .item-input {
+            &__form {
+              @include input;
+            }
+          }
+        }
+        .item-condition{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_condition {
+              @include select;
+            }
+          }
+        }
+      }
+    }
+
+    .item-form-3 {
+      padding: 40px;
+      border-top: 1px solid #eee;
+      display: inline-flex;
+      width: 720px;
+      h3{
+        color: #888;
+        font-weight: 600;
+      }
+      .price-info{
+        background-color: #0099e8;
+        border-radius: 50%;
+        text-decoration: none;
+        height: 14px;
+        width: 14px;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 5px;
+      }
+      .registration{
+        width: 65%;
+        margin-left: auto;
+        .item-shipping_price{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_shipping_price {
+              @include select;
+            }
+          }
+        }
+        .item-shipping_method{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_shipping_method {
+              @include select;
+            }
+          }
+        }
+        .item-prefecture_id{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_prefecture_id {
+              @include select;
+            }
+          }
+        }
+        .item-shipping_days{
+          margin-top: 32px;
+          .item-label {
+            font-weight: 600;
+          }
+          .form-require {
+            @include require;
+          }
+          .item-input {
+            #item_shipping_days{
+              @include select;
+            }
+          }
+        }
+      }
+    }
+
+    .item-form-4 {
+      padding: 40px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      display: inline-flex;
+      width: 720px;
+      h4{
+        color: #888;
+        font-weight: 600;
+      }
+      .price-info{
+        background-color: #0099e8;
+        border-radius: 50%;
+        text-decoration: none;
+        height: 14px;
+        width: 14px;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 5px;
+      }
+      .registration{
+        width: 65%;
+        margin-left: auto;
+        .item-price{
+          display: flex;
+          margin-top: 32px;
+          padding: 0 0 24px;
+          border-bottom: 1px solid #ccc;
+          .item-price-left{
+            line-height: 65px;
+            .item-label {
+              font-weight: 600;
+            }
+            .form-require {
+              @include require;
+            }
+          }
+          .item-input {
+            display: flex;
+            margin-left: auto;
+            p{
+              line-height: 75px;
+              vertical-align: middle;
+              padding-right: 10px;
+            }
+            &__form {
+              @include input;
+              text-align: right;
+            }
+          }
+        }
+        .sales-fee{
+          padding: 24px 0;
+          border-bottom: 1px solid #ccc;
+          display: flex;
+          .sales-fee-price{
+            margin-left: auto;
+          }
+        }
+        .sales-profit{
+          padding: 24px 0;
+          display: flex;
+          font-weight: 600;
+          font-size: 16px;
+          .sales-profit-price{
+            margin-left: auto;
+          }
+        }
+      }
+    }
+
+
+
+    .item-form-btn{
+      padding: 40px;
+      margin: 0 auto;
+      margin-top: 32px;
+      font-size: 18px;
+      .consent{
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      .submit {
+        margin: 24px 0 0;
+        background: $red;
+        border: 1px solid $red;
+        color: #fff;
+        width: 100%;
+        line-height: 55px;
+        cursor: pointer;
+        margin-bottom: 24px;
+      }
+      .root-btn{
+        line-height: 55px;
+        background-color: #bfbfbf;
+        cursor: pointer;
+        margin: 0 auto;
+        margin-bottom: 24px;
+        text-align: center;
+        width: 45%;
+        a{
+          text-decoration: none;
+        }
+        a:visited {
+          color: #222222;
+        }
+      }
+    }
   }
-  .buy-confirm__footer{
+
+  .item-fooder{
     width: 456px;
     height: 220px;
     margin: 0 auto;
@@ -194,3 +448,4 @@
     }
   }
 }
+
