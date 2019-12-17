@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :address, only: [:index,:new, :create]
   end
   resources :items, only: [:index, :new, :create, :destroy, :edit, :update, :show]
-  resources :item_images, only: [:index, :new, :create]
+  
   resources :card, only: [:new, :show] 
   resources :categories, only: [:index] 
   resources :personals, only: [:index, :edit] 
