@@ -1,9 +1,13 @@
 # class ItemsController < ApplicationController
 
-#   def new
-#     @item = Item.new
-#     @item.item_images.build
-#   end
+  def index
+    @items = Item.limit(5)
+  end
+
+  def new
+    @item = Item.new
+    @item.item_images.build
+  end
 
 #   def create
 #     @item = Item.new(item_params)
@@ -16,6 +20,10 @@
 #       redirect_to users_path
 #     end
 #   end
+
+  def show
+    @item = Item.find(params[:id])
+  end
 
 
 #   private
