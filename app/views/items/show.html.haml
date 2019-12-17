@@ -6,14 +6,6 @@
   .mainbody__item
     .mainbody__item__title
       = @item.name
-    .mainbody__item__description
-      『
-      = @item.name
-      』は、**回の取引実績を持つ"出品者"さんから出品されました。
-      = @item.category.name
-      の商品で、”県名”から
-      = @item.shipping_days
-      されます。
     .mainbody__item__content
       .mainbody__item__content__image
         .thumbnail
@@ -39,7 +31,7 @@
         %table
           %tr
             %td.td1 出品者名
-            %td.td2 "出品者名" "評価"
+            %td.td2= @item.seller.nickname
           %tr
             %td.td1 カテゴリー
             %td.td2= @item.category.name
@@ -57,7 +49,7 @@
             %td= @item.shipping_method
           %tr
             %td.td1 発送元地域
-            %td.td2 "県名"
+            %td.td2= @item.prefecture_id
           %tr
             %td.td1 発送日の目安
             %td= @item.shipping_days
