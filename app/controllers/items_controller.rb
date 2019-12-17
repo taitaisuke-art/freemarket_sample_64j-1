@@ -7,12 +7,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
-    # @item.save!
     if @item.save
+      params[:item_images][:image].each do |image|
+        @item.item_images.create(image: image)
+      end
       redirect_to root_path
     else
-      # binding.pry
       redirect_to users_path
     end
   end
@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :size, :condition, :shipping_method, :shipping_days, :prefecture_id, :shipping_price, :price, :text, :category_id, :brand_id, :seller_id, :buyer_id, :sale_status, item_images_attributes: {image: []}).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :size, :condition, :shipping_method, :shipping_days, :prefecture_id, :shipping_price, :price, :text, :category_id, :brand_id, :seller_id, :buyer_id, :sale_status, item_images_attributes: [:image]).merge(seller_id: current_user.id)
   end
 
 end

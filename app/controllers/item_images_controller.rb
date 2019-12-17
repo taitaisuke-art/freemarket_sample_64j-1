@@ -1,4 +1,4 @@
 class ItemImagesController < ApplicationController
 
-  
+
 end
