@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'purchase/index'
+
   get 'purchase/done'
 
   devise_for :users
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   resources :card, only: [:new, :show] 
   resources :profiles, only: [:new, :create]
   resources :categories, only: [:index] 
-  resources :purchase, only: [:index] 
+  resources :purchase, only: [:index]
 
   resources :signup do
     collection do
@@ -34,6 +36,7 @@ Rails.application.routes.draw do
   post 'show', to: 'card#show'
   post 'pay', to: 'card#pay'
   post 'delete', to: 'card#delete'
-  post 'pay', to: 'purchase#pay'
+  get 'index', to: 'purchase#index'
   get 'done', to: 'purchase#done'
+  patch "pay", to: 'purchase#pay'
 end

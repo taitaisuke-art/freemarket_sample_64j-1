@@ -1,8 +1,8 @@
 class PurchaseController < ApplicationController
-  before_action :set_card
 
   require 'payjp'
-  
+  before_action :set_card
+
   def index
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if @card.blank?
@@ -13,7 +13,7 @@ class PurchaseController < ApplicationController
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(@card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
@@ -27,10 +27,7 @@ class PurchaseController < ApplicationController
   redirect_to action: 'done' #完了画面に移動
   end
 
-  private
-
   def set_card
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
-
 end
