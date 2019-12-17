@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'purchase/index'
-
   get 'purchase/done'
 
   devise_for :users
@@ -36,7 +34,6 @@ Rails.application.routes.draw do
   post 'show', to: 'card#show'
   post 'pay', to: 'card#pay'
   post 'delete', to: 'card#delete'
-  get 'index', to: 'purchase#index'
   get 'done', to: 'purchase#done'
   patch "pay", to: 'purchase#pay'
 end
