@@ -1,0 +1,66 @@
+#商品購入確認ページのビュー仮置き
+.buy
+  .buy-confirm
+    .buy-confirm__header
+      .buy-confirm__header__logo
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", class: "header-logo__icon"
+    .buy-confirm__box
+      .buy-confirm__box__header
+        %h1 購入内容の確認
+      .buy-confirm__box__border
+      .buy-confirm__box__item
+        .buy-confirm__box__item__image
+          = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
+        .buy-confirm__box__item__text
+          %h2 【値下げ】【即購入歓迎】ギンガムチェックワンピース
+          %p ¥4,900 (税込)送料込み
+      .buy-confirm__box__border2
+      .buy-confirm__box__price
+        .buy-confirm__box__price__top
+          .buy-confirm__box__price__top__left
+            %h1 支払い金額
+          .buy-confirm__box__price__top__right
+            %h2 ¥4,900
+        .buy-confirm__box__price__bottom
+          .buy-confirm__box__price__bottom__box
+            %i.fas.fa-check-square
+            %h1 ポイントを使用(所持ポイント:P0)
+      .buy-confirm__box__border3
+      .buy-confirm__box__price-method
+        .buy-confirm__box__price-method__top
+          %h1 支払い方法
+        .buy-confirm__box__price-method__bottom
+          %i.fas.fa-plus-circle
+          = link_to "登録してください", root_path
+      .buy-confirm__box__border4
+      .buy-confirm__box__address
+        .buy-confirm__box__address__left
+          %h1 配送先
+          %p  〒111-1111
+          %p  東京都世田谷区駒沢1-1-1
+          %p  橋本 環奈
+        .buy-confirm__box__address__right
+          = link_to "変更する", root_path
+      .buy-confirm__box__border5
+      .buy-confirm__box__btn
+        .buy-btn
+          = link_to "購入する", root_path,class: "submit"
+    .buy-confirm__footer
+      %nav
+        %ul
+          %li
+            = link_to "プライバシーポリシー", root_path
+          %li
+            = link_to "フリーマケット利用規約", root_path
+          %li
+            = link_to "特定商取引に関する表記", root_path
+      .fooder-image
+        = link_to root_path do
+          = image_tag "logo_white.svg", class: "fooder_logo"
+      %p
+        &copy; Fmarket 64 teamJ
+
+
+
+
