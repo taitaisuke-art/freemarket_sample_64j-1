@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
 
+  def index
+    @items = Item.limit(5)
+  end
+
   def new
     @item = Item.new
     @item.item_images.build
@@ -15,6 +19,10 @@ class ItemsController < ApplicationController
     else
       redirect_to users_path
     end
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
 

@@ -21,66 +21,27 @@
               %span 出品
               %i.fas.fa-camera
               
-
       .items-images
         .women
           .women-new
             .women-new-item
               レディース新着アイテム
             = link_to root_path, class: "women-new-more" do
-              もっと見る 
+              もっと見る
               = icon "fas fa-chevron-right", class: "fas fa-chevron-right"
-            
-
 
           %ul.women-item
+            - @items.each do |item|
             -# ここは実際の商品情報が入る
             %li.women-item-image
               = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-text
-                .item-price
-                  ¥2,000
-                .item-name
-                  %p
-                  【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-            %li.women-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-text
-                .item-price
-                  ¥2,000
-                .item-name
-                  %p
-                  【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-            %li.women-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-text
-                .item-price
-                  ¥2,000
-                .item-name
-                  %p
-                  【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-            %li.women-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-text
-                .item-price
-                  ¥2,000
-                .item-name
-                  %p
-                  【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-            %li.women-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-text
-                .item-price
-                  ¥2,000
-                .item-name
-                  %p
-                  【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-
+                .item-text
+                = link_to item_path(item.id), method: :get do
+                  .item-price  
+                    = item.price
+                  .item-name
+                    %p
+                    = item.name
 
               
         .mens-items
@@ -97,13 +58,14 @@
                 %p
                 【値下げ】【即購入歓迎】ギンガムチェックワンピース
           
-            %li.men-item-image
+            %li.women-item-image
               = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-price
-                ¥2,000
-              .item-name
-                %p
-                【値下げ】【即購入歓迎】ギンガムチェックワンピース
+              .item-text
+                .item-price
+                  ¥2,000
+                .item-name
+                  %p
+                  【値下げ】【即購入歓迎】ギンガムチェックワンピース
 
             %li.men-item-image
               = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
@@ -128,6 +90,4 @@
               .item-name
                 %p
                 【値下げ】【即購入歓迎】ギンガムチェックワンピース
-            
-
 
