@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   resources :card, only: [:new, :show] 
   resources :profiles, only: [:new, :create]
   resources :categories, only: [:index] 
-  resources :purchase, only: [:index, :done, :pay]
-  resources :personals, only: [:index, :edit] 
+  resources :personals, only: [:index, :edit]
+  
+  resources :purchase do
+    member do
+      patch 'pay'
+      get 'done'
+    end
+  end
  
   resources :signup do
     collection do
