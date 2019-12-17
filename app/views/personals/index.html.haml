@@ -1,0 +1,116 @@
+.wrapper
+  = render "items/top-head"
+  = render "users/pan"
+  .mypage_main
+    = render "users/sidehead"
+    .mypage_top
+      .mypage_top_user
+        = link_to root_path do
+          .mypage_top_user_name
+            = image_tag "user_image.png", class: "mypage_top_user_name_icon"
+            .mypage_top_user_name_name
+              = current_user.nickname
+            .mypage_number
+              .evaluation
+                評価
+                %span
+                  99
+              .exhibit
+                出品数
+                %span
+                  99
+      .mypage_top_notice_things
+        .tabs
+          %input#notice{checked: "checked", name: "tab_item", type: "radio"}/
+          %label.tab_item{for: "notice"} お知らせ
+          %input#things{name: "tab_item", type: "radio"}/
+          %label.tab_item{for: "things"} やることリスト
+          #notice_content.tab_content
+            .tab_content_description
+              %ul.notice
+                = link_to root_path do
+                  %li.notice_content
+                    = image_tag "red_icon", size: "48x48", class: "red_icon"
+                    .notice_content_list
+                      .notice_content_list_text
+                        《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
+                      %time
+                        %i.far.fa-clock
+                          %span
+                            １日前
+                    %i.fas.fa-chevron-right
+                = link_to root_path do
+                  %li.notice_content
+                    = image_tag "red_icon", size: "48x48"
+                    .notice_content_list
+                      .notice_content_list_text
+                        《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
+                      %time
+                        %i.far.fa-clock
+                          %span
+                            １日前
+                    %i.fas.fa-chevron-right
+                = link_to root_path do
+                  %li.notice_content
+                    = image_tag "red_icon", size: "48x48"
+                    .notice_content_list
+                      .notice_content_list_text
+                        《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
+                      %time
+                        %i.far.fa-clock
+                          %span
+                            １日前
+                    %i.fas.fa-chevron-right
+                = link_to root_path do
+                  %li.notice_content
+                    = image_tag "red_icon", size: "48x48"
+                    .notice_content_list
+                      .notice_content_list_text
+                        《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
+                      %time
+                        %i.far.fa-clock
+                          %span
+                            １日前
+                    %i.fas.fa-chevron-right
+                = link_to root_path do
+                  %li.notice_content
+                    = image_tag "red_icon", size: "48x48"
+                    .notice_content_list
+                      .notice_content_list_text
+                        《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
+                      %time
+                        %i.far.fa-clock
+                          %span
+                            １日前
+                    %i.fas.fa-chevron-right
+                %li.notice_btn
+                  = link_to root_path do
+                    .notice_btn_content
+                      一覧を見る
+
+          #things_content.tab_content
+            .tab_content_description
+              %ul.things
+                %li.things_content
+                  現在、やることリストはありません
+      .purchase
+        .purchase_header
+          購入した商品
+        .mypage_top_current_past
+          .switchings
+            %input#current{checked: "checked", name: "switching_item", type: "radio"}/
+            %label.switching_item{for: "current"} 取引中
+            %input#past{name: "switching_item", type: "radio"}/
+            %label.switching_item{for: "past"} 過去の取引
+            #current_content.switching_content
+              .switching_content_description
+                %ul.current
+                  %li.current_content
+                    取引中の商品がありません
+            #past_content.switching_content
+              .switching_content_description
+                %ul.past
+                  %li.past_content
+                    過去の取引がありません
+                    
+  = render "items/top-foot"
