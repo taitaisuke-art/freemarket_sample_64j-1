@@ -91,3 +91,28 @@
                 %p
                 【値下げ】【即購入歓迎】ギンガムチェックワンピース
 
+.item-select
+  .item-select-title
+    レディース新着アイテム
+    .item-select-content
+      - @items.each do |item|
+        = link_to item_path(item.id), method: :get do
+          .item-select-image
+            //= item.item_images[0].image
+            = image_tag item.item_images[0].image
+            .item-select-text
+              .item-select-price  
+                = item.price
+              .item-select-name
+                = item.name
+                = item.seller_id
+                = item.seller.nickname
+                = item.category.name
+                = item.seller.address.city
+
+
+
+
+
+
+ 
