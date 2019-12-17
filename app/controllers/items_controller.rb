@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.limit(5)
-    # all.order("id DESC").page(params[:page]).per(25)
     @ladies = Item.where(category_id: "2")
     @mens = Item.where(category_id: "139")
     @appliance = Item.where(category_id: "783")
