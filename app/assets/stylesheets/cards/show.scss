@@ -1,6 +1,5 @@
 $red: #ea352d;
 $blue: #86D6FC;
-
 @mixin input {
   width: 100%;
   margin: 8px 0 0;
@@ -91,17 +90,29 @@ $blue: #86D6FC;
       }
     }
   }
+}
 
-  .form-1{
-    width: 700px;
-    background-color: white;
-    margin: 0 auto;
-    font-size: 14px;
+.mypage-side{
+  margin: 24px auto 0;
+}
+.form-1{
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+  font-size: 14px;
+  position: relative;
+  .card-aaa{
+    height: 360px;
+    position: absolute;
+    background-color: pink;
+    right: -20%;
+    margin: 24px auto 0;
     h1{
       font-size: 22px;
       font-weight: bold;
       padding: 32px;
       border-bottom: solid 1px #c1c1c14f;
+      text-align: center;
     }
     .form-user{
       padding: 40px 180px;
@@ -121,6 +132,7 @@ $blue: #86D6FC;
           @include ul;
         }
       }
+    }
 
       &__email{
         margin-top: 32px;
@@ -339,7 +351,6 @@ $blue: #86D6FC;
       font-size: 13px;
     }
   }
-}
 
 #card_number{
   width: 95%;
@@ -413,5 +424,89 @@ $blue: #86D6FC;
   position: relative;
   .fas{
     font-size: 20px;
+  }
+}
+
+.card{
+  .card-date{
+    #label{
+      font-weight: bold;
+      font-size: 14px;
+    }
+    li{
+      list-style: none;
+      padding: 24px 0;
+      border-bottom: 1px solid #eee;
+      width: 300px;
+    .from{
+      position: relative;
+      .form_logo{
+        width: 45px;
+      }
+      #charge-form{
+        position: relative;
+        button{
+          position: absolute;
+          top: -44px;
+          left: 60%;
+          padding: 4px 6px;
+          background: #fff;
+          border-radius: 3px;
+          border: 1px solid #ea352d;
+          color: #ea352d;
+        }
+      }
+      .user-text{
+        top: 68px;
+        left: 130px;
+        #card{
+
+        }
+        #text{
+          
+        }
+      }
+      }
+    }
+  }
+}
+
+.mypage-side {
+  width: 280px;
+  margin: 0 40px 30px 200px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  .side-head1 li {
+    margin: 24px auto 0;
+    border: 1px solid #F5F5F5;
+    line-height: 50px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .side-head1 li:hover {
+    background: #F5F5F5;
+  }
+  .side-head1 li ::after{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    content: "\f054";
+    font-size: 15px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: silver;
+  }
+  .merpay {
+    font-size: 16px;
+    padding-top: 40px;
+    font-weight: bold;
+  }
+  .setting {
+    font-size: 16px;
+    padding-top: 40px;
+    font-weight: bold;
+  }
+  .mymenu {
+    text-decoration: none;
+    color: black;
   }
 }
