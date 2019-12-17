@@ -47,6 +47,11 @@
             = icon 'fas', 'chevron-right'
           %li
             %p.last #{@category.name}
+        - if @path.is('items#show')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last= @item.name
         - if @path.is('users#index')
           %li
             = icon 'fas', 'chevron-right'

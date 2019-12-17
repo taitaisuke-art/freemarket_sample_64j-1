@@ -22,7 +22,7 @@
                   ドラック&ドロップ 
                   またはクリックしてファイルをアップロード
               = f.fields_for :item_images do |image|
-                = image.file_field :image, multiple: true, id: "upload-image", class: "upload-image"
+                = image.file_field :image, multiple: true, name: "item_images[image][]", id: "upload-image", class: "upload-image"
 
 
       .item-form-1

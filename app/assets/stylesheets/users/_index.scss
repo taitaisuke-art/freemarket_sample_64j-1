@@ -1,0 +1,59 @@
+.mypage{
+  background: rgb(245,245,245);
+  margin-top: -37px;
+  .mypage_main{
+    padding-top: 40px;
+    
+    .logout-box{
+      background: white;
+      width: 700px;
+      height: 180px;
+      display: flex;
+    }
+      .logout-btn{
+        height: 50px;
+        width: 320px;
+        background: red;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        a{
+          text-decoration: none;
+          color: white;
+          position: absolute;
+          margin-top: 15px;
+          margin-left: -40px;
+          }
+      }
+      .circle{
+        height: 155px;
+        width: 155px;
+        background-color: rgb(234,53,45,);
+        border-radius: 50%;
+        position: relative;
+        left: 1250px;
+        display: inline-block;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        display: inline-block;
+        z-index: 100;
+      }
+      
+      .circle span{
+        color: white;
+        position: absolute;
+        margin-top: 25px;
+        margin-left: 55px;
+        font-size: 20px;
+      }
+      
+      .circle i{
+        color:white;
+        position: absolute;
+        margin-top: 55px;
+        margin-left: 48px;
+        font-size: 55px;
+      }
+    }
+  }
