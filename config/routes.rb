@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :create, :destroy, :edit, :update, :show]
   
   resources :card, only: [:new, :show] 
-  resources :categories, only: [:index] 
+  resources :categories, only: [:index, :show] 
   resources :personals, only: [:index, :edit] 
   
   resources :signup do
