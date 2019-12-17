@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:new, :create]
   resources :categories, only: [:index] 
   resources :personals, only: [:index, :edit]
-  
+  resources :purchass, only: [:index]
   resources :purchase do
     member do
       patch 'pay'
