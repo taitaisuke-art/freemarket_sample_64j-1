@@ -11,6 +11,8 @@
 | last_name       | string | null:false              |
 | first_name_kana | string | null:false              |
 | last_name_kana  | string | null:false              |
+| birthyear       | string | null:false              |
+| birthmonth      | string | null:false              |
 | birthday        | string | null:false              |
 | telephone       | string | null:false              |
 | icon            | text   |                         |
@@ -33,7 +35,7 @@ has_many:likes, dependent: :destroy
 | first_name_kana | string  | null:false                  |
 | last_name_kana  | string  | null:false                  |
 | post_cord       | integer | null:false                  |
-| prefectures     | string  | null:false                  |
+| prefecture_id   | string  | null:false                  |
 | city            | string  | null:false                  |
 | address         | string  | null:false                  |
 | building        | text    |                             |
@@ -73,6 +75,8 @@ belongs_to:user
 | buyer_id | integer | |
 | brand_id | integer | |
 | category_id | references | null:false,foreign_key:true|
+| prefecture_id | integer | null:false |
+| sale_status | string | null:false |
 
 ### Association
 
@@ -86,9 +90,10 @@ has_many:comments, dependent: :destroy
 
 ## categories テーブル
 
-| Column | Type   | Options    |
-| ------ | ------ | ---------- |
-| name   | string | null:false |
+| Column     | Type   | Options    |
+| ------     | ------ | ---------- |
+| name       | string | null:false |
+| ancestry   | string | null:false |
 
 ### Association
 
@@ -166,3 +171,31 @@ belongs_to:genre
 
 has_many:brands,through: :brands_genres
 has_many:brands_genres
+
+
+
+## cards テーブル
+
+| Column        | Type   | Options    |
+| ------        | ------ | ---------- |
+| user_id       | integer | null:false |
+| customer_id   | integer | null:false |
+| card_id       | integer | null:false |
+
+### Association
+#後ほど記入
+#belongs_to :user 
+
+
+
+##  residencesテーブル
+
+| Column          | Type   | Options    |
+| ------          | ------ | ---------- |
+| prefecture_id   | integer | null:false |
+| city            | text | null:false |
+
+### Association
+#後ほど記入
+#belongs_to_active_hash :prefecture
+

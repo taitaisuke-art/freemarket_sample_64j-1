@@ -4,15 +4,18 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'items#index'
-  resources :users, only: [:index, :edit, :update] do
+  resources :users, only: [:index, :edit, :update, :show] do
     resources :address, only: [:index,:new, :create]
   end
-  resources :items, only: [:index,:new, :create] 
+
+
+  resources :items, only: [:index, :new, :create, :destroy, :edit, :update, :show]
   resources :card, only: [:new, :show] 
   resources :profiles, only: [:new, :create]
   resources :categories, only: [:index] 
   resources :purchase, only: [:index]
-
+  resources :personals, only: [:index, :edit] 
+ 
   resources :signup do
     collection do
       get 'step0'
