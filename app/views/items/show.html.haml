@@ -9,23 +9,31 @@
     .mainbody__item__content
       .mainbody__item__content__image
         .thumbnail
-          %div
-            = image_tag 'show_page/m1.jpg', alt: "", class: "showimage"
-          %div
-            = image_tag 'show_page/m2.jpg', alt: "", class: "showimage"
-          %div
-            = image_tag 'show_page/m3.jpg', alt: "", class: "showimage"
-          %div
-            = image_tag 'show_page/m4.jpg', alt: "", class: "showimage"
+          - @item.item_images.each.with_index do |item_image, index|
+            - if index == 0
+              .thumbnail__item.current{"data-index": index}
+                .thumbnail__item__box
+                  = image_tag item_image.image, class: "showimage"
+            - else
+              .thumbnail__item{"data-index": index}
+                .thumbnail__item__box
+                  = image_tag item_image.image, class: "showimage"
+          - if @item.item_images.length > 5
+            - for i in 1..(10 - @item.item_images.length)
+              .thumbnail__dummy
         .thumbnail-thumb
-          %div
-            = image_tag 'show_page/m1.jpg', alt: "", class: "showimage1"
-          %div
-            = image_tag 'show_page/m2.jpg', alt: "", class: "showimage1"
-          %div
-            = image_tag 'show_page/m3.jpg', alt: "", class: "showimage1"
-          %div
-            = image_tag 'show_page/m4.jpg', alt: "", class: "showimage1"
+          - @item.item_images.each.with_index do |item_image, index|
+            - if index == 0
+              .thumbnail__item.current{"data-index": index}
+                .thumbnail__item__box
+                  = image_tag item_image.image, class: "showimage1"
+            - else
+              .thumbnail__item{"data-index": index}
+                .thumbnail__item__box
+                  = image_tag item_image.image, class: "showimage1"
+          - if @item.item_images.length > 5
+            - for i in 1..(10 - @item.item_images.length)
+              .thumbnail__dummy
 
       .mainbody__item__content__post
         %table
@@ -49,7 +57,7 @@
             %td= @item.shipping_method
           %tr
             %td.td1 発送元地域
-            %td.td2= @item.prefecture_id
+            %td.td2= @item.prefecture.name
           %tr
             %td.td1 発送日の目安
             %td= @item.shipping_days
@@ -62,49 +70,65 @@
         (税込)
       .mainbody__item__pricebox__soryo
         = @item.shipping_price
-    .mainbody__item__buybox
-      購入画面に進む
-    .mainbody__item__textbox
-      = @item.text
-    .mainbody__item__btnbox
-      .mainbody__item__btnbox__iine
-        %i.far.fa-heart
-        いいね！
-      .mainbody__item__btnbox__report
-        %i.far.fa-flag
-        不適切な商品の報告
-      .mainbody__item__btnbox__anzen
-        %i.fas.fa-lock
-        あんしん・あんぜんへの取り組み
+
+
+    -if user_signed_in?
+      -if @item.seller_id == current_user.id
+        = link_to edit_item_path(@item), data: {turbolinks: false} do
+          .signin-edit 商品の編集
+        .signin-or or
+        = link_to edit_item_path(@item), data: {turbolinks: false} do
+          .signin-stop 出品を一旦停止する
+        = link_to item_path(@item), method: :delete, data: { turbolinks: false} do
+          .item-stop-btn この商品を削除する
+      -else
+        = link_to "購入画面に進む", root_path, data: {turbolinks: false}, class: "mainbody__item__buybox" 
+    -else
+      = link_to "購入画面に進む", new_user_session_path, class: "mainbody__item__buybox" 
+    -unless user_signed_in? && @item.seller_id == current_user.id
+      .mainbody__item__textbox
+        = @item.text
+      .mainbody__item__btnbox
+        .mainbody__item__btnbox__iine
+          %i.far.fa-heart
+          いいね！
+        .mainbody__item__btnbox__report
+          %i.far.fa-flag
+          不適切な商品の報告
+        .mainbody__item__btnbox__anzen
+          %i.fas.fa-lock
+          あんしん・あんぜんへの取り組み
 
   .item-select
     .item-select__left
-      ＜商品1
+      = link_to "＜前の商品", root_path, class: "select1"
+        
     .item-select__right
-      商品2＞
+      = link_to "次の商品＞", root_path, class: "select1"
 
   .iconbox
     .iconbox2
       .iconbox2__face
-        = link_to "https://www.facebook.com/", class: "women-new-more" do
-          %i.fab.fa-facebook-square
+        = link_to "https://www.facebook.com/" do
+          = image_tag "https://www.facebook.com/images/fb_icon_325x325.png", size: '48x48' 
+          //%i.fab.fa-facebook-square
       .iconbox2__twitter
-        = link_to "https://twitter.com/", class: "women-new-more" do
-          %i.fab.fa-twitter-square
+        = link_to "https://twitter.com/" do
+          = image_tag "https://greencard.isb.az/App_Themes/Images/twiticon.png", size: '50x50' 
       .iconbox2__pinte
-        = link_to "https://www.instagram.com/", class: "women-new-more" do
-          %i.fab.fa-pinterest-square
-      
+        = link_to "http://pinterest.com/" do
+          = image_tag "https://pngimage.net/wp-content/uploads/2018/06/icono-pinterest-png-4.png", size: '50x50' 
+
   .usersitem
     .usersitem__title
       = @item.seller.nickname
       さんのその他の出品
-        
-        
+
   .categoryitem
     .categoryitem__select
       = @item.category.name
       その他の出品  
+
 
 .wrapper
   = render "pans/pan"
