@@ -7,14 +7,14 @@
 
     %nav.forward
       %ul.forward-bar
-        %li.through
+        %li.begin
           会員情報
-          .forward-dot#through_forward-dot
-          .forward-dot_bar#through_forward-dot_bar
-        %li.active
+          .forward-dot#begin_forward-dot
+          .forward-dot_bar#begin_forward-dot_bar
+        %li.phone
           電話番号認証
-          .forward-dot#active_forward-dot
-          .forward-dot_bar#active_forward-dot_bar
+          .forward-dot#phone_forward-dot
+          .forward-dot_bar#phone_forward-dot_bar
         %li.address
           お届け先住所入力
           .forward-dot#address_forward-dot
@@ -32,7 +32,7 @@
     %h1
       支払い方法
     .form-user
-      = form_tag(@pay_path,method: :post, id: 'charge-form',  name: "inputForm") do
+      = form_tag(pay_path,method: :post, id: 'charge-form',  name: "inputForm") do
         .form-user__nickname
           %label
             カード番号

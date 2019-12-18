@@ -5,28 +5,28 @@
       = link_to root_path do
         = image_tag "fmarket_logo_red.svg", class: "header_logo"
 
-    %nav.progress
-      %ul.progress-bar
-        %li.through
+    %nav.forward
+      %ul.forward-bar
+        %li.begin
           会員情報
-          .progress-dot#through_progress-dot
-          .progress-dot_bar#through_progress-dot_bar
-        %li.active
+          .forward-dot#begin_forward-dot
+          .forward-dot_bar#begin_forward-dot_bar
+        %li.phone
           電話番号認証
-          .progress-dot#active_progress-dot
-          .progress-dot_bar#active_progress-dot_bar
+          .forward-dot#phone_forward-dot
+          .forward-dot_bar#phone_forward-dot_bar
         %li.address
           お届け先住所入力
-          .progress-dot#address_progress-dot
-          .progress-dot_bar
+          .forward-dot#address_forward-dot
+          .forward-dot_bar#address_forward-dot_bar
         %li.payment
           支払い方法
-          .progress-dot#payment_progress-dot
-          .progress-dot_bar
+          .forward-dot#payment_forward-dot
+          .forward-dot_bar#payment_forward-dot_bar
         %li.end#end
           完了
-          .progress-dot#end_progress-dot
-          .progress-dot_bar
+          .forward-dot#end_forward-dot
+          .forward-dot_bar
 
   .form-2
     %h1
