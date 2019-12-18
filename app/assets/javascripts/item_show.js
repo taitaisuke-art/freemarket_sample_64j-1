@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function(){
   $('.thumbnail').slick({
     infinite: true, //スライドのループ有効化
     arrows: false, //矢印非表示
