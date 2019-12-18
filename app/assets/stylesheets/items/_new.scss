@@ -69,14 +69,24 @@ $blue: #86d6fc;
     margin: 0 auto;
     background: #fff;
 
+    .title{
+      padding: 32px 16px;
+      h1{
+        font-size: 22px;
+        text-align: center;
+        font-weight: 600;
+      }
+    }
+
     .item-form-image{
       padding: 40px;
+      border-top: 1px solid #eee;
       .item-image{
         height: 200px;
         #preview{
           margin-bottom: 16px;
           display: flex;
-          h1{
+          h2{
             font-weight: 600;
           }
           .form-require {
@@ -84,24 +94,25 @@ $blue: #86d6fc;
             height: 20px;
           }
         }
-        .dropzone{
-          display: flex;
-          align-items: center;
-          background-color: rgb(245, 245, 245);
-          border-width: 1px;
-          border-style: dashed;
-          border-color: rgb(204, 204, 204);
-          .item-label {
-            margin: 0 auto;
-            height: 150px;
-            width: 100%;
+        .item-label {
+          .dropzone{
+            display: flex;
+            // flex-wrap: wrap;
             .dropzone-text{
+              height: auto;
+              width: 100%;
+              align-items: center;
+              background-color: rgb(245, 245, 245);
+              border-color: rgb(204, 204, 204);
+              border-width: 1px;
+              border-style: dashed;
+              padding: 50px;
               pre{
                 font-size: 16px;
                 text-align: center;
-                height: 100%;
-                padding: 50px;
                 line-height: 1.5;
+                margin: 0 auto;
+                flex-wrap: wrap;
               }
             }
             #upload-image{
@@ -152,7 +163,7 @@ $blue: #86d6fc;
       padding: 40px;
       display: inline-flex;
       width: 720px;
-      h2{
+      h3{
         color: #888;
         font-weight: 600;
         width: 35%;
@@ -225,7 +236,7 @@ $blue: #86d6fc;
       border-top: 1px solid #eee;
       display: inline-flex;
       width: 720px;
-      h3{
+      h4{
         color: #888;
         font-weight: 600;
       }
@@ -309,7 +320,7 @@ $blue: #86d6fc;
       border-bottom: 1px solid #eee;
       display: inline-flex;
       width: 720px;
-      h4{
+      h5{
         color: #888;
         font-weight: 600;
       }
@@ -449,3 +460,29 @@ $blue: #86d6fc;
   }
 }
 
+.preview-box{
+  width: 116px;
+  margin: 0 10px 10px 0;
+  border: 1px solid #eee;
+  .preview-box__img-box{
+    .image{
+      height: 114px;
+    }
+  }
+  .preview-box__select{
+    display: flex;
+    font-size: 14px;
+    background: #f5f5f5;
+    line-height: 44px;
+    text-align: center;
+    color: #0099e8;
+    text-decoration: none;
+    .preview-box__select--edit{
+      width: 50%;
+    }
+    .preview-box__select--delete{
+      width: 50%;
+      border-left: 1px solid #eee;
+    }
+  }
+}

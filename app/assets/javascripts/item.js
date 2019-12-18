@@ -1,0 +1,86 @@
+$(function() {
+  // 画像を管理するための配列を定義する。
+  var images = [];
+
+  // htmlを定義
+  function buildHTML(imgSrc){
+    var html =  `<div class="preview-box">
+                  <div class="preview-box__img-box">
+                    <img src="${imgSrc}", class="image">
+                  </div>
+                  <div class="preview-box__select">
+                    <div class="preview-box__select--edit">
+                    <p>編集</p>
+                  </div>
+                  <div class="preview-box__select--delete">
+                    <p>削除</p>
+                  </div>
+                </div>
+              </div>`
+    // .dropzoneの配列の最初に追加
+    $('.dropzone').prepend(html);
+  };
+
+  // 画像を入れた時にイベント発火
+  $('#upload-image').on("change", function(e){
+    // イベント発火したファイルを定義
+    var files = e.target.files;
+    // 画像のファイルを一つづつ、先ほどの画像管理用の配列に追加する。
+    for (var i = 0, f; f = files[i]; i++){
+      // 新しく作成された FileReader を定義したreaderに返す
+      let reader = new FileReader();
+
+      reader.readAsDataURL(f);
+      
+      reader.onload = function(){
+
+        let imgSrc = reader.result;
+        // htmlの呼び出し
+        buildHTML(imgSrc);
+
+        images.push(imgSrc);
+      }
+    }
+  });
+
+  // ドロップしたらイベント発火
+  $('.dropzone').on('drop', function(e) {
+    // 画面の遷移を行わないように制御する
+    e.preventDefault();
+    // イベント伝播を行わないようにする
+    e.stopPropagation();
+    // dropイベントは、e.originalEvent を使う必要がある
+    let dropImages = e.originalEvent.dataTransfer.files;
+      // 画像のファイルを一つづつ、先ほどの画像管理用の配列に追加する。
+      for(let i = 0; i < dropImages.length; i++ ) {
+
+        let imgSrc = URL.createObjectURL(dropImages[i]);
+        // htmlの呼び出し
+        buildHTML(imgSrc);
+        // (pushメソッドで)配列の最後に追加
+        images.push(dropImages[i].name);
+      }
+  });
+  // 削除ボタンを押すとイベント発火
+  $(document).on('click', '.preview-box__select--delete p', function(){
+    $(this).closest('.preview-box').remove();
+  });
+
+
+// 手数料計算
+// 販売金額を入れたらイベント発火
+$('#item_price').on('input',function() {
+  // 販売金額を定義
+  var data = $('#item_price').val();
+  // 販売利益を定義(販売金額の１割引)
+  var profit = Math.round(data * 0.9)
+  // 手数料の定義
+  var fee = (data - profit)
+  $('.sales-fee-price').html(fee)
+  // 手数料に￥をつける
+  $('.sales-fee-price').prepend('¥')
+  $('.sales-profit-price').html(profit)
+  // 販売利益に￥をつける
+  $('.sales-profit-price').prepend('¥')
+  })
+});
