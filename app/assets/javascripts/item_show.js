@@ -10,5 +10,6 @@ $(document).on('turbolinks:load', function(){
     slidesToShow: 5, //表示するスライドの数
     focusOnSelect: true, //フォーカスの有効化
     asNavFor: '.thumbnail', //thumbnailクラスのナビゲーション
+    arrows: false, //矢印非表示
   });
 });
