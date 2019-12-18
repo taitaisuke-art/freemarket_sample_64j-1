@@ -56,7 +56,6 @@
           margin-left: 55px;
           font-size: 20px;
         }
-        
         .circle i{
           color:white;
           position: absolute;
@@ -66,20 +65,21 @@
         }
         
       }
+
       .items-images {
         width: 1020px;
         margin: 0 auto;
         padding: 42px 0px 100px;
-        .women {
-          .women-new {
+        .ladies {
+          .ladies-new {
             display: flex;
             justify-content: space-between;
-            .women-new-item{
+            .ladies-new-item{
             font-size: 24px;
             font-weight: 600;
             margin-bottom: 16px;
             }
-            .women-new-more{
+            .ladies-new-more{
               color: rgb(0, 149, 238);
               text-align: right;
               font-weight: 600;
@@ -92,113 +92,141 @@
               margin: 3px;
             }
           }
-          ul {
+          ul.ladies-item {
             display: flex;
-            li {
-              background-color: white;
-              width: 188px;
-              box-shadow: 2px 2px 4px lightgrey;
-              padding-bottom: 10px;
-              margin: 10px;
-              cursor: pointer;
-              .woman-1 {
+            .item-link{
+              text-decoration: none;
+              color: rgb(51, 51, 51);
+              li.ladies-item-image {
+                background-color: white;
                 width: 188px;
-                height: 188px;
-                object-fit: cover;
-              }
-              .item-price {
-                height: 25px;
-                background-color: rgba(0,0,0,.4);
-                border-radius: 0 14px 14px 0;
-                padding:0 12px;
-                width: fit-content;
-                position: relative;
-                bottom: 40px;
-                margin-bottom: -31px;
-                color: white;
-                font-size: 16px;
-                text-align: center;
-                z-index: 2;
-              }
-              .item-name {
-                overflow: hidden;
-                position: relative;
-                padding: 0 12px;
-                margin-top: 9px;
-                height: 3.6em;
-                line-height: 1.8;
-                p {
-                  font-size: 14px;
+                box-shadow: 2px 2px 4px lightgrey;
+                padding-bottom: 10px;
+                margin: 10px;
+                cursor: pointer;
+                .item_image {
+                  width: 188px;
+                  height: 188px;
+                  object-fit: cover;
                 }
-                p::after {
-                  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
-                  bottom: 0;
-                  content: "";
-                  height: 50%;
-                  position: absolute;
-                  right: 0;
-                  width: 50%;
+                .item-price {
+                  line-height: 25px;
+                  background-color: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  padding:0 12px;
+                  width: fit-content;
+                  position: relative;
+                  bottom: 40px;
+                  margin-bottom: -31px;
+                  color: white;
+                  font-size: 16px;
+                  text-align: center;
+                  z-index: 2;
                 }
+                .item-name {
+                  overflow: hidden;
+                  position: relative;
+                  padding: 0 12px;
+                  margin-top: 9px;
+                  height: 3.6em;
+                  line-height: 1.8;
+                  p {
+                    font-size: 14px;
+                  }
+                  p::after {
+                    background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+                    bottom: 0;
+                    content: "";
+                    height: 50%;
+                    position: absolute;
+                    right: 0;
+                    width: 50%;
+                  }
+                }
+              }
+              li:hover {
+                outline: 1px solid cornflowerblue;
               }
             }
-            li:hover {
-              outline: 1px solid cornflowerblue;
-              }
+            .item-link:visited {
+              color: rgb(51, 51, 51);
+            }
           }
         }
-        .mens-items{
+
+        .mens{
           .mens-new{
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            margin-top: 60px;
-          }
-          ul {
             display: flex;
-            li {
-              background-color: white;
-              width: 188px;
-              box-shadow: 2px 2px 4px lightgrey;
-              padding-bottom: 10px;
-              margin: 10px;
-              cursor: pointer;
-              .woman-1 {
+            justify-content: space-between;
+            margin-top: 60px;
+            .mens-new-item{
+              font-size: 24px;
+              font-weight: 600;
+              margin-bottom: 16px;
+            }
+            .mens-new-more{
+              color: rgb(0, 149, 238);
+              text-align: right;
+              font-weight: 600;
+              text-decoration: none;
+              height: 25px;
+              font-size: 14px;
+              padding-top: 25px;
+            }
+            .fas{
+              margin: 3px;
+            }
+          }
+          ul.mens-item {
+            display: flex;
+            .item-link{
+              text-decoration: none;
+              color: rgb(51, 51, 51);
+              li.men-item-image {
+                background-color: white;
                 width: 188px;
-                height: 188px;
-                object-fit: cover;
-              }
-              .item-price {
-                height: 25px;
-                background-color: rgba(0,0,0,.4);
-                border-radius: 0 14px 14px 0;
-                padding:0 12px;
-                width: fit-content;
-                position: relative;
-                bottom: 40px;
-                margin-bottom: -31px;
-                color: white;
-                font-size: 16px;
-                text-align: center;
-                z-index: 2;
-              }
-              .item-name {
-                overflow: hidden;
-                position: relative;
-                padding: 0 12px;
-                margin-top: 9px;
-                height: 3.6em;
-                line-height: 1.8;
-                p {
-                  font-size: 14px;
+                box-shadow: 2px 2px 4px lightgrey;
+                padding-bottom: 10px;
+                margin: 10px;
+                cursor: pointer;
+                .item_image {
+                  width: 188px;
+                  height: 188px;
+                  object-fit: cover;
                 }
-                p::after {
-                  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
-                  bottom: 0;
-                  content: "";
-                  height: 50%;
-                  position: absolute;
-                  right: 0;
-                  width: 50%;
+                .item-price {
+                  line-height: 25px;
+                  background-color: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  padding:0 12px;
+                  width: fit-content;
+                  position: relative;
+                  bottom: 40px;
+                  margin-bottom: -31px;
+                  color: white;
+                  font-size: 16px;
+                  text-align: center;
+                  z-index: 2;
+                }
+                .item-name {
+                  overflow: hidden;
+                  position: relative;
+                  padding: 0 12px;
+                  margin-top: 9px;
+                  height: 3.6em;
+                  line-height: 1.8;
+                  p {
+                    font-size: 14px;
+                  }
+                  p::after {
+                    background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+                    bottom: 0;
+                    content: "";
+                    height: 50%;
+                    position: absolute;
+                    right: 0;
+                    width: 50%;
+                  }
                 }
               }
             }
