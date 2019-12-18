@@ -67,7 +67,7 @@
         
       }
       .items-images {
-        width: 1020px;
+        width: 1040px;
         margin: 0 auto;
         padding: 42px 0px 100px;
         .women {
@@ -94,6 +94,7 @@
           }
           ul {
             display: flex;
+<<<<<<< Updated upstream
             li {
               background-color: white;
               width: 188px;
@@ -102,6 +103,14 @@
               margin: 10px;
               cursor: pointer;
               .woman-1 {
+=======
+            flex-wrap: wrap;
+            .item-link{
+              text-decoration: none;
+              color: rgb(51, 51, 51);
+              li.ladies-item-image {
+                background-color: white;
+>>>>>>> Stashed changes
                 width: 188px;
                 height: 188px;
                 object-fit: cover;
