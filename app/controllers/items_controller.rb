@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.limit(5)
     @ladies = Item.where(category_id: "2")
     @mens = Item.where(category_id: "139")
     @appliance = Item.where(category_id: "783")
