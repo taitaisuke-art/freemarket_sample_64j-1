@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
     @ladies = Item.where(category_id: "2")
@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path if @item.seller_id == current_user.id && @item.destroy
   end
 
 
