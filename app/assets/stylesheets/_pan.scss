@@ -1,8 +1,9 @@
 .breadcrumbs {
   padding: 10px 200px;
-  border-top: 2px solid #F5F5F5;
-  border-bottom: 2px solid #F5F5F5;
+  border-top: 1px solid #F5F5F5;
+  border-bottom: 1px solid #F5F5F5;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  line-height: 25px;
 }
 .breadcrumbs ul {
   display: flex;
@@ -15,3 +16,15 @@
   text-decoration: none;
   color: black;
 }
+
+.breadcrumbs a{
+  color:#333333;
+  text-decoration: none;
+  margin:0 5px 0;
+}
+
+.current{
+  font-weight: bold;
+  margin: 0 5px 0;
+}
+

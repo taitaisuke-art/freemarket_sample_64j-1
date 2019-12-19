@@ -1,6 +1,7 @@
 .wrapper
   = render "items/top-head"
-  = render "pans/pan"
+  - breadcrumb :mypage, @mypage
+  = render "layouts/breadcrumbs"
   .mypage_main
     = render "users/sidehead"
     .mypage_top
