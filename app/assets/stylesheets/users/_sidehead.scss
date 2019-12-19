@@ -1,13 +1,16 @@
 .mypage-side {
+  margin-left: -10px;
   background: white;
   width: 280px;
   margin-right:40px;
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+
   .side-head1 li {
     border: 1px solid #F5F5F5;
     line-height: 50px;
     padding-left: 10px;
     position: relative;
+    margin-top: 0;
   }
   .side-head1 li:hover {
     background: #F5F5F5;
