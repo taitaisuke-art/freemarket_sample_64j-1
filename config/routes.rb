@@ -10,18 +10,17 @@ Rails.application.routes.draw do
 
 
   resources :items, only: [:index, :new, :create, :destroy, :edit, :update, :show]
-  resources :profiles, only: [:new, :create]
-  resources :categories, only: [:index] 
-  resources :personals, only: [:index, :edit]
   resources :card, only: [:new, :show] 
-    resources :purchase, only: [:index] do
-      member do
-        patch 'pay'
-        get 'done'
+  resources :profiles, only: [:new, :create]
+  resources :categories, only: [:index, :show] 
+  resources :personals, only: [:index, :edit]
+  resources :purchase, only: [:index] do
+    member do
+      patch 'pay'
+      get 'done'
     end
   end
-
- 
+  
   resources :signup do
     collection do
       get 'step0'
@@ -43,5 +42,4 @@ Rails.application.routes.draw do
   post 'show', to: 'card#show'
   post 'pay', to: 'card#pay'
   post 'delete', to: 'card#delete'
-  post 'card/new', to: 'card#new' 
-  end
+end
