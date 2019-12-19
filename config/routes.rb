@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-    
+  
   resources :signup do
     collection do
       get 'step0'
