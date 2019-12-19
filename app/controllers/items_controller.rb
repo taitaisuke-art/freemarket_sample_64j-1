@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
-    @ladies = Item.where(category_id: "2")
-    @mens = Item.where(category_id: "139")
-    @appliance = Item.where(category_id: "783")
-    @hobby = Item.where(category_id: "576")
+    @ladies = Item.where(category_id: "1").order(created_at: "DESC").limit(10)
+    @mens = Item.where(category_id: "139").order(created_at: "DESC").limit(10)
+    @appliance = Item.where(category_id: "783").order(created_at: "DESC").limit(10)
+    @hobby = Item.where(category_id: "576").order(created_at: "DESC").limit(10)
   end
 
   def new
@@ -16,6 +16,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    respond_to do |format|
+      format.html
+      format.json {render json: @item}
+    end
     if @item.save
       params[:item_images][:image].each do |image|
         @item.item_images.create(image: image)
@@ -33,6 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path if @item.seller_id == current_user.id && @item.destroy
   end
 
 
