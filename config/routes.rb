@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
   resources :items, only: [:index, :new, :create, :destroy, :edit, :update, :show]
-  resources :card, only: [:new, :show] 
+  resources :card, only: [:new, :show]
   resources :profiles, only: [:new, :create]
   resources :categories, only: [:index, :show] 
   resources :personals, only: [:index, :edit]
