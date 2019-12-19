@@ -5,23 +5,28 @@
       = link_to root_path do
         = image_tag "fmarket_logo_red.svg", class: "header_logo"
 
-    %nav
-      %ul
-        %li
-          会員登録
-          .nav-dot
-        %li
+    %nav.forward
+      %ul.forward-bar
+        %li.begin
+          会員情報
+          .forward-dot#begin_forward-dot
+          .forward-dot_bar#begin_forward-dot_bar
+        %li.phone
           電話番号認証
-          .nav-dot
-        %li
+          .forward-dot#phone_forward-dot
+          .forward-dot_bar#phone_forward-dot_bar
+        %li.address
           お届け先住所入力
-          .nav-dot
-        %li-ok
+          .forward-dot#address_forward-dot
+          .forward-dot_bar#address_forward-dot_bar
+        %li.payment#payment
           支払い方法
-          .nav-dot-ok
-        %li
+          .forward-dot#payment_forward-dot
+          .forward-dot_bar
+        %li.end
           完了
-          .nav-dot
+          .forward-dot
+          .forward-dot_bar
   
   .form-1
     %h1
@@ -33,6 +38,7 @@
             カード番号
           %span.form-require
             必須
+          %card
             = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
         .form-user__email
           %label
