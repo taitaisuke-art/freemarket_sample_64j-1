@@ -460,13 +460,17 @@ $blue: #86d6fc;
   }
 }
 
+
 .preview-box{
-  width: 116px;
+  width: 118px;
   margin: 0 10px 10px 0;
   border: 1px solid #eee;
   .preview-box__img-box{
+    height: 118px;
     .image{
-      height: 114px;
+      height: 118px;
+      width: 118px;
+      object-fit: cover;
     }
   }
   .preview-box__select{
