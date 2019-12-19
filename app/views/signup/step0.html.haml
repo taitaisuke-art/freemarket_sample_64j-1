@@ -13,10 +13,12 @@
       = link_to "メールアドレスで登録する", new_user_registration_path, class: 'btn'
     .select-content__btn2
       <i class="fab fa-facebook-square"></i>
-      Fecebookで登録する
+      = link_to user_facebook_omniauth_authorize_path do
+        = 'Facebookで登録する'
     .select-content__btn3
       <i class="fab fa-google"></i>
-      Googleで登録
+      = link_to user_google_oauth2_omniauth_authorize_path do
+        = 'Googleで登録する'
 
 .single-footer
   .single-footer__content
