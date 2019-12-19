@@ -85,6 +85,8 @@ gem 'active_hash'
 
 gem 'payjp'
 
+gem "gretel"
+
 gem "omniauth"
 
 gem "omniauth-facebook"
@@ -92,3 +94,4 @@ gem "omniauth-facebook"
 gem 'omniauth-google-oauth2'
 
 gem 'faker'
+
