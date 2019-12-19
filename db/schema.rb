@@ -91,17 +91,16 @@ ActiveRecord::Schema.define(version: 20191218011337) do
     t.string   "shipping_method",                           null: false
     t.string   "shipping_days",                             null: false
     t.string   "prefecture_id",                             null: false
-    t.integer  "shipping_price",                            null: false
+    t.string   "shipping_price",                            null: false
     t.integer  "price",                                     null: false
     t.text     "text",            limit: 65535,             null: false
+    t.integer  "category_id",                               null: false
+    t.integer  "brand_id"
     t.integer  "seller_id",                                 null: false
     t.integer  "buyer_id"
     t.integer  "sale_status",                   default: 0, null: false
-    t.integer  "category_id",                               null: false
-    t.integer  "brand_id"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
   end
 
@@ -162,7 +161,6 @@ ActiveRecord::Schema.define(version: 20191218011337) do
   add_foreign_key "commnets", "items"
   add_foreign_key "commnets", "users"
   add_foreign_key "item_images", "items"
-  add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
