@@ -15,104 +15,47 @@
             %li
               = link_to "おもちゃ・ホビー・グッズ", root_path, class: "category-link"
 
-
           = link_to new_item_path, class: "category-link" do
             .circle
               %span 出品
               %i.fas.fa-camera
-              
+
       .items-images
-        .women
-          .women-new
-            .women-new-item
+        .ladies
+          .ladies-new
+            .ladies-new-item
               レディース新着アイテム
-            = link_to root_path, class: "women-new-more" do
+            = link_to root_path, class: "ladies-new-more" do
               もっと見る
               = icon "fas fa-chevron-right", class: "fas fa-chevron-right"
-
-          %ul.women-item
-            - @items.each do |item|
-            -# ここは実際の商品情報が入る
-            %li.women-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-                .item-text
-                = link_to item_path(item.id), method: :get do
+          %ul.ladies-item
+            - @ladies.each do |item|
+              = link_to item_path(item.id), class: "item-link" do
+                %li.ladies-item-image
+                  = image_tag item.item_images[0].image, class: "item_image"
                   .item-price  
-                    = item.price
+                    = "¥ #{item.price}"
                   .item-name
                     %p
-                    = item.name
+                      = item.name
 
-              
-        .mens-items
-          %p.mens-new
-            メンズ新着アイテム
+        .mens
+          .mens-new
+            .mens-new-item
+              メンズ新着アイテム
+            = link_to root_path, class: "mens-new-more" do
+              もっと見る
+              = icon "fas fa-chevron-right", class: "fas fa-chevron-right"
           %ul.mens-item
-
-            -# ここは実際の商品情報が入る
-            %li.men-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-price
-                ¥2,000
-              .item-name
-                %p
-                【値下げ】【即購入歓迎】ギンガムチェックワンピース
-          
-            %li.women-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-text
-                .item-price
-                  ¥2,000
-                .item-name
-                  %p
-                  【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-            %li.men-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-price
-                ¥2,000
-              .item-name
-                %p
-                【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-            %li.men-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-price
-                ¥2,000
-              .item-name
-                %p
-                【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-            %li.men-item-image
-              = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
-              .item-price
-                ¥2,000
-              .item-name
-                %p
-                【値下げ】【即購入歓迎】ギンガムチェックワンピース
-
-.item-select
-  .item-select-title
-    レディース新着アイテム
-    .item-select-content
-      - @items.each do |item|
-        = link_to item_path(item.id), method: :get do
-          .item-select-image
-            //= item.item_images[0].image
-            = image_tag item.item_images[0].image
-            .item-select-text
-              .item-select-price  
-                = item.price
-              .item-select-name
-                = item.name
-                = item.seller_id
-                = item.seller.nickname
-                = item.category.name
-                = item.seller.address.city
+            - @mens.each do |item|
+              = link_to item_path(item.id), class: "item-link" do
+                %li.men-item-image
+                  = image_tag item.item_images[0].image, class: "item_image"
+                  .item-price
+                    = "¥ #{item.price}"
+                  .item-name
+                    %p
+                      = item.name
 
 
 
-
-
-
- 

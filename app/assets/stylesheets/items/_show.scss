@@ -79,6 +79,7 @@
       display: block;
       margin-top: 16px;
       background: #ea352d;
+      text-decoration: none;
     }
     &__textbox {
       margin: 16px 0 0;
@@ -117,14 +118,14 @@
 .item-select {
   margin: 24px auto 0;
   width: 680px;
-  color: #0099e8;
   display: flex;
   justify-content: space-between;
   &__left {
     width: 45%;
-
   }
-  &__right {
+  .select1 {
+    text-decoration: none;
+    color: #0099e8;
   }
 }
 .iconbox {

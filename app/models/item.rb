@@ -1,4 +1,8 @@
 class Item < ApplicationRecord
+  
+  # active_hashのアソシエーション
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 
   # belongs_to :user
   belongs_to :seller, class_name: 'User', foreign_key: 'seller_id'
@@ -8,10 +12,9 @@ class Item < ApplicationRecord
   belongs_to :brand, optional: true
   has_many :messages, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :comments, dependent: :destroy
   
   # item_imagesモデルの属性付
-  has_many :item_images, inverse_of: :item
+  has_many :item_images, inverse_of: :item, dependent: :destroy
   accepts_nested_attributes_for :item_images
 
 
