@@ -21,6 +21,8 @@ class ItemsController < ApplicationController
       format.json {render json: @item}
     end
     if @item.save
+      # 複数入った画像をひとつずつ取り出して保存
+      binding.pry
       params[:item_images][:image].each do |image|
         @item.item_images.create(image: image)
       end

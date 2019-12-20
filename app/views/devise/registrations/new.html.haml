@@ -82,7 +82,6 @@
             必須
           .input-name
             = f.text_field :last_name, placeholder: "例)山田", class: "input-default"
-
             = f.text_field :first_name, placeholder: "例)彩", class: "input-default__lastname"
 
         .form-user__name-kana
@@ -121,8 +120,6 @@
             %p
               本人情報の登録について
             = icon "fas fa-angle-right", class: "fas fa-angle-right"
-  //= render "devise/shared/links"
-  
 
   .step-1_fooder
     %nav
