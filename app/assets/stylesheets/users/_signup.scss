@@ -14,56 +14,93 @@
   padding: 0;
   background: whitesmoke;
   height: calc(100vh - 128px -330px);
-  .select-content {
+  &-content {
     width: 700px;
     margin: 0 auto;
     background: white;
     text-align: center;
     height: 370px;
     &__title {
-      border-bottom: 2px solid whitesmoke;
+      border-bottom: 1px solid whitesmoke;
       font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
       font-size: 22px;
       padding: 32px;
       font-weight: bold;
     }
-    &__btn1 {
-      color: #fff;
-      background-color: #ea352d;
-      border-radius: 4px;
-      border: 1px solid transparent;
-      line-height: 48px;
-      font-size: 14px;
-      cursor: pointer;
-      margin: 20px 180px;
-      margin-top: 40px;
-      .btn {
-        text-decoration: none;
-        color: white;
-      }
+    &__menu{
+      padding: 40px 40px 64px;
+      &__area{
+        margin: 0 137px;
+        .mail_text{
+          text-decoration: none;
+          .select-content__btn1 {
+            color: #fff;
+            background-color: #ea352d;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            width: 343px;
+            position: relative;
+            transition: all .5s;
+            .far.fa-envelope{
+              position: absolute;
+              top: 14px;
+              left: 16px;
+              font-size: 20px;
+            }
+          }
+        }
+        .select-content__btn1:hover {
+          opacity:0.7;
+        }
+        .mail_text{
+          text-decoration: none;
+          .select-content__btn2 {
+            color: #fff;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top:16px;
+            background: #385185;
+            color: #fff;
+            width: 343px;
+            position: relative;
+            .fab.fa-facebook-square{
+              position: absolute;
+              top: 10px;
+              left: 16px;
+              font-size: 28px;
+            }
+          }
+        }
+        .mail_text{
+          text-decoration: none;
+          .select-content__btn3 {
+            border: #979797 solid 1px;
+            color: #333;
+            border-radius: 4px;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top:16px;
+            width: 343px;
+            position: relative;
+            .fab.fa-google{
+              position: absolute;
+              top: 17px;
+              left: 16px;
+              font-size: 16px;
+            }
+          } 
+        }
     }
-    &__btn2 {
-      color: #fff;
-      border-radius: 4px;
-      border: 1px solid transparent;
-      line-height: 48px;
-      font-size: 14px;
-      cursor: pointer;
-      margin: 20px 180px;
-      background: #385185;
-      color: #fff;
-    }
-    &__btn3 {
-      border: #979797 solid 1px;
-      color: #333;
-      border-radius: 4px;
-      line-height: 48px;
-      font-size: 14px;
-      cursor: pointer;
-      margin: 20px 180px;
-    } 
   }
  }
+}
 
  .single-footer {
    background: whitesmoke; 
