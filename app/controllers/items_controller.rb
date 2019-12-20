@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:show, :edit, :destroy]
+  before_action :set_item, only: [:show, :edit, :destroy, :update]
 
   def index
     @ladies = Item.where(category_id: "1").order(created_at: "DESC").limit(10)
@@ -24,9 +24,9 @@ class ItemsController < ApplicationController
       params[:item_images][:image].each do |image|
         @item.item_images.create(image: image)
       end
-      redirect_to root_path
+      redirect_to item_path(@item)
     else
-      redirect_to users_path
+      redirect_to new_item_path
     end
   end
 
@@ -34,6 +34,23 @@ class ItemsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    #binding.pry
+    respond_to do |format|
+      format.html
+      format.json {render json: @item}
+    end
+    if @item.update(item_params2)
+      #binding.pry
+      params[:item_images][:image].each do |image|
+        @item.item_images.create(image: image)
+      end
+      redirect_to item_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -44,6 +61,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :size, :condition, :shipping_method, :shipping_days, :prefecture_id, :shipping_price, :price, :text, :category_id, :brand_id, :seller_id, :buyer_id, :sale_status, item_images_attributes: [:image]).merge(seller_id: current_user.id)
+  end
+
+  def item_params2
+    params.require(:item).permit(:name, :size, :condition, :shipping_method, :shipping_days, :prefecture_id, :shipping_price, :price, :text, :category_id, :brand_id, :seller_id, :buyer_id, :sale_status).merge(seller_id: current_user.id)
   end
 
   def set_item

@@ -29,18 +29,26 @@ $(function() {
     for (var i = 0, f; f = files[i]; i++){
       // 新しく作成された FileReader を定義したreaderに返す
       let reader = new FileReader();
-
       reader.readAsDataURL(f);
-      
       reader.onload = function(){
-
         let imgSrc = reader.result;
         // htmlの呼び出し
         buildHTML(imgSrc);
-
         images.push(imgSrc);
       }
     }
+  });
+  
+  // 削除ボタンを押すとイベント発火
+  $(document).on('click', '.preview-box__select--delete p', function(){
+    console.log(this);
+    $(this).closest('.preview-box').remove();
+  });
+
+  // 削除ボタンを押すとイベント発火(既存画像用)
+  $(document).on('click', '.preview-box__select--delete2 p', function(){
+    console.log(this);
+    $(this).closest('.image_box').remove();
   });
 
   // ドロップしたらイベント発火
@@ -53,7 +61,6 @@ $(function() {
     let dropImages = e.originalEvent.dataTransfer.files;
       // 画像のファイルを一つづつ、先ほどの画像管理用の配列に追加する。
       for(let i = 0; i < dropImages.length; i++ ) {
-
         let imgSrc = URL.createObjectURL(dropImages[i]);
         // htmlの呼び出し
         buildHTML(imgSrc);
@@ -61,11 +68,6 @@ $(function() {
         images.push(dropImages[i].name);
       }
   });
-  // 削除ボタンを押すとイベント発火
-  $(document).on('click', '.preview-box__select--delete p', function(){
-    $(this).closest('.preview-box').remove();
-  });
-
 
 // 手数料計算
 // 販売金額を入れたらイベント発火
