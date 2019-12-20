@@ -44,7 +44,7 @@ $(document).on('turbolinks:load', function() {
 
 
   // ドロップしたらイベント発火
-  $('.dropzone').on('drop', function(e){
+  $('.item-label').on('drop', function(e){
     // 画面の遷移を行わないように制御する
     e.preventDefault();
     // イベント伝播を行わないようにする

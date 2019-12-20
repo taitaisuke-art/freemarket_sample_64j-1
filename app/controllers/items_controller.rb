@@ -22,13 +22,12 @@ class ItemsController < ApplicationController
     end
     if @item.save
       # 複数入った画像をひとつずつ取り出して保存
-      binding.pry
       params[:item_images][:image].each do |image|
         @item.item_images.create(image: image)
       end
       redirect_to root_path
     else
-      redirect_to users_path
+      alert('出品に失敗しました！');
     end
   end
 
