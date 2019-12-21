@@ -47,8 +47,14 @@ $(function() {
 
   // 削除ボタンを押すとイベント発火(既存画像用)
   $(document).on('click', '.preview-box__select--delete2 p', function(){
+    if ($('.preview-box__select--delete2 p').length == 1) {
+      alert('削除できません');
+      //要素の効果を無効化する
+      return false;
+    } else {
     console.log(this);
     $(this).closest('.image_box').remove();
+    }
   });
 
   // ドロップしたらイベント発火

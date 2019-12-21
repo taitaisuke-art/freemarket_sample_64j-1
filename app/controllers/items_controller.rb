@@ -37,16 +37,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    #binding.pry
-    respond_to do |format|
-      format.html
-      format.json {render json: @item}
-    end
     if @item.update(item_params2)
-      #binding.pry
-      params[:item_images][:image].each do |image|
-        @item.item_images.create(image: image)
+    #binding.pry
+      if  params[:item_images].present?
+        params[:item_images][:image].each do |image|
+          @item.item_images.create(image: image)
       end
+    end
       redirect_to item_path
     else
       render :edit
