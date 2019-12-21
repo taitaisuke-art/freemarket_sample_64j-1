@@ -41,6 +41,22 @@ $(document).on('turbolinks:load', function() {
       }
     }
   });
+  
+  // 削除ボタンを押すとイベント発火
+  $(document).on('click', '.preview-box__select--delete p', function(){
+    $(this).closest('.preview-box').remove();
+  });
+
+  // 削除ボタンを押すとイベント発火(既存画像用)
+  $(document).on('click', '.preview-box__select--delete2 p', function(){
+    if ($('.preview-box__select--delete2 p').length == 1) {
+      alert('削除できません');
+      //要素の効果を無効化する
+      return false;
+    } else {
+    $(this).closest('.image_box').remove();
+    }
+  });
 
 
   // ドロップしたらイベント発火
@@ -62,6 +78,21 @@ $(document).on('turbolinks:load', function() {
       }
   });
 
+// 手数料計算
+// 販売金額を入れたらイベント発火
+$('#item_price').on('input',function() {
+  // 販売金額を定義
+  var data = $('#item_price').val();
+  // 販売利益を定義(販売金額の１割引)
+  var profit = Math.round(data * 0.9)
+  // 手数料の定義
+  var fee = (data - profit)
+  $('.sales-fee-price').html(fee)
+  // 手数料に￥をつける
+  $('.sales-fee-price').prepend('¥')
+  $('.sales-profit-price').html(profit)
+  // 販売利益に￥をつける
+  $('.sales-profit-price').prepend('¥')
   
   
   // 削除ボタンを押すとイベント発火
