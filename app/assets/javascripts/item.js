@@ -41,7 +41,6 @@ $(function() {
   
   // 削除ボタンを押すとイベント発火
   $(document).on('click', '.preview-box__select--delete p', function(){
-    console.log(this);
     $(this).closest('.preview-box').remove();
   });
 
@@ -52,7 +51,6 @@ $(function() {
       //要素の効果を無効化する
       return false;
     } else {
-    console.log(this);
     $(this).closest('.image_box').remove();
     }
   });

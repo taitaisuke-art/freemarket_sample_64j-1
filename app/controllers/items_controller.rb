@@ -38,7 +38,6 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params2)
-    #binding.pry
       if  params[:item_images].present?
         params[:item_images][:image].each do |image|
           @item.item_images.create(image: image)
