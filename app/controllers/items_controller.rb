@@ -21,12 +21,14 @@ class ItemsController < ApplicationController
       format.json {render json: @item}
     end
     if @item.save
+      # 複数入った画像をひとつずつ取り出して保存
       params[:item_images][:image].each do |image|
         @item.item_images.create(image: image)
       end
       redirect_to item_path(@item)
     else
       redirect_to new_item_path
+      alert('出品に失敗しました！');
     end
   end
 
