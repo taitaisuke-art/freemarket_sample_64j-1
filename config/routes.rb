@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'purchase/index'
 
-  devise_for :users
+  devise_for :users,controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   root to: 'items#index'
   resources :users, only: [:index, :edit, :update, :show] do
     resources :address, only: [:index, :new, :create]
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-    
+
   resources :signup do
     collection do
       get 'step0'
@@ -46,3 +46,4 @@ Rails.application.routes.draw do
   post 'delete', to: 'card#delete'
   post 'card/new', to:'card#new'
 end
+
