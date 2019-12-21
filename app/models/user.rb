@@ -26,7 +26,7 @@ class User < ApplicationRecord
     # uidとproviderでユーザーを検索
     user = User.find_by(uid: auth.uid, provider: auth.provider)
     if user
-      #SNSを使って登録したユーザーがいたらそのユーザーを返す
+      #SNS認証を使って登録したユーザーがいたらそのユーザーを返す
       return user
     else
       #いなかった場合はnewします。

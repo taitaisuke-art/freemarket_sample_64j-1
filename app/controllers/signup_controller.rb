@@ -1,3 +1,5 @@
+#ここは使用していない。registrations_controllerを使用
+
 class SignupController < ApplicationController
 
   def step0
