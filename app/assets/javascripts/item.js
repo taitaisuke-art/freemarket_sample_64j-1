@@ -93,6 +93,7 @@ $('#item_price').on('input',function() {
   $('.sales-profit-price').html(profit)
   // 販売利益に￥をつける
   $('.sales-profit-price').prepend('¥')
+});
   
   
   // 削除ボタンを押すとイベント発火
@@ -117,7 +118,7 @@ $('#item_price').on('input',function() {
     $('.sales-profit-price').html(profit)
     // 販売利益に￥をつける
     $('.sales-profit-price').prepend('¥')
-  })
+  });
 
   // ブラウザの制御
   $(document).on("dragover", e => {

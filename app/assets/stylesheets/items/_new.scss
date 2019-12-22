@@ -466,11 +466,12 @@ $blue: #86d6fc;
     .image{
       height: 118px;
       width: 118px;
-    height: 118px;
-    .image{
       height: 118px;
-      width: 118px;
-      object-fit: cover;
+      .image{
+        height: 118px;
+        width: 118px;
+        object-fit: cover;
+      }
     }
   }
   .preview-box__select{
