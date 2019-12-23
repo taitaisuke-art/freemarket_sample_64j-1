@@ -65,7 +65,7 @@
       line-height: 60px;
       display: block;
       margin-top: 16px;
-      background: #ea352d;
+      background: $red;
       text-decoration: none;
     }
     &__textbox {
@@ -157,7 +157,7 @@
 .signin-edit{
   height: 50px;
   line-height: 50px;
-  background-color: red;
+  background-color: $red;
   color: white;
 }
 .signin-or{
@@ -170,7 +170,7 @@
 .signin-stop{
   height: 50px;
   line-height: 50px;
-  background-color: red;
+  background-color: $red;
   color: white;
 }
 
