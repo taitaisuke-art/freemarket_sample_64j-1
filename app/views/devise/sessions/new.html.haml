@@ -13,12 +13,14 @@
 
 .sns-login
   .sns-content
-    .sns-content__btn1
-      <i class="fab fa-facebook-square"></i>
-      Fecebookでログイン
-    .sns-content__btn2
-      <i class="fab fa-google"></i>
-      Googleでログイン
+    = link_to user_facebook_omniauth_authorize_path , {class: "mail_text"} do
+      .sns-content__btn1
+        <i class="fab fa-facebook-square"></i>
+        Facebookでログイン
+    = link_to user_google_oauth2_omniauth_authorize_path , {class: "mail_text"} do
+      .sns-content__btn2
+        <i class="fab fa-google"></i>
+        Googleでログイン
 
 .login-body
   .login

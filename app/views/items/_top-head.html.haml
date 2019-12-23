@@ -2,10 +2,11 @@
   .header-inner
     .header-inner__upper
       .header-inner__upper__site-logo
-        = image_tag "fmarket_logo_white.svg", size: "120x40", alt: "test"
+        = link_to root_path do
+          = image_tag "fmarket_logo_white.svg", size: "120x40", alt: "fmarket"
       .header-inner__upper__search-form
-        %form.form{:action => ""}
-          %input.form_text{name: "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+        %form.form{action: ""}
+          %input.form_text{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
           %i.fa.fa-search
     .header-inner__lower
       .header-inner__lower__left
@@ -2642,4 +2643,4 @@
               = link_to user_session_path do
                 %button.btns{:autofocus => "true", :type => "buttun"}
                   ログイン  
-              
+ 

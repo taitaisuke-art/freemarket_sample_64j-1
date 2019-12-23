@@ -146,7 +146,6 @@
         }
       }
     }
-  }
 
 .gnav {
   display: flex;
@@ -214,9 +213,9 @@
   width: 300px;
 }
 
-.gnav li a:hover{
+.gnav li a:hover {
+  background: #EA342C;
   color: white;
-  background-color: #ea352d;
 }
 .gnav li a{
   height: 44px;
@@ -224,9 +223,4 @@
 
 .category:hover{
   color: #0195EE;
-}
-
-
-
-
 }

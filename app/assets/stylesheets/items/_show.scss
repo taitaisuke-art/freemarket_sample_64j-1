@@ -11,23 +11,10 @@
     width: 600px;
     padding: 24px 40px 40px;
     margin: 40px auto 0;
-    &__title {
-      font-size: 25px;
-    }
-    &__description {
-      margin: 8px 0 0;
-      font-size: 14px;
-      color: #888;
-      line-height: 1.5;
-    }
     &__content {
       margin: 16px 0 0;
       display: flex;
       &__image {
-        width: 300px;
-        height: 420px;
-      }
-      .woman-2 {
         width: 300px;
         height: 420px;
       }
@@ -165,5 +152,37 @@
   margin-bottom: 40px;
   color: #0099e8;
   font-size: 30px;
+}
+
+.signin-edit{
+  height: 50px;
+  line-height: 50px;
+  background-color: red;
+  color: white;
+}
+.signin-or{
+  height: 50px;
+  line-height: 50px;
+  background-color: white;
+  color: black;
+}
+
+.signin-stop{
+  height: 50px;
+  line-height: 50px;
+  background-color: red;
+  color: white;
+}
+
+.item-stop-btn{
+  height: 50px;
+  line-height: 50px;
+  background-color: gray;
+  color: white;
+  margin-top: 15px;
+}
+
+.booder{
+  text-decoration: none;
 }
 
