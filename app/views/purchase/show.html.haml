@@ -13,14 +13,13 @@
           = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
         .buy-confirm__box__item__text
           = @item.name
-          = @item.price
       .buy-confirm__box__border2
       .buy-confirm__box__price
         .buy-confirm__box__price__top
           .buy-confirm__box__price__top__left
             %h1 支払い金額
           .buy-confirm__box__price__top__right
-            %h2 ¥4,900
+            = @item.price
         .buy-confirm__box__price__bottom
           .buy-confirm__box__price__bottom__box
             %i.fas.fa-check-square
@@ -53,7 +52,7 @@
       .buy-confirm__box__btn
         .buy-btn
           = form_for @card, url: pay_purchase_path(@item) do |f|
-            = f.submit "購入する"
+            = f.submit "購入する",class: "submit"
     .buy-confirm__footer
       %nav
         %ul
