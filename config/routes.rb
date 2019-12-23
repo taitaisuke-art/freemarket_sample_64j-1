@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   
   resources :users, only: [:index, :edit, :update, :show] do
-    resources :address, only: [:index,:new, :create]
+    resources :address, only: [:index, :new, :create]
   end
 
   resources :items do
@@ -15,7 +15,9 @@ Rails.application.routes.draw do
       get 'category_grandchildren'
     end
   end
-
+ 
+  resources :item_images, only: [:destroy]
+  
   resources :card, only: [:new, :show] 
   
   resources :profiles, only: [:new, :create]
@@ -23,8 +25,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
 
   resources :personals, only: [:index, :edit]
-  
-  resources :purchase, only: [:index] do
+
+  resources :purchase, only: [:index, :show] do
+
     member do
       patch 'pay'
       get 'done'

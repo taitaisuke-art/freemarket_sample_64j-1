@@ -75,15 +75,15 @@
 
     -if user_signed_in?
       -if @item.seller_id == current_user.id
-        = link_to edit_item_path(@item), data: {turbolinks: false} do
-          .signin-edit 商品の編集
+        = link_to edit_item_path(@item),class: "booder", data: {turbolinks: false} do
+          .signin-edit  商品の編集
         .signin-or or
-        = link_to edit_item_path(@item), data: {turbolinks: false} do
+        = link_to edit_item_path(@item),class: "booder",data: {turbolinks: false} do
           .signin-stop 出品を一旦停止する
-        = link_to item_path(@item), method: :delete, data: { turbolinks: false} do
+        = link_to item_path(@item),class: "booder", method: :delete, data: { turbolinks: false} do
           .item-stop-btn この商品を削除する
       -else
-        = link_to "購入画面に進む", root_path, data: {turbolinks: false}, class: "mainbody__item__buybox" 
+        = link_to "購入画面に進む", "/purchase/#{@item.id}", data: {turbolinks: false}, class: "mainbody__item__buybox"
     -else
       = link_to "購入画面に進む", new_user_session_path, class: "mainbody__item__buybox" 
     -unless user_signed_in? && @item.seller_id == current_user.id

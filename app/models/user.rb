@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_one :address, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_one :card
 
   validates :nickname, :first_name, :last_name, :first_name_kana, :last_name_kana, :birthyear, :birthmonth, :birthday, :telephone, presence: true
 
@@ -26,7 +27,7 @@ class User < ApplicationRecord
     # uidとproviderでユーザーを検索
     user = User.find_by(uid: auth.uid, provider: auth.provider)
     if user
-      #SNSを使って登録したユーザーがいたらそのユーザーを返す
+      #SNS認証を使って登録したユーザーがいたらそのユーザーを返す
       return user
     else
       #いなかった場合はnewします。

@@ -462,11 +462,16 @@ $blue: #86d6fc;
   margin: 0 23px 10px 0;
   border: 1px solid #eee;
   .preview-box__img-box{
-    height: 118px;
+    display: flex;
     .image{
       height: 118px;
       width: 118px;
-      object-fit: cover;
+      height: 118px;
+      .image{
+        height: 118px;
+        width: 118px;
+        object-fit: cover;
+      }
     }
   }
   .preview-box__select{
@@ -485,6 +490,9 @@ $blue: #86d6fc;
       width: 50%;
       border-left: 1px solid #eee;
       cursor: pointer;
+    }
+    .preview-box__select--delete2{
+      margin: 0 auto;
     }
   }
 }
