@@ -9,22 +9,17 @@
       width: 700px;
       height: 180px;
       display: flex;
-    }
       .logout-btn{
         height: 50px;
         width: 320px;
-        background: red;
+        background: #EA342C;
         margin: auto;
         text-align: center;
-        position: relative;
-        a{
-          text-decoration: none;
-          color: white;
-          position: absolute;
-          margin-top: 15px;
-          margin-left: -40px;
-          }
+        text-decoration: none;
+        color: white;
+        line-height: 50px;
       }
+    }
       .circle{
         height: 155px;
         width: 155px;

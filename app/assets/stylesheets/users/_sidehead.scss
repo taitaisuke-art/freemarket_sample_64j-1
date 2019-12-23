@@ -15,7 +15,24 @@
   .side-head1 li:hover {
     background: #fafafa;
   }
-  .side-head1 li ::after{
+  .merpay {
+    font-size: 16px;
+    padding-top: 40px;
+    font-weight: bold;
+    background-color: #F5F5F5;
+  }
+  .setting {
+    font-size: 16px;
+    padding-top: 40px;
+    font-weight: bold;
+    background-color: #F5F5F5;
+  }
+  .mymenu {
+    text-decoration: none;
+    color: black;
+    
+  }
+  .mymenu ::after{
     position: absolute;
     top: 0;
     right: 20px;
@@ -24,20 +41,6 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     color: silver;
-  }
-  .merpay {
-    font-size: 16px;
-    padding-top: 40px;
-    font-weight: bold;
-  }
-  .setting {
-    font-size: 16px;
-    padding-top: 40px;
-    font-weight: bold;
-  }
-  .mymenu {
-    text-decoration: none;
-    color: black;
   }
 }
   

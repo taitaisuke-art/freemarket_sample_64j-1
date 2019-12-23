@@ -194,9 +194,11 @@
   transition: opacity .1s;
   z-index: 3;
 }
+
 .gnav li li a {
   //border-top: 1px solid #eee;
 }
+
 .gnav li:hover > ul > li {
   height: 2rem;
   overflow: visible;
