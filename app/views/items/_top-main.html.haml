@@ -14,12 +14,16 @@
               = link_to "家電・スマホ・カメラ", root_path, class: "category-link"
             %li
               = link_to "おもちゃ・ホビー・グッズ", root_path, class: "category-link"
-
+        -if user_signed_in?
           = link_to new_item_path, class: "category-link" do
             .circle
               %span 出品
               %i.fas.fa-camera
-
+        -else
+          = link_to user_session_path, class: "category-link" do
+            .circle
+              %span 出品
+              %i.fas.fa-camera
       .items-images
         .ladies
           .ladies-new
