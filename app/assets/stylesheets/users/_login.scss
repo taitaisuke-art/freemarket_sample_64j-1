@@ -37,6 +37,9 @@
     background: white;
     text-align: center;
     padding-top: 20px;
+    a{
+      text-decoration: none;
+    }
     &__btn1 {
       color: #fff;
       border: 1px solid transparent;
@@ -54,6 +57,7 @@
       font-size: 14px;
       cursor: pointer;
       margin: 0 60px;
+      text-decoration: none;
     } 
   }
 }
