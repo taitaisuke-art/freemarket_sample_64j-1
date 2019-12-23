@@ -22,3 +22,9 @@ crumb :log_out do
   parent :mypage
 end
 
+
+crumb :card do
+  link "支払い方法"
+  parent :mypage
+end
+
