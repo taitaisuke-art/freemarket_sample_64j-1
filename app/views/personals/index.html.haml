@@ -1,6 +1,7 @@
 .wrapper
   = render "items/top-head"
-  = render "pans/pan"
+  - breadcrumb :mypage, @mypage
+  = render "layouts/breadcrumbs"
   .mypage_main
     = render "users/sidehead"
     .mypage_top
@@ -14,11 +15,11 @@
               .evaluation
                 評価
                 %span
-                  99
+                  = Like.count
               .exhibit
                 出品数
                 %span
-                  99
+                  = Item.count
       .mypage_top_notice_things
         .tabs
           %input#notice{checked: "checked", name: "tab_item", type: "radio"}/
@@ -30,7 +31,7 @@
               %ul.notice
                 = link_to root_path do
                   %li.notice_content
-                    = image_tag "red_icon", size: "48x48"
+                    = image_tag "logo_red", size: "48x48"
                     .notice_content_list
                       .notice_content_list_text
                         《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
@@ -41,7 +42,7 @@
                     %i.fas.fa-chevron-right
                 = link_to root_path do
                   %li.notice_content
-                    = image_tag "red_icon", size: "48x48"
+                    = image_tag "logo_red", size: "48x48"
                     .notice_content_list
                       .notice_content_list_text
                         《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
@@ -52,7 +53,7 @@
                     %i.fas.fa-chevron-right
                 = link_to root_path do
                   %li.notice_content
-                    = image_tag "red_icon", size: "48x48"
+                    = image_tag "logo_red", size: "48x48"
                     .notice_content_list
                       .notice_content_list_text
                         《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
@@ -63,7 +64,7 @@
                     %i.fas.fa-chevron-right
                 = link_to root_path do
                   %li.notice_content
-                    = image_tag "red_icon", size: "48x48"
+                    = image_tag "logo_red", size: "48x48"
                     .notice_content_list
                       .notice_content_list_text
                         《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
@@ -74,7 +75,7 @@
                     %i.fas.fa-chevron-right
                 = link_to root_path do
                   %li.notice_content
-                    = image_tag "red_icon", size: "48x48"
+                    = image_tag "logo_red", size: "48x48"
                     .notice_content_list
                       .notice_content_list_text
                         《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
@@ -84,8 +85,8 @@
                             １日前
                     %i.fas.fa-chevron-right
                 %li.notice_btn
-                  = link_to root_path do
-                    .notice_btn_content
+                  = link_to root_path , {class: "notice_btn_index"} do
+                    .notice_btn_index_content
                       一覧を見る
 
           #things_content.tab_content

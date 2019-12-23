@@ -2,10 +2,11 @@
   .header-inner
     .header-inner__upper
       .header-inner__upper__site-logo
-        = image_tag "fmarket_logo_white.svg", size: "120x40", alt: "test"
+        = link_to root_path do
+          = image_tag "fmarket_logo_white.svg", size: "120x40", alt: "fmarket"
       .header-inner__upper__search-form
-        %form.form{:action => ""}
-          %input.form_text{name: "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+        %form.form{action: ""}
+          %input.form_text{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
           %i.fa.fa-search
     .header-inner__lower
       .header-inner__lower__left
@@ -2615,20 +2616,24 @@
           %ul.mypage-menu
             %li.mypage-menu__list
               =link_to root_path do
-                %i.far.fa-heart
-                いいね！一覧
+                .headmenu
+                  %i.far.fa-heart
+                  いいね！一覧
             %li.mypage-menu__list
               =link_to root_path do
-                %i.far.fa-bell
-                お知らせ
+                .headmenu
+                  %i.far.fa-bell
+                  お知らせ
             %li.mypage-menu__list
               =link_to root_path do
-                %i.fas.fa-check
-                やることリスト
+                .headmenu
+                  %i.fas.fa-check
+                  やることリスト
             %li.mypage-menu__list
               = link_to personals_path do
-                %i.fas.fa-check
-                マイページ
+                .headmenu
+                  %i.fas.fa-check
+                  マイページ
         - else
           = link_to "新規会員登録", step0_signup_index_path, class: 'btn'
           = link_to user_session_path do

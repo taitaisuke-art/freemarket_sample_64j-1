@@ -17,16 +17,16 @@
             %span.form-require
               必須
           %p 最大10枚までアップロードできます
+
           .dropzone
-          
             %label.item-label
               .dropzone-text
-                %pre
-                  ドラック&ドロップ 
-                  またはクリックしてファイルをアップロード
+                ドラック&ドロップ
+                %br
+                またはクリックしてファイルをアップロード
               = f.fields_for :item_images do |image|
                 = image.file_field :image, multiple: true, name: "item_images[image][]", id: "upload-image", class: "upload-image"
-
+          
 
       .item-form-1
         .item-name

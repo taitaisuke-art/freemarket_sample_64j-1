@@ -82,7 +82,6 @@ $blue: #86d6fc;
       padding: 40px;
       border-top: 1px solid #eee;
       .item-image{
-        // height: 200px;
         #preview{
           margin-bottom: 16px;
           display: flex;
@@ -97,23 +96,20 @@ $blue: #86d6fc;
         .dropzone{
           display: flex;
           flex-flow: wrap;
+          height: 161px;
           .item-label{
             background-color: rgb(245, 245, 245);
             border-color: rgb(204, 204, 204);
             border-width: 1px;
             border-style: dashed;
-            padding: 50px;
             width: 100%;
+            height: 100%;
             flex: 1;
             .dropzone-text{
-              pre{
-                font-size: 16px;
-                text-align: center;
-                line-height: 1.5;
-                margin: 0 auto;
-                // display: flex;
-                // flex-flow: wrap;
-              }
+              font-size: 16px;
+              text-align: center;
+              line-height: 1.5;
+              padding-top: 30px;
             }
             #upload-image{
               display: none;
@@ -460,13 +456,22 @@ $blue: #86d6fc;
   }
 }
 
+
 .preview-box{
-  width: 116px;
-  margin: 0 10px 10px 0;
+  width: 118px;
+  margin: 0 23px 10px 0;
   border: 1px solid #eee;
   .preview-box__img-box{
+    display: flex;
     .image{
-      height: 114px;
+      height: 118px;
+      width: 118px;
+      height: 118px;
+      .image{
+        height: 118px;
+        width: 118px;
+        object-fit: cover;
+      }
     }
   }
   .preview-box__select{
@@ -479,10 +484,15 @@ $blue: #86d6fc;
     text-decoration: none;
     .preview-box__select--edit{
       width: 50%;
+      cursor: pointer;
     }
     .preview-box__select--delete{
       width: 50%;
       border-left: 1px solid #eee;
+      cursor: pointer;
+    }
+    .preview-box__select--delete2{
+      margin: 0 auto;
     }
   }
 }

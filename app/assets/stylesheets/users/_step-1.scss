@@ -48,6 +48,7 @@ $blue: #86D6FC;
       .header_logo{
         width: 180px;
         padding-right: 44px;
+        cursor: pointer;
       }
     }
   }
@@ -283,6 +284,7 @@ $blue: #86D6FC;
           padding-left: 10px;
           a{
             text-decoration: none;
+            cursor: pointer;
           }
           a:visited{
             color: #333;
@@ -294,6 +296,7 @@ $blue: #86D6FC;
       width: 80px;
       padding-top: 30px;
       padding-bottom: 10px;
+      cursor: pointer;
     }
     p{
       font-size: 13px;
