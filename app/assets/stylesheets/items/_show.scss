@@ -11,6 +11,11 @@
     width: 600px;
     padding: 24px 40px 40px;
     margin: 40px auto 0;
+    &__title{
+      font-size: 30px;
+      line-height: 1.4;
+      font-weight: 600;
+    }
     &__content {
       margin: 16px 0 0;
       display: flex;
@@ -50,12 +55,13 @@
       &__price {
         margin: 0 16px 0 0;
         font-size: 50px;
+        font-weight: 500;
       }
-      &__zei {
+      &__tax {
         font-size: 10px;
         padding-top: 30px;
       }
-      &__soryo {
+      &__shipping_price {
         padding: 26px 3px;
       }
     }
