@@ -4,7 +4,7 @@
   width: 280px;
   margin-right:40px;
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-
+  min-width :280px;
   .side-head1 li {
     border: 1px solid #F5F5F5;
     line-height: 50px;
@@ -13,7 +13,7 @@
     margin-top: 0;
   }
   .side-head1 li:hover {
-    background: #F5F5F5;
+    background: #fafafa;
   }
   .side-head1 li ::after{
     position: absolute;
