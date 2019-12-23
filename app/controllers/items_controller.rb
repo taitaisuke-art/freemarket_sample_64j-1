@@ -58,25 +58,25 @@ class ItemsController < ApplicationController
 
   
   def category_children  
+    # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
     @category_children = Category.find(params[:productcategory]).children 
-    end
-  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
+  end
 
   def category_grandchildren
+    # Ajax通信で送られてきたデータをparamsで受け取り､childrenで孫を取得｡（実際には子カテゴリーの子になる｡childrenは子を取得するメソッド)
     @category_grandchildren = Category.find(params[:productcategory]).children
-    end
-  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで孫を取得｡（実際には子カテゴリーの子になる｡childrenは子を取得するメソッド)
-
-  def search
-    # binding.pry
-    respond_to do |format|
-      format.html
-      format.json do
-        #カテゴリーのidから子ボックスのidの配列を作成してインスタンス変数で定義
-        @children = Category.find(params[:parent_id]).children
-      end
-    end
   end
+
+  # def search
+  #   # binding.pry
+  #   respond_to do |format|
+  #     format.html
+  #     format.json do
+  #       #カテゴリーのidから子ボックスのidの配列を作成してインスタンス変数で定義
+  #       @children = Category.find(params[:parent_id]).children
+  #     end
+  #   end
+  # end
 
 
   private
