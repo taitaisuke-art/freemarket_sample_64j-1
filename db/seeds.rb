@@ -7,6 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 lady = Category.create(:name=>"レディース")
+mens = Category.create(:name=>"メンズ")
+kids = Category.create(:name=>"ベビー・キッズ")
+home = Category.create(:name=>"インテリア・住まい・小物")
+book = Category.create(:name=>"本・音楽・ゲーム")
+toy = Category.create(:name=>"おもちゃ・ホビー・グッズ")
+beauty = Category.create(:name=>"コスメ・香水・美容")
+iphone = Category.create(:name=>"家電・スマホ・カメラ")
+sports = Category.create(:name=>"スポーツ・レジャー")
+made = Category.create(:name=>"ハンドメイド")
+ticket = Category.create(:name=>"チケット")
+car = Category.create(:name=>"自動車・オートバイ")
+other = Category.create(:name=>"その他")
+
+
+
 
 lady_tops = lady.children.create(:name=>"トップス")
 lady_jacket = lady.children.create(:name=>"ジャケット/アウター")
@@ -51,7 +66,7 @@ lady_small.children.create([{:name=>"長財布"}, {:name=>"折財布"}, {:name=>
 
 lady_clock.children.create([{:name=>"腕時計（アナログ）"}, {:name=>"腕時計（デジタル）"}, {:name=>"ラバーベルト"}, {:name=>"レザーベルト"}, {:name=>"金属ベルト"}, {:name=>"その他"}])
 
-mens = Category.create(:name=>"メンズ")
+
 
 mens_tops = mens.children.create(:name=>"トップス")
 mens_jacket = mens.children.create(:name=>"ジャケット/アウター")
@@ -94,7 +109,7 @@ mens_leg.children.create([{:name=>"ソックス"}, {:name=>"レギンス/スパ�
 
 mens_under.children.create([{:name=>"トランクス"}, {:name=>"ボクサーパンツ"},{:name=>"その他"}])
 
-kids = Category.create(:name=>"ベビー・キッズ")
+
 
 kids_girl = kids.children.create(:name=>"ベビー服（女の子用）~95cm")
 kids_boy = kids.children.create(:name=>"ベビー服（男の子用）~95cm")
@@ -139,7 +154,7 @@ kids_toy.children.create([{:name=>"おふろのおもちゃ"}, {:name=>"がら�
 
 kids_event.children.create([{:name=>"お宮参り用品"}, {:name=>"お食い初め用品"},{:name=>"アルバム"},{:name=>"手形/足形"},{:name=>"その他"}])
 
-home = Category.create(:name=>"インテリア・住まい・小物")
+
 
 home_kitchen = home.children.create(:name=>"キッチン/食器")
 home_bed = home.children.create(:name=>"ベッド/マットレス")
@@ -147,7 +162,7 @@ home_sofa = home.children.create(:name=>"ソファ/ソファベッド")
 home_chair = home.children.create(:name=>"椅子/チェア")
 home_desk = home.children.create(:name=>"机/テーブル")
 home_storage = home.children.create(:name=>"収納家具")
-home_mat = home.children.create(:name=>"ラブ/カーペット/マット")
+home_mat = home.children.create(:name=>"ラグ/カーペット/マット")
 home_curtain = home.children.create(:name=>"カーテン/ブラインド")
 home_light = home.children.create(:name=>"ライト/照明")
 home_bedding = home.children.create(:name=>"寝具")
@@ -179,7 +194,7 @@ home_small.children.create([{:name=>"ゴミ箱"}, {:name=>"ウェルカムボー
 
 home_event.children.create([{:name=>"正月"}, {:name=>"成人式"},{:name=>"バレンタインデー"},{:name=>"ひな祭り"},{:name=>"子どもの日"},{:name=>"母の日"},{:name=>"父の日"},{:name=>"サマーギフト/お中元"},{:name=>"夏/夏休み"},{:name=>"ハロウィン"},{:name=>"敬老の日"},{:name=>"七五三"},{:name=>"お歳暮"},{:name=>"クリスマス"}])
 
-book = Category.create(:name=>"本・音楽・ゲーム")
+
 
 book_book = book.children.create(:name=>"本")
 book_manga = book.children.create(:name=>"漫画")
@@ -203,7 +218,7 @@ book_record.children.create([{:name=>"邦楽"}, {:name=>"洋楽"},{:name=>"そ�
 
 book_tv.children.create([{:name=>"家庭用ゲーム本体"}, {:name=>"家庭用ゲームソフト"},{:name=>"携帯用ゲーム本体"},{:name=>"携帯用ゲームソフト"},{:name=>"PC用ゲーム"},{:name=>"その他"}])
 
-toy = Category.create(:name=>"おもちゃ・ホビー・グッズ")
+
 
 toy_toy = toy.children.create(:name=>"おもちゃ")
 toy_talent = toy.children.create(:name=>"タレントグッズ")
@@ -239,7 +254,7 @@ toy_artitem.children.create([{:name=>"画材"}, {:name=>"額縁"},{:name=>"そ�
 
 toy_other.children.create([{:name=>"トランプ/UNO"}, {:name=>"カルタ/百人一首"},{:name=>"ダーツ"},{:name=>"ビリヤード"},{:name=>"麻雀"},{:name=>"パズル/ジグソーパズル"},{:name=>"囲碁/将棋"},{:name=>"オセロ/チェス"},{:name=>"人生ゲーム"},{:name=>"野球/サッカーゲーム"},{:name=>"スポーツ"},{:name=>"三輪車/乗り物"},{:name=>"ヨーヨー"},{:name=>"模型製作用品"}])
 
-beauty = Category.create(:name=>"コスメ・香水・美容")
+
 
 beauty_base = beauty.children.create(:name=>"ベースメイク")
 beauty_up = beauty.children.create(:name=>"メイクアップ")
@@ -275,7 +290,7 @@ beauty_diet.children.create([{:name=>"ダイエット食品"}, {:name=>"エク�
 
 beauty_other.children.create([{:name=>"健康用品"}, {:name=>"看護/介護用品"},{:name=>"救急/衛生用品"},{:name=>"その他"}])
 
-iphone = Category.create(:name=>"家電・スマホ・カメラ")
+
 
 iphone_iphone = iphone.children.create(:name=>"スマートフォン/携帯電話")
 iphone_small = iphone.children.create(:name=>"スマホアクセサリー")
@@ -306,7 +321,7 @@ iphone_life.children.create([{:name=>"冷蔵庫"}, {:name=>"洗濯機"},{:name=>
 
 iphone_other.children.create([{:name=>"その他"}])
 
-sports = Category.create(:name=>"スポーツ・レジャー")
+
 
 sports_golf = sports.children.create(:name=>"ゴルフ")
 sports_fish = sports.children.create(:name=>"フィッシング")
@@ -345,7 +360,7 @@ sports_outdoor.children.create([{:name=>"テント／タープ"}, {:name=>"ラ�
 
 sports_other.children.create([{:name=>"旅行用品"},{:name=>"その他"}])
 
-made = Category.create(:name=>"ハンドメイド")
+
 
 made_woman = made.children.create(:name=>"アクセサリー（女性用）")
 made_small = made.children.create(:name=>"ファッション/小物")
@@ -373,7 +388,7 @@ made_item.children.create([{:name=>"各種パーツ"}, {:name=>"生地/糸"}, {:
 
 made_second.children.create([{:name=>"Ingress"}, {:name=>"クリエイターズ宇宙兄弟"}, {:name=>"シンデレラガールズCPグッズ"}])
 
-ticket = Category.create(:name=>"チケット")
+
 
 ticket_music = ticket.children.create(:name=>"音楽")
 ticket_sports = ticket.children.create(:name=>"スポーツ")
@@ -398,7 +413,7 @@ ticket_park.children.create([{:name=>"遊園地/テーマパーク"}, {:name=>"�
 
 ticket_discount.children.create([{:name=>"ショッピング"}, {:name=>"レストラン/食事券"},{:name=>"フード/ドリンク券"},{:name=>"宿泊券"},{:name=>"その他"}])
 
-car = Category.create(:name=>"自動車・オートバイ")
+
 
 car_car = car.children.create(:name=>"自動車本体")
 car_tire = car.children.create(:name=>"自動車タイヤ/ホイール")
@@ -420,7 +435,6 @@ car_motorparts.children.create([{:name=>"タイヤ"}, {:name=>"マフラー"}, {
 
 car_motoritem.children.create([{:name=>"ヘルメット/シールド"}, {:name=>"バイクウエア/装備"}, {:name=>"アクセサリー"}, {:name=>"メンテナンス"}, {:name=>"カタログ/マニュアル"}, {:name=>"その他"}])
 
-other = Category.create(:name=>"その他")
 
 other_all = other.children.create(:name=>"まとめ売り")
 other_pets = other.children.create(:name=>"ペット用品")

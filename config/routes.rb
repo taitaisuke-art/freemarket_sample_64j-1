@@ -4,16 +4,26 @@ Rails.application.routes.draw do
 
   devise_for :users,controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   root to: 'items#index'
+  
   resources :users, only: [:index, :edit, :update, :show] do
     resources :address, only: [:index,:new, :create]
   end
 
+  resources :items do
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
+  end
 
-  resources :items, only: [:index, :new, :create, :destroy, :edit, :update, :show]
   resources :card, only: [:new, :show] 
+  
   resources :profiles, only: [:new, :create]
-  resources :categories, only: [:index, :show] 
+  
+  resources :categories, only: [:index]
+
   resources :personals, only: [:index, :edit]
+  
   resources :purchase, only: [:index] do
     member do
       patch 'pay'

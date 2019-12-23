@@ -4,14 +4,15 @@ class ItemsController < ApplicationController
 
   def index
     @ladies = Item.where(category_id: "1").order(created_at: "DESC").limit(10)
-    @mens = Item.where(category_id: "139").order(created_at: "DESC").limit(10)
-    @appliance = Item.where(category_id: "783").order(created_at: "DESC").limit(10)
-    @hobby = Item.where(category_id: "576").order(created_at: "DESC").limit(10)
+    @mens = Item.where(category_id: "2").order(created_at: "DESC").limit(10)
+    @appliance = Item.where(category_id: "8").order(created_at: "DESC").limit(10)
+    @hobby = Item.where(category_id: "6").order(created_at: "DESC").limit(10)
   end
 
   def new
     @item = Item.new
     @item.item_images.build
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def create
@@ -21,7 +22,7 @@ class ItemsController < ApplicationController
       format.json {render json: @item}
     end
     if @item.save
-      # 複数入った画像をひとつずつ取り出して保存
+      # 複数画像が入ったハッシュ形式からひとつずつ取り出して保存
       params[:item_images][:image].each do |image|
         @item.item_images.create(image: image)
       end
@@ -39,6 +40,28 @@ class ItemsController < ApplicationController
 
   def destroy
     redirect_to root_path if @item.seller_id == current_user.id && @item.destroy
+  end
+
+  
+  def category_children  
+    @category_children = Category.find(params[:productcategory]).children 
+    end
+  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
+
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+    end
+  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで孫を取得｡（実際には子カテゴリーの子になる｡childrenは子を取得するメソッド)
+
+  def search
+    # binding.pry
+    respond_to do |format|
+      format.html
+      format.json do
+        #カテゴリーのidから子ボックスのidの配列を作成してインスタンス変数で定義
+        @children = Category.find(params[:parent_id]).children
+      end
+    end
   end
 
 
