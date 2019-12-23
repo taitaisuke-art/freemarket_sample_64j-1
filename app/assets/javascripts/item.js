@@ -11,14 +11,11 @@ $(document).on('turbolinks:load', function() {
                     <img src="${imgSrc}", class="image">
                   </div>
                   <div class="preview-box__select">
-                    <div class="preview-box__select--edit">
-                    <p>編集</p>
+                    <div class="preview-box__select--delete">
+                      <p>削除</p>
+                    </div>
                   </div>
-                  <div class="preview-box__select--delete">
-                    <p>削除</p>
-                  </div>
-                </div>
-              </div>`
+                </div>`
     // .dropzoneの配列の最初に追加
     $('.dropzone').prepend(html);
   };
