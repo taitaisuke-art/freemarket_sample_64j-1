@@ -39,6 +39,11 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def  done
+    @item_purchaser= item.find(params[:id])
+    @item_purchaser.update( purchaser_id: current_user.id)
+  end
+
   def update
     if @item.update(item_params2)
       if  params[:item_images].present?

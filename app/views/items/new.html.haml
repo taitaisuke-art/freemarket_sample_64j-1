@@ -100,7 +100,7 @@
             %span.form-require
               必須
             .item-input
-              = f.collection_select :prefecture_id, @parents, :id, :name, prompt: "選択してください", class: "item-input__select"
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください", class: "item-input__select"
 
           .item-shipping_days
             = f.label :shipping_days, "発送までの日数", class: "item-label"

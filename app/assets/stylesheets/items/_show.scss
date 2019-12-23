@@ -5,30 +5,36 @@
   background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   line-height: 1;
+
   &__item {
     text-align: center;
     background: #fff;
     width: 600px;
     padding: 24px 40px 40px;
     margin: 40px auto 0;
+
     &__title{
       font-size: 30px;
       line-height: 1.4;
       font-weight: 600;
     }
+
     &__content {
       margin: 16px 0 0;
       display: flex;
+
       &__image {
         width: 300px;
         height: 420px;
       }
+
       &__post {
         border-collapse: collapse;
         border: 1px solid #f5f5f5;
         font-size: 15px;
         text-align: left;
         margin-left: 20px;
+
         table {
           height: 420px;
           width: 280px;
@@ -52,15 +58,18 @@
       margin: 24px 0 0;
       text-align: center;
       display: inline-flex;
+
       &__price {
         margin: 0 16px 0 0;
         font-size: 50px;
         font-weight: 500;
       }
+
       &__tax {
         font-size: 10px;
         padding-top: 30px;
       }
+
       &__shipping_price {
         padding: 26px 3px;
       }
@@ -84,6 +93,7 @@
       margin: 16px 0 0;
       display: flex;
       font-size: 14px;
+
       &__iine {
         color: #333;
         border: 1px solid #f5f5f5;
@@ -113,6 +123,7 @@
   width: 680px;
   display: flex;
   justify-content: space-between;
+  
   &__left {
     width: 45%;
   }
