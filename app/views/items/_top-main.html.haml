@@ -7,9 +7,9 @@
         .popularity-categoreis__list
           %ul
             %li
-              = link_to "レディース", root_path, class: "category-link"
+              = link_to "レディース",  "/categories/1", class: "category-link"
             %li
-              = link_to "メンズ", root_path, class: "category-link"
+              = link_to "メンズ", "/categories/2", class: "category-link"
             %li
               = link_to "家電・スマホ・カメラ", root_path, class: "category-link"
             %li
@@ -29,7 +29,7 @@
           .ladies-new
             .ladies-new-item
               レディース新着アイテム
-            = link_to root_path, class: "ladies-new-more" do
+            = link_to "/categories/1", class: "ladies-new-more" do
               もっと見る
               = icon "fas fa-chevron-right", class: "fas fa-chevron-right"
           %ul.ladies-item
@@ -37,13 +37,14 @@
               = link_to item_path(item.id), class: "item-link" do
                 %li.ladies-item-image
                   = image_tag item.item_images[0].image, class: "item_image"
+
                   -# buyer_idがある時は sold out を表示
-                  -# - buyer_id = Item.find_by(item: item.id)
-                  -# - buy = Item.find_by(buyer_id: user.id)
-                  -# - unless buy == nil
-                  -#   .items-box_photo__sold
-                  -#     .items-box_photo__sold__inner
-                  -#       SOLD
+                  - @item = Item.find(item.id)
+                  - if @item.buyer_id.present?
+                    .items__sold
+                      .items__sold__inner
+                        SOLD
+
 
                   .item-price  
                     = "¥ #{item.price.to_s(:delimited)}"
@@ -55,7 +56,7 @@
           .mens-new
             .mens-new-item
               メンズ新着アイテム
-            = link_to root_path, class: "mens-new-more" do
+            = link_to "/categories/2", class: "mens-new-more" do
               もっと見る
               = icon "fas fa-chevron-right", class: "fas fa-chevron-right"
           %ul.mens-item

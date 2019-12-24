@@ -27,16 +27,13 @@
                     またはクリックしてファイルをアップロード
                     = f.fields_for :item_images do |image|
                       = image.file_field :image, multiple: true, name: "item_images[image][]", id: "upload-image", class: "upload-image"
-            .preview-box
-              .preview-box__img-box
-                - @item.item_images.each do |item_image|
-                  .image_box
-                    = image_tag item_image.image, id: "upload-image", class: "image"
-                    .preview-box__select
-                      .preview-box__select--delete2
-                        = link_to item_image_path(item_image.id), method: :delete, data: { turbolinks: false } do
-                          %p 削除
-                          
+            .preview-box2
+              - @item.item_images.each do |item_image|
+                .image-box
+                  = image_tag item_image.image, id: "upload-image", class: "image"
+                  .preview-box__select
+                    = link_to item_image_path(item_image.id), method: :delete, data: { turbolinks: false } do
+                      %p 削除
       .item-form-1
         .item-name
           = f.label :name, "商品名", class: "item-label"

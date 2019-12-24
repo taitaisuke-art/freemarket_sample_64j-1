@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
   resources :profiles, only: [:new, :create]
   
-  resources :categories, only: [:index]
+  resources :categories, only: [:index, :show]
 
   resources :personals, only: [:index, :edit]
 
