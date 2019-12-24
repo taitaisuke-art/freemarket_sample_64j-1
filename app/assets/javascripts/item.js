@@ -92,31 +92,6 @@ $('#item_price').on('input',function() {
   $('.sales-profit-price').prepend('¥')
 });
   
-  
-  // 削除ボタンを押すとイベント発火
-  $(document).on('click', '.preview-box__select--delete p', function(){
-    // 削除を押された画像をremove
-    $(this).closest('.preview-box').remove();
-  });
-  
-  
-  // 手数料計算
-  // 販売金額を入れたらイベント発火
-  $('#item_price').on('input',function() {
-    // 販売金額を定義
-    var data = $('#item_price').val();
-    // 販売利益を定義(販売金額の１割引)
-    var profit = Math.round(data * 0.9)
-    // 手数料の定義
-    var fee = (data - profit)
-    $('.sales-fee-price').html(fee)
-    // 手数料に￥をつける
-    $('.sales-fee-price').prepend('¥')
-    $('.sales-profit-price').html(profit)
-    // 販売利益に￥をつける
-    $('.sales-profit-price').prepend('¥')
-  });
-
   // ブラウザの制御
   $(document).on("dragover", e => {
     // 画面の遷移を行わないように制御する

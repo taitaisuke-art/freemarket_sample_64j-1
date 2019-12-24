@@ -22,11 +22,11 @@
             .dropzone
               %label.item-label
                 .dropzone-text
-                  %pre
-                    ドラック&ドロップ 
-                    またはクリックしてファイルをアップロード
-                    = f.fields_for :item_images do |image|
-                      = image.file_field :image, multiple: true, name: "item_images[image][]", id: "upload-image", class: "upload-image"
+                  ドラック&ドロップ
+                  %br
+                  またはクリックしてファイルをアップロード
+                = f.fields_for :item_images do |image|
+                  = image.file_field :image, multiple: true, name: "item_images[image][]", id: "upload-image", class: "upload-image"
             .preview-box2
               - @item.item_images.each do |item_image|
                 .image-box
