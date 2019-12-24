@@ -23,7 +23,6 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
