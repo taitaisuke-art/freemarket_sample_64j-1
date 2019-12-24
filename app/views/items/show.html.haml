@@ -10,7 +10,7 @@
     .mainbody__item__content
       .mainbody__item__content__image
         -# sold out
-        -unless @item.buyer_id.nil?
+        -if @item.buyer_id.present?
           .items-box_photo__sold
             .items-box_photo__sold__inner
               SOLD
@@ -87,9 +87,15 @@
         = link_to item_path(@item),class: "booder", method: :delete, data: { turbolinks: false} do
           .item-stop-btn この商品を削除する
       -else
-        = link_to "購入画面に進む", "/purchase/#{@item.id}", data: {turbolinks: false}, class: "mainbody__item__buybox"
+        -if @item.buyer_id.present?
+          = link_to "売り切れました", root_path, id: "soldout", class: "mainbody__item__buybox"
+        -else
+          = link_to "購入画面に進む", "/purchase/#{@item.id}", data: {turbolinks: false}, class: "mainbody__item__buybox"
     -else
-      = link_to "購入画面に進む", new_user_session_path, class: "mainbody__item__buybox" 
+      -if @item.buyer_id.present?
+        = link_to "売り切れました", root_path, id: "soldout", class: "mainbody__item__buybox"
+      -else
+        = link_to "購入画面に進む", new_user_session_path, class: "mainbody__item__buybox" 
     -unless user_signed_in? && @item.seller_id == current_user.id
       .mainbody__item__textbox
         = @item.text

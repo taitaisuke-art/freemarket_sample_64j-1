@@ -74,6 +74,9 @@
         padding: 26px 3px;
       }
     }
+    #soldout {
+      background: gray;
+    }
     &__buybox {
       color: white;
       font-size: 24px;
@@ -225,3 +228,4 @@
     font-weight: 600;
   }
 }
+
