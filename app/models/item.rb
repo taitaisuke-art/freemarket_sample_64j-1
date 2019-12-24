@@ -12,6 +12,7 @@ class Item < ApplicationRecord
   belongs_to :brand, optional: true
   has_many :messages, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   # item_imagesモデルの属性付
   has_many :item_images, inverse_of: :item, dependent: :destroy

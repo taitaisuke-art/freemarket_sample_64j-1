@@ -122,6 +122,48 @@
         padding-left: 80px;
       }
     }
+    &__commentbox {
+      margin-top: 50px;
+      &__comment {
+        margin-bottom: 50px;
+        .comment-user{
+          font-size: 15px;
+          text-align: left;
+          padding-top: 20px;
+          padding-left: 5px;
+        }
+        .comment-text {
+          border: 1px solid #f5f5f5;
+          border-radius: 10px;
+          background: #f5f5f5;
+          font-size: 15px;
+          padding: 20px;
+          text-align: left;
+          margin-top: 5px;
+        }
+        .comment-date {
+          color: silver;
+          padding-top: 15px;
+        }
+      }
+      &__form {
+        &__text {
+          background: #FFF6DE;
+          border: 1px solid #FFF6DE;
+          border-radius: 4px;
+          text-align: left;
+          padding: 10px 10px;
+          margin: 10px 0;
+        }
+        &__btn {
+          background: silver;
+          color: white;
+          line-height: 50px;
+          padding: 0 257px;
+          margin-top: 5px;
+        }
+      }
+    }
   }
 }
 
