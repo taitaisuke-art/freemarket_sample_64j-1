@@ -205,3 +205,23 @@
   text-decoration: none;
 }
 
+.items-box_photo__sold{
+  width: 0;
+  height: 0;
+  border-top: 60px solid $red;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid $red;
+  z-index:1000;
+  position: relative;
+  top: 120px;
+  margin-top: -120px;
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 28px;
+    margin:-20px 0px 0px -55px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+}

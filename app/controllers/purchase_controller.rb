@@ -24,14 +24,19 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
     :customer => @card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
-  )
-  redirect_to action: 'done' #完了画面に移動
+    )
+
+    # 購入者のidをDBに反映
+    @item_buyer = Item.find(params[:id])
+    @item_buyer.update(buyer_id: current_user.id)
+
+    redirect_to action: 'done' #完了画面に移動
+
   end
 
   

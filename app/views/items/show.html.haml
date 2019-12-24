@@ -9,10 +9,16 @@
 
     .mainbody__item__content
       .mainbody__item__content__image
+        -# sold out
+        -unless @item.buyer_id.nil?
+          .items-box_photo__sold
+            .items-box_photo__sold__inner
+              SOLD
+        -# Slider
         .thumbnail
           - @item.item_images.each.with_index do |item_image, index|
             - if index == 0
-              .thumbnail__item.current{"data-index": index}
+              .thumbnail__item-current{"data-index": index}
                 .thumbnail__item__box
                   = image_tag item_image.image, class: "showimage"
             - else
@@ -25,7 +31,7 @@
         .thumbnail-thumb
           - @item.item_images.each.with_index do |item_image, index|
             - if index == 0
-              .thumbnail__item.current{"data-index": index}
+              .thumbnail__item-current{"data-index": index}
                 .thumbnail__item__box
                   = image_tag item_image.image, class: "showimage1"
             - else
@@ -35,7 +41,6 @@
           - if @item.item_images.length > 5
             - for i in 1..(10 - @item.item_images.length)
               .thumbnail__dummy
-
       .mainbody__item__content__post
         %table
           %tr

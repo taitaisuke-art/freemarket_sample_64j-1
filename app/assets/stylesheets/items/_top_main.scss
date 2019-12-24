@@ -180,6 +180,7 @@
           }
           ul.mens-item {
             display: flex;
+            flex-flow: wrap;
             .item-link{
               text-decoration: none;
               color: rgb(51, 51, 51);
