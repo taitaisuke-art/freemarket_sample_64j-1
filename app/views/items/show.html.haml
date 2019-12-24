@@ -68,7 +68,7 @@
     .mainbody__item__pricebox
       .mainbody__item__pricebox__price
         ¥
-        = @item.price
+        = @item.price.to_s(:delimited)
       .mainbody__item__pricebox__tax
         (税込)
       .mainbody__item__pricebox__shipping_price

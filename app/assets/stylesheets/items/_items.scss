@@ -154,11 +154,13 @@
 }
 .gnav > li {/*親階層のみ幅を25%にする*/
   width: 100%;
+  padding: 5px 0;
 }
 /*全てのリスト・リンク共通*/
 .gnav li {
   list-style: none;
   position: relative;
+  line-height: 2rem;
 }
 
 
@@ -196,7 +198,6 @@
 }
 
 .gnav li li a {
-  //border-top: 1px solid #eee;
 }
 
 .gnav li:hover > ul > li {
@@ -219,9 +220,6 @@
 .gnav li a:hover {
   background: #EA342C;
   color: white;
-}
-.gnav li a{
-  height: 44px;
 }
 
 .category:hover{

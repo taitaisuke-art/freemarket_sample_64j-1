@@ -22,7 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    step2_signup_index_path
+    if current_user.address.present?
+      root_path
+    else
+      step2_signup_index_path
+    end
   end
 
   def request_path
