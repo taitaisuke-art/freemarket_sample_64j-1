@@ -148,6 +148,19 @@
         width: 48%;
         margin: auto;
       }
+      .buy-confirm__box__btn{
+
+        .buy-btn{
+          height: 50px;
+          width: 340px;
+          margin: auto;
+          margin-top: 30px;
+          &a{
+            margin-left: 172px;
+          }
+          }
+        }
+      }
       
     }
   }
