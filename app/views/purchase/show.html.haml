@@ -32,10 +32,16 @@
             %br 
           - else
             -#以下カード情報を表示
+            %br クレジットカード
             = "**** **** **** " + @default_card_information.last4
-            - exp_month = @default_card_information.exp_month.to_s
-            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-            = exp_month + " / " + exp_year
+            %br
+            .kigen
+              .kigen1
+                有効期限 
+              .kigen2
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
         .buy-confirm__box__price-method__bottom
           %i.fas.fa-plus-circle
           = link_to "登録してください", root_path

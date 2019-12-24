@@ -5,13 +5,8 @@ class PurchaseController < ApplicationController
 
 
   def show
-    
-  end
-
-
-  def index
-    #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
-    if @card.blank?
+     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
+     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
@@ -21,6 +16,10 @@ class PurchaseController < ApplicationController
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
+  end
+
+
+  def index
   end
 
   def pay
