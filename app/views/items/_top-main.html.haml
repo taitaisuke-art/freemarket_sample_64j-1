@@ -39,11 +39,11 @@
                   = image_tag item.item_images[0].image, class: "item_image"
                   -# buyer_idがある時は sold out を表示
                   -# - buyer_id = Item.find_by(item: item.id)
-                  - buy = Item.find_by(buyer_id: user.id)
-                  - unless buy == nil
-                    .items-box_photo__sold
-                      .items-box_photo__sold__inner
-                        SOLD
+                  -# - buy = Item.find_by(buyer_id: user.id)
+                  -# - unless buy == nil
+                  -#   .items-box_photo__sold
+                  -#     .items-box_photo__sold__inner
+                  -#       SOLD
 
                   .item-price  
                     = "¥ #{item.price}"

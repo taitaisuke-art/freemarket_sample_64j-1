@@ -10,10 +10,10 @@
     .mainbody__item__content
       .mainbody__item__content__image
         -# sold out
-        -# -unless @item.buyer_id.nil?
-        -#   .items-box_photo__sold
-        -#     .items-box_photo__sold__inner
-        -#       SOLD
+        -unless @item.buyer_id.nil?
+          .items-box_photo__sold
+            .items-box_photo__sold__inner
+              SOLD
         -# Slider
         .thumbnail
           - @item.item_images.each.with_index do |item_image, index|
