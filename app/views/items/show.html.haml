@@ -1,7 +1,6 @@
 .wrapper
   = render "top-head"
 
-
 .mainbody
   .mainbody__item
     .mainbody__item__title
@@ -10,7 +9,7 @@
     .mainbody__item__content
       .mainbody__item__content__image
         -# sold out
-        -unless @item.buyer_id.nil?
+        -if @item.buyer_id.present?
           .items-box_photo__sold
             .items-box_photo__sold__inner
               SOLD
