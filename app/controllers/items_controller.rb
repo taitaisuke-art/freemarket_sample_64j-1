@@ -5,8 +5,6 @@ class ItemsController < ApplicationController
   def index
     @ladies = Item.where(category_id: "1").order(created_at: "DESC").limit(10)
     @mens = Item.where(category_id: "2").order(created_at: "DESC").limit(10)
-    @appliance = Item.where(category_id: "8").order(created_at: "DESC").limit(10)
-    @hobby = Item.where(category_id: "6").order(created_at: "DESC").limit(10)
   end
 
   def new
@@ -39,11 +37,6 @@ class ItemsController < ApplicationController
   def edit
   end
 
-  def  done
-    @item_purchaser= item.find(params[:id])
-    @item_purchaser.update( purchaser_id: current_user.id)
-  end
-
   def update
     if @item.update(item_params2)
       if  params[:item_images].present?
@@ -71,17 +64,6 @@ class ItemsController < ApplicationController
     # Ajax通信で送られてきたデータをparamsで受け取り､childrenで孫を取得｡（実際には子カテゴリーの子になる｡childrenは子を取得するメソッド)
     @category_grandchildren = Category.find(params[:productcategory]).children
   end
-
-  # def search
-  #   # binding.pry
-  #   respond_to do |format|
-  #     format.html
-  #     format.json do
-  #       #カテゴリーのidから子ボックスのidの配列を作成してインスタンス変数で定義
-  #       @children = Category.find(params[:parent_id]).children
-  #     end
-  #   end
-  # end
 
 
   private
