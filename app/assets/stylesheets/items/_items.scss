@@ -168,10 +168,12 @@
   background: white;
   display: block;
   height: 2rem;
-  text-align: left;
+  line-height: 2rem;
   text-decoration: none;
   width: 100%;
   color:#333333;
+  padding-left: 15px;
+  border-right: 2px solid whitesmoke;
   .fas.fa-bars{
     color: red;
     .category:hover{
@@ -195,10 +197,13 @@
   overflow: hidden;
   transition: opacity .1s;
   z-index: 3;
+  padding-left: 15px;
 }
 
 .gnav li li a {
 }
+
+
 
 .gnav li:hover > ul > li {
   height: 2rem;

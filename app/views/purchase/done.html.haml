@@ -1,3 +1,76 @@
-%h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
+.buy
+  .buy-confirm
+    .buy-confirm__header
+      .buy-confirm__header__logo
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", class: "header-logo__icon"
+    .buy-confirm__box
+      .buy-confirm__box__header
+        %h1 購入が完了しました
+      .buy-confirm__box__border
+      .buy-confirm__box__item
+        .buy-confirm__box__item__image
+          = image_tag 'woman-1.jpg', alt: "商品画像", class: "woman-1"
+        .buy-confirm__box__item__text
+          = @item.name
+      .buy-confirm__box__border2
+      .buy-confirm__box__price
+        .buy-confirm__box__price__top
+          .buy-confirm__box__price__top__left
+            %h1 支払い金額
+          .buy-confirm__box__price__top__right
+            = "¥ #{@item.price}"
+        .buy-confirm__box__price__bottom
+          .buy-confirm__box__price__bottom__box
+            %i.fas.fa-check-square
+            %h1 ポイントを使用(所持ポイント:P0)
+      .buy-confirm__box__border3
+      .buy-confirm__box__price-method
+        .buy-confirm__box__price-method__top
+          %h1 支払い方法
+          - if @default_card_information.blank?
+            %br 
+          - else
+            -#以下カード情報を表示
+            %br クレジットカード
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            .kigen
+              .kigen1
+                有効期限 
+              .kigen2
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+        .buy-confirm__box__price-method__bottom
+      .buy-confirm__box__border4
+      .buy-confirm__box__address
+        .buy-confirm__box__address__left
+          %h1 配送先
+          %p  〒111-1111
+          %p  東京都世田谷区駒沢1-1-1
+          %p  橋本 環奈
+        .buy-confirm__box__address__right
+          = link_to "変更する", root_path
+      .buy-confirm__box__border5
+      .buy-confirm__box__btn
+        .buy-btn
+          = link_to "マイページへ戻る", root_path
+    .buy-confirm__footer
+      %nav
+        %ul
+          %li
+            = link_to "プライバシーポリシー", root_path
+          %li
+            = link_to "フリーマケット利用規約", root_path
+          %li
+            = link_to "特定商取引に関する表記", root_path
+      .fooder-image
+        = link_to root_path do
+          = image_tag "logo_white.svg", class: "fooder_logo"
+      %p
+        &copy; Fmarket 64 teamJ
+
+
+
+
