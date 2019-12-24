@@ -1,9 +1,12 @@
+$red: #ea352d;
+
 .top-main{
   background-color: #f5f5f5;
   color: rgb(51, 51, 51);
   .categoreis-box {
     .popularity-categoreis {
       &__head {
+        padding: 56px 0px 30px;
         background-color: white;
         h1 {
           font-size: 28px;
@@ -35,7 +38,7 @@
         .circle{
           height: 155px;
           width: 155px;
-          background-color: rgb(234,53,45,);
+          background-color: $red;
           border-radius: 50%;
           position: relative;
           left: 1250px;
@@ -239,10 +242,10 @@
             margin-bottom: 16px;
             margin-top: 60px;
           }
-          ul {
+          ul.mens-item{
             display: flex;
             flex-wrap: wrap;
-            li {
+            li.men-item-image {
               background-color: white;
               width: 188px;
               box-shadow: 2px 2px 4px lightgrey;
@@ -289,7 +292,7 @@
                 }
               }
             }
-            li:hover {
+            .men-item-image:hover {
               outline: 1px solid cornflowerblue;
             }
           }
@@ -298,3 +301,25 @@
     }
   }
 }
+
+.items__sold{
+  width: 0;
+  height: 0;
+  border-top: 30px solid $red;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid $red;
+  z-index:1000;
+  position: relative;
+  bottom: 191px;
+  margin-bottom: -60px;
+  .items__sold__inner{
+    transform: rotate(-45deg);
+    font-size: 14px;
+    margin: -9px 0px 0px -25px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+}
+
