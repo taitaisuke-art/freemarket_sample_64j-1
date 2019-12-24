@@ -46,7 +46,7 @@
                   -#       SOLD
 
                   .item-price  
-                    = "¥ #{item.price}"
+                    = "¥ #{item.price.to_s(:delimited)}"
                   .item-name
                     %p
                       = item.name
@@ -64,7 +64,7 @@
                 %li.men-item-image
                   = image_tag item.item_images[0].image, class: "item_image"
                   .item-price
-                    = "¥ #{item.price}"
+                    = "¥ #{item.price.to_s(:delimited)}"
                   .item-name
                     %p
                       = item.name
