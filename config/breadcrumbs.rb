@@ -28,3 +28,9 @@ crumb :card do
   parent :mypage
 end
 
+
+crumb :item do |item|
+  link "#{item.name}"
+  parent :root
+end
+

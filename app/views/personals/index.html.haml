@@ -114,15 +114,14 @@
                   %li.past_content
                     過去の取引がありません
 
-.top-main
-  .categoreis-box
-    .popularity-categoreis
-      .popularity-categoreis__head
-        .popularity-categoreis__list
-          = link_to new_item_path, class: "category-link" do
-            .circle
-              %span 出品
-              %i.fas.fa-camera
+  .top-main
+    .categoreis-box
+      .popularity-categoreis
+        .popularity-categoreis__head
+          .popularity-categoreis__list
+            = link_to new_item_path, class: "category-link" do
+              .circle
+                %span 出品
+                %i.fas.fa-camera
                     
-.wrapper
   = render "items/top-foot"

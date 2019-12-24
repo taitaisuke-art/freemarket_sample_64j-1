@@ -130,6 +130,7 @@
 
 
 .wrapper
-  = render "pans/pan"
+  - breadcrumb :item, @item
+  = render "layouts/breadcrumbs"
   = render "top-foot"
 
