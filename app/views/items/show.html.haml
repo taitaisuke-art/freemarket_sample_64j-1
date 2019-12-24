@@ -107,6 +107,26 @@
           %i.fas.fa-lock
           あんしん・あんぜんへの取り組み
 
+    .mainbody__item__commentbox
+      .mainbody__item__commentbox__comment
+        %h2 コメント一覧
+        - @comments.each do |c|
+          .comment-user
+            = c.user.nickname
+          .comment-text
+            = c.text
+            .comment-date
+              %i.far.fa-clock
+              = c.created_at
+      .mainbody__item__commentbox__form
+        .mainbody__item__commentbox__form__text
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = form_for [@item, @comment] do |f|
+          = f.text_area :text, size: "83x7"
+          = f.submit 'コメントする', class: "mainbody__item__commentbox__form__btn"
+
+
+
   .item-select
     .item-select__left
       = link_to "＜前の商品", root_path, class: "select1"
