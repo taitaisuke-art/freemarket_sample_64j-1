@@ -45,7 +45,6 @@
                       .items__sold__inner
                         SOLD
 
-
                   .item-price  
                     = "¥ #{item.price.to_s(:delimited)}"
                   .item-name
@@ -64,6 +63,14 @@
               = link_to item_path(item.id), class: "item-link" do
                 %li.men-item-image
                   = image_tag item.item_images[0].image, class: "item_image"
+                  
+                  -# buyer_idがある時は sold out を表示
+                  - @item = Item.find(item.id)
+                  - if @item.buyer_id.present?
+                    .items__sold
+                      .items__sold__inner
+                        SOLD
+
                   .item-price
                     = "¥ #{item.price.to_s(:delimited)}"
                   .item-name
