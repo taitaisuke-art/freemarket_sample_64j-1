@@ -19,7 +19,6 @@
               .exhibit
                 出品数
                 %span
-                  -# = Item.group(:seller_id).count(:current_user)
                   - @item = Item.where(seller_id: current_user.id)
                   = @item.count
                   
