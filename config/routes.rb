@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     collection do
       get 'category_children' 
       get 'category_grandchildren'
+      get 'search'
     end
     resources :comments, only: [:create]
   end
