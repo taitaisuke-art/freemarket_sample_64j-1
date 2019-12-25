@@ -23,6 +23,13 @@ class Item < ApplicationRecord
   validates :text, presence: true, length: { maximum: 1000 }
   validates :condition, :shipping_method, :shipping_days, :prefecture_id, :shipping_price, :price, :seller_id, :category_id, :sale_status, presence: true
 
+  def self.search(search)
+    if search
+      Item.where('text LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 
 end
 
