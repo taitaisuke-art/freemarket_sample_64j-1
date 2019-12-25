@@ -110,14 +110,16 @@
       .mainbody__item__commentbox
         .mainbody__item__commentbox__comment
           %h2 コメント一覧
-          - @comments.each do |c|
+          - @comments.each do |comment|
             .comment-user
-              = c.user.nickname
+              = comment.user.nickname
             .comment-text
-              = c.text
+              = comment.text
               .comment-date
                 %i.far.fa-clock
-                = c.created_at
+                = comment.created_at.strftime("%Y/%m/%d %H:%M")
+                = link_to item_comment_path(comment.item.id, comment.id),class: "comment-destroy", method: :delete, data: { turbolinks: false} do
+                  %i.fas.fa-trash-alt
         .mainbody__item__commentbox__form
           .mainbody__item__commentbox__form__text
             相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。

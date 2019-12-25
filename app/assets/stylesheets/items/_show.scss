@@ -131,6 +131,7 @@
           text-align: left;
           padding-top: 20px;
           padding-left: 5px;
+          font-weight: bold;
         }
         .comment-text {
           border: 1px solid #f5f5f5;
@@ -144,6 +145,12 @@
         .comment-date {
           color: silver;
           padding-top: 15px;
+          font-size: 13px;
+        }
+        .comment-destroy {
+          text-align: right;
+          color: silver;
+          float: right;
         }
       }
       &__form {
