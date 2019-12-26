@@ -47,9 +47,15 @@
       .buy-confirm__box__address
         .buy-confirm__box__address__left
           %h1 配送先
-          %p  〒111-1111
-          %p  東京都世田谷区駒沢1-1-1
-          %p  橋本 環奈
+          = "〒"
+          = @addresses.post_cord
+          %br 
+          = @item.prefecture.name
+          = @addresses.city
+          = @addresses.address
+          %br 
+          = @addresses.first_name
+          = @addresses.last_name
         .buy-confirm__box__address__right
           = link_to "変更する", root_path
       .buy-confirm__box__border5
