@@ -14,20 +14,23 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    respond_to do |format|
-      format.html
-      format.json {render json: @item}
-    end
-    if @item.save
-      # 複数画像が入ったハッシュ形式からひとつずつ取り出して保存
-      params[:item_images][:image].each do |image|
-        @item.item_images.create(image: image)
+    if  params[:item_images].present?
+      @item = Item.new(item_params)
+      respond_to do |format|
+        format.html
+        format.json {render json: @item}
       end
-      redirect_to item_path(@item)
+      if @item.save
+        # 複数画像が入ったハッシュ形式からひとつずつ取り出して保存
+        params[:item_images][:image].each do |image|
+          @item.item_images.create(image: image)
+        end
+        redirect_to item_path(@item)
+      else
+        redirect_to new_item_path
+      end
     else
       redirect_to new_item_path
-      alert('出品に失敗しました！');
     end
   end
 
